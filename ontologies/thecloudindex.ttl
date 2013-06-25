@@ -1,0 +1,1370 @@
+@prefix : <http://purl.org/seerc/seqos/#> .
+@prefix ci-onto: <http://purl.org/cloudindex/ontology/> .
+@prefix ci: <http://purl.org/cloudindex/resource/> .
+@prefix ci-org: <http://purl.org/cloudindex/organization/> .
+@prefix ci-people: <http://purl.org/cloudindex/people/> .
+@prefix ci-project: <http://purl.org/cloudindex/project/> .
+@prefix rdfindex:  <http://purl.org/rdfindex/ontology/> .
+@prefix rdfindex-org: <http://purl.org/rdfindex/organization/> .
+@prefix rdfindex-people: <http://purl.org/rdfindex/people/> .
+@prefix rdfindex-project: <http://purl.org/rdfindex/project/> .
+@prefix rdfindex-component:  <http://purl.org/rdfindex/component/> .
+@prefix rdfindex-indicator:  <http://purl.org/rdfindex/indicator/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+@prefix interval:  <http://www.w3.org/2006/time#> .
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix v:  <http://www.w3.org/2006/vcard/ns#> .
+
+<http://purl.org/cloudindex/ontology/>
+    a owl:Ontology;
+    owl:versionInfo "0.1";
+    rdfs:label "Core Cloud Index structure and computation process"@en;
+    rdfs:comment "This is the first version of the The CloudIndex taxonomy for representing QoS indicators and modeling an index."@en;
+    dcterms:created "2012-05-20"^^xsd:date;
+    dcterms:modified "2012-06-20"^^xsd:date;
+    dcterms:title "The CloudIndex structure"@en;
+    dcterms:author ci-people:Chema, ci-org:SEERC ;
+    dcterms:publisher  ci-people:Chema;
+    dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
+    dcterms:license <http://opendatacommons.org/licenses/by/1.0/> .
+
+
+#################################################################
+#
+#    Specific classes
+#
+#################################################################
+
+
+ci-onto:KPIIndicator a owl:Class, rdfs:Class;
+	rdfs:subClassOf rdfindex:Indicator;
+	rdfs:label "KPI Indicator"@en ;
+	rdfs:comment "Key Performance Indicator."@en;
+.
+
+
+#################################################################
+#
+#    Properties
+#
+#################################################################
+
+### Metadata of observations: indicator|component, value, when, who
+
+ci-ont:ref-area a rdf:Property, qb:DimensionProperty; 
+	rdfs:label "URI to an Area"@en; 
+	rdfs:subPropertyOf sdmx-dimension:ref-area; 
+	rdfs:range skos:Concept; 
+	qb:concept sdmx-concept:ref-area . 
+
+ci-ont:ref-provider a rdf:Property, qb:DimensionProperty; 
+	rdfs:label "URI to a provider"@en; 
+	rdfs:subPropertyOf sdmx-dimension:ref-area; 
+	rdfs:range skos:Concept; 
+	qb:concept sdmx-concept:ref-area . 
+
+ci-ont:ref-year  a rdf:Property, qb:DimensionProperty;
+	rdfs:label "Period and year"@en;
+	rdfs:subPropertyOf sdmx-dimension:ref-period;
+	rdfs:range interval:Interval;
+	qb:concept sdmx-concept:ref-period . 
+
+
+ci-ont:ref-period  a rdf:Property, qb:DimensionProperty;
+	rdfs:label "Period"@en;
+	rdfs:subPropertyOf sdmx-dimension:ref-period;
+	rdfs:range interval:Interval;
+	qb:concept sdmx-concept:ref-period . 
+
+ci-onto:value a owl:ObjectProperty, qb:MeasureProperty;
+	rdfs:label "Observation's value"@en; 
+	rdfs:comment "Values should be accessed through a proxy class"@en;
+	rdfs:subPropertyOf sdmx-measure:obsValue; 
+.
+
+ci-onto:timestamp a owl:ObjectProperty, rdf:Property ;
+	rdfs:label "Timestamp of an observation"@en ;
+	rdfs:comment "It is used to specify the precise moment in which the observation has been generated."@en ;
+.
+
+
+### Metadata of definitions providers
+
+
+ci-onto:defined-by  a owl:ObjectProperty, rdf:Property;
+	rdfs:subPropertyOf  dcterms:source;
+	rdfs:label "provider-link"@en;
+	rdfs:comment "URI to the provider of a definition"@en;
+. 
+
+
+### Components
+
+
+ci-component:ds
+      a       void:Dataset ;
+      rdfs:label "SEERC| SEQoS | Components"@en ;
+      rdfs:comment "Dataset of components that aggregates different indicators and are part of a subindex."@en ;
+      dcterms:created "2012-20-05"^^xsd:date;
+      dcterms:modified "2012-08-31"^^xsd:date;
+      dcterms:title "Core SeQoS ontology"@en;
+      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:publisher  ci-people:Chema;
+      dcterms:contributor  ci-org:SEERC, ci-org:RELATE ;
+      dcterms:license <http://opendatacommons.org/licenses/by/1.0/>;
+      void:exampleResource ci-component:CommunicationsInfrastructure ;
+      void:uriRegexPattern
+              "http://purl.org/seerc/seqos/component/.+" ;
+      void:vocabulary  rdfs: ,  skos: ;
+      foaf:homepage <http://purl.org/seerc/seqos/> .
+
+
+
+
+ci-component:Accountability a ci-onto:Component;
+	rdfs:label "Accountability"@en;
+	rdfs:comment "This component is used to measure the properties related to the service provider
+organization. These properties may be independent of the service being provided."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	rdfindex:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Auditability; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Compliance; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ContractingExperience; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:DataOwnership; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:EaseDoingBusiness; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Governance; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Ownership; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderStability; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderCertifications; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderSLAVerification; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderEthics; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderPersonnelRequirements; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderSupplyChain; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProviderSecurityCapabilities; 
+			rdfindex:weight 0.06];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Sustainability; 
+			rdfindex:weight 0.06];
+	];
+	qb:structure 	ci:AccountabilityDSD ;
+	.
+
+	ci-component:Accountability skos:narrower ci-indicator:Auditability.
+	ci-component:Accountability skos:narrower ci-indicator:Compliance.
+	ci-component:Accountability skos:narrower ci-indicator:ContractingExperience.
+	ci-component:Accountability skos:narrower ci-indicator:DataOwnership.
+	ci-component:Accountability skos:narrower ci-indicator:EaseDoingBusiness.
+	ci-component:Accountability skos:narrower ci-indicator:Governance.
+	ci-component:Accountability skos:narrower ci-indicator:Ownership .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderStability .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderCertifications .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderSLAVerification .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderEthics .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderPersonnelRequirements .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderSupplyChain .
+	ci-component:Accountability skos:narrower ci-indicator:ProviderSecurityCapabilities .
+	ci-component:Accountability skos:narrower ci-indicator:Sustainability .
+
+ci-component:Agility a ci-onto:Component;
+	rdfs:label "Agility"@en;
+	rdfs:comment "Indicates the impact of a service upon a client's ability to change direction, strategy, or tactics quickly
+and with minimal disruption."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Adaptability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Capacity; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Elasticity; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Extensibility; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Flexibility; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Portability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Scalability; 
+			rdfindex:weight 0.14];
+	];
+	qb:structure 	ci:AgilityDSD ;  
+
+.
+
+	ci-component:Agility skos:narrower ci-indicator:Adaptability .
+	ci-component:Agility skos:narrower ci-indicator:Capacity .
+	ci-component:Agility skos:narrower ci-indicator:Elasticity .
+	ci-component:Agility skos:narrower ci-indicator:Extensibility .
+	ci-component:Agility skos:narrower ci-indicator:Flexibility .
+	ci-component:Agility skos:narrower ci-indicator:Portability .
+	ci-component:Agility skos:narrower ci-indicator:Scalability .
+
+
+
+ci-component:Assurance a ci-onto:Component;
+	rdfs:label "Assurance"@en;
+	rdfs:comment "This category includes key attributes that indicate how likely it is that the service will be available as
+specified."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Availability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Maintainability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Recoverability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Reliability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Resiliency; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Stability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Serviceability; 
+			rdfindex:weight 0.14];
+	];
+	qb:structure 	ci:AssuranceDSD ;  
+.
+
+	ci-component:Assurance skos:narrower ci-indicator:Availability .
+	ci-component:Assurance skos:narrower ci-indicator:Maintainability  .
+	ci-component:Assurance skos:narrower ci-indicator:Recoverability  .
+	ci-component:Assurance skos:narrower ci-indicator:Reliability  .
+	ci-component:Assurance skos:narrower ci-indicator:Resiliency .
+	ci-component:Assurance skos:narrower ci-indicator:Stability .
+	ci-component:Assurance skos:narrower ci-indicator:Serviceability .
+
+
+ci-component:Financial a ci-onto:Component;
+	rdfs:label "Financial"@en;
+	rdfs:comment "The amount of money spent on the service by the client."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Acquisition; 
+			rdfindex:weight 0.33];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:OngoingCost; 
+			rdfindex:weight 0.33];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Profit; 
+			rdfindex:weight 0.33];
+	];
+	qb:structure 	ci:FinancialDSD ;  
+.
+
+
+	ci-component:Financial skos:narrower ci-indicator:Acquisition .
+	ci-component:Financial skos:narrower ci-indicator:OngoingCost .
+	ci-component:Financial skos:narrower ci-indicator:Profit .
+
+
+
+ci-component:Performance a ci-onto:Component;
+	rdfs:label "Performance"@en;
+	rdfs:comment "This category covers the features and functions of the provided services."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Accuracy; 
+			rdfindex:weight 0.2];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Functionality; 
+			rdfindex:weight 0.2];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Suitability; 
+			rdfindex:weight 0.2];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Interoperability; 
+			rdfindex:weight 0.2];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ServiceResponseTime; 
+			rdfindex:weight 0.2];
+	];
+	qb:structure 	ci:PerformanceDSD ;  
+
+
+.
+
+
+	ci-component:Performance skos:narrower ci-indicator:Accuracy .
+	ci-component:Performance skos:narrower ci-indicator:Functionality  .
+	ci-component:Performance skos:narrower ci-indicator:Suitability  .
+	ci-component:Performance skos:narrower ci-indicator:Interoperability  .
+	ci-component:Performance skos:narrower ci-indicator:ServiceResponseTime  .
+
+
+
+
+ci-component:SecurityPrivacy a ci-onto:Component;
+	rdfs:label "Security and Privacy"@en;
+	rdfs:comment "This category includes attributes that indicate the effectiveness of a service provider's controls on
+access to services, service data, and the physical facilities from which services are provided."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:AccessControl; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:GeographicalConstraint; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:PoliticalConstraint; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:DataIntegrity; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:DataPrivacy; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:DataPrivacy; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:DataLoss; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:EnvironmentSecurity; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ProactiveThreat; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Retention; 
+			rdfindex:weight 0.1];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Disposition; 
+			rdfindex:weight 0.1];
+	];
+	qb:structure 	ci:PerformanceDSD ;  
+.
+
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:AccessControl  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:GeographicalConstraint  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:PoliticalConstraint  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:DataIntegrity  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:DataPrivacy  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:DataLoss .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:EnvironmentSecurity  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:ProactiveThreat  .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:Retention .
+	ci-component:SecurityPrivacy skos:narrower ci-indicator:Disposition .
+
+
+
+ci-component:Usability a ci-onto:Component;
+	rdfs:label "Usability"@en;
+	rdfs:comment "The ease with which a service can be used."@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	#skos:broader ci-index:Readiness;
+	ci-onto:weight "0.3333"^^xsd:double;
+.
+
+
+ci-component:Usability skos:narrower ci-indicator:Accessibility  .
+ci-component:Usability skos:narrower ci-indicator:ClientPersonnelRequirements .
+ci-component:Usability skos:narrower ci-indicator:Installability  .
+ci-component:Usability skos:narrower ci-indicator:Learnability .
+ci-component:Usability skos:narrower ci-indicator:Operability  .
+ci-component:Usability skos:narrower ci-indicator:Suitability  .
+ci-component:Usability skos:narrower ci-indicator:Transparency  .
+ci-component:Usability skos:narrower ci-indicator:Understandability  .
+
+
+### Indicators
+
+
+ci-indicator:ds
+      a       void:Dataset ;
+      rdfs:label "SEERC| SEQoS | Indicators"@en ;
+      rdfs:comment "Indicators used to retrieve observations per country and year. They can also be taken as measures."@en ;
+      dcterms:created "2013-05-20"^^xsd:date;
+      dcterms:modified "2013-05-20-"^^xsd:date;
+      dcterms:title "Indicators of Core SeQoS ontology"@en;
+      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:publisher  ci-people:Chema;
+      dcterms:contributor  ci-org:SEERC, ci-org:RELATE ;
+      dcterms:license <http://opendatacommons.org/licenses/by/1.0/>;
+      void:exampleResource ci-component:CommunicationsInfrastructure ;
+      void:uriRegexPattern
+              "http://purl.org/seerc/seqos/indicator/.+" ;
+      void:vocabulary  rdfs: ,  skos: ;
+      foaf:homepage <http://purl.org/seerc/seqos/>.
+
+
+ci-indicator:Auditability  a ci-onto:KPIIndicator ;
+	rdfs:label "Auditability"@en ;
+	rdfs:comment "The ability of a client to verify that the service provider is adhering to the standards, processes, and policies that they follow."@en ;
+	skos:definition "The ability of a client to verify that the service provider is adhering to the standards, processes, and policies that they follow."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Auditability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:Compliance  a ci-onto:KPIIndicator ;
+	rdfs:label "Compliance"@en ;
+	rdfs:comment "Standards, processes, and policies committed to by the service provider are followed."@en ;
+	skos:definition "Standards, processes, and policies committed to by the service provider are followed."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Compliance" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:ContractingExperience a ci-onto:KPIIndicator ;
+	rdfs:label "Contracting Experience"@en ;
+	rdfs:comment "Indicators of client effort and satisfaction with the process of entering into the agreements required to use a service."@en ;
+	skos:definition "Indicators of client effort and satisfaction with the process of entering into the agreements required to use a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ContractingExperience" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+ci-indicator:DataOwnership a ci-onto:KPIIndicator ;
+	rdfs:label "Data Ownership"@en ;
+	rdfs:comment "The Level of rights a client has over client data associated with a service."@en ;
+	skos:definition "The Level of rights a client has over client data associated with a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "DataOwnership" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:EaseDoingBusiness a ci-onto:KPIIndicator ;
+	rdfs:label "Ease of Doing Business"@en ;
+	rdfs:comment "Client satisfaction with the ability to do business with a service provider."@en ;
+	skos:definition "Client satisfaction with the ability to do business with a service provider."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "EaseDoingBusiness" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:Governance  a ci-onto:KPIIndicator ;
+	rdfs:label "Ease of Doing Business"@en ;
+	rdfs:comment "The processes used by the service provider to manage client expectations, issues and service performance."@en ;
+	skos:definition "The processes used by the service provider to manage client expectations, issues and service performance."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Governance" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:Ownership   a ci-onto:KPIIndicator ;
+	rdfs:label "Ownership"@en ;
+	rdfs:comment "The level of rights a client has over software licenses, intellectual property and data associated with a service."@en ;
+	skos:definition "The level of rights a client has over software licenses, intellectual property and data associated with a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Ownership" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:ProviderStability   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider business stability"@en ;
+	rdfs:comment "The likelihood that the service provider will continue to exist throughout the contracted term."@en ;
+	skos:definition "The likelihood that the service provider will continue to exist throughout the contracted term."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderStability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:ProviderCertifications   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider Certifications"@en ;
+	rdfs:comment "The service provider maintains current certifications for standards relevant to their clients' requirements."@en ;
+	skos:definition "The service provider maintains current certifications for standards relevant to their clients' requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderCertifications" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+
+ci-indicator:ProviderSLAVerification   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider Contract/SLA Verification"@en ;
+	rdfs:comment "The service provider makes available to clients SLAs adequate to manage the service and mitigate risks of service failure."@en ;
+	skos:definition "The service provider makes available to clients SLAs adequate to manage the service and mitigate risks of service failure."@en ;	
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderSLAVerification" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+
+
+ci-indicator:ProviderEthics   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider Ethicality"@en ;
+	rdfs:comment "Ethicality refers to the manner in which the service provider conducts business; it includes business practices and ethics outside the scope of regulatory compliance. Ethicality includes fair practices with suppliers, customers, and employees."@en ;
+	skos:definition "Ethicality refers to the manner in which the service provider conducts business; it includes business practices and ethics outside the scope of regulatory compliance. Ethicality includes fair practices with suppliers, customers, and employees."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderEthics" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:ProviderPersonnelRequirements   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider Personnel Requirements"@en ;
+	rdfs:comment "The extent to which service provider personnel have the skills, experience, education, and certifications required to effectively deliver a service."@en ;
+	skos:definition "The extent to which service provider personnel have the skills, experience, education, and certifications required to effectively deliver a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderPersonnelRequirements" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+
+ci-indicator:ProviderSupplyChain   a ci-onto:KPIIndicator ;
+	rdfs:label "Provider Supply Chain"@en ;
+	rdfs:comment "The service provider ensures that any SLAs that must be supported by its suppliers are supported."@en ;
+	skos:definition "The service provider ensures that any SLAs that must be supported by its suppliers are supported."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderSupplyChain" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+ci-indicator:ProviderSecurityCapabilities   a ci-onto:KPIIndicator ;
+	rdfs:label "Security Capabilities"@en ;
+	rdfs:comment "The capabilities of service providers to ensure application, data, and infrastructure securiy based on the security requirements of the client."@en ;
+	skos:definition "The capabilities of service providers to ensure application, data, and infrastructure securiy based on the security requirements of the client."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProviderSecurityCapabilities" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+ci-indicator:Sustainability   a ci-onto:KPIIndicator ;
+	rdfs:label "Sustainability"@en ;
+	rdfs:comment "The impact on the economy, society and the environment of the service provider."@en ;
+	skos:definition "The impact on the economy, society and the environment of the service provider."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Sustainability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Accountability .
+
+#Agility indicators
+
+ci-indicator:Adaptability a ci-onto:KPIIndicator ;
+	rdfs:label "Adaptability"@en ;
+	rdfs:comment "The ability of the service provider to adjust to changes in client requirements."@en ;
+	skos:definition "The ability of the service provider to adjust to changes in client requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Adaptability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+ci-indicator:Capacity  a ci-onto:KPIIndicator ;
+	rdfs:label "Capacity"@en ;
+	rdfs:comment "The maximum amount of a service that a service provider can deliver while meeting agreed SLAs."@en ;
+	skos:definition "The maximum amount of a service that a service provider can deliver while meeting agreed SLAs."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Capacity" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+ci-indicator:Elasticity  a ci-onto:KPIIndicator ;
+	rdfs:label "Elasticity"@en ;
+	rdfs:comment "The ability of a service to adjust its resource consumption to meet demand."@en ;
+	skos:definition "The ability of a service to adjust its resource consumption to meet demand."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Elasticity" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+ci-indicator:Extensibility a ci-onto:KPIIndicator ;
+	rdfs:label "Extensibility"@en ;
+	rdfs:comment "The ability to add new features or services to existing services."@en ;
+	skos:definition "The ability to add new features or services to existing services."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Extensibility" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+ci-indicator:Flexibility  a ci-onto:KPIIndicator ;
+	rdfs:label "Flexibility"@en ;
+	rdfs:comment "The ability to add or remove predefined features from a service."@en ;
+	skos:definition "The ability to add or remove predefined features from a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Flexibility" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+ci-indicator:Portability  a ci-onto:KPIIndicator ;
+	rdfs:label "Portability"@en ;
+	rdfs:comment "The ability of a client to easily move a service from one service provider to another with minimal disruption."@en ;
+	skos:definition "The ability of a client to easily move a service from one service provider to another with minimal disruption."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Portability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+ci-indicator:Scalability  a ci-onto:KPIIndicator ;
+	rdfs:label "Scalability"@en ;
+	rdfs:comment "The ability of a service provider to increase or decrease the amount of service available to meet client requirements."@en ;
+	skos:definition "The ability of a service provider to increase or decrease the amount of service available to meet client requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Scalability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Agility .
+
+
+
+### Assurance indicators
+
+
+ci-indicator:Availability a ci-onto:KPIIndicator ;
+	rdfs:label "Availability"@en ;
+	rdfs:comment "The amount of time that a client can make use of a service."@en ;
+	skos:definition "The amount of time that a client can make use of a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Availability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+ci-indicator:Maintainability  a ci-onto:KPIIndicator ;
+	rdfs:label "Maintainability"@en ;
+	rdfs:comment "Maintainability refers to the ability for the service provider to make modifications to the service to keep the service in a condition of good repair."@en ;
+	skos:definition "Maintainability refers to the ability for the service provider to make modifications to the service to keep the service in a condition of good repair."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Maintainability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+
+ci-indicator:Recoverability  a ci-onto:KPIIndicator ;
+	rdfs:label "Recoverability"@en ;
+	rdfs:comment "Recoverability is the degree to which a service is able to quickly resume a normal state of operation after an unplanned disruption."@en ;
+	skos:definition "Recoverability is the degree to which a service is able to quickly resume a normal state of operation after an unplanned disruption."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Recoverability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+
+ci-indicator:Reliability  a ci-onto:KPIIndicator ;
+	rdfs:label "Reliability"@en ;
+	rdfs:comment "Reliability reflects measures of how a service operates without failure under
+given conditions during a given time period."@en ;
+	skos:definition "Reliability reflects measures of how a service operates without failure under
+given conditions during a given time period."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Reliability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+
+ci-indicator:Resiliency  a ci-onto:KPIIndicator ;
+	rdfs:label "Resiliency"@en ;
+	rdfs:comment "The ability of a service to continue to operate properly in the event of a failure in
+one or more of its components."@en ;
+	skos:definition "The ability of a service to continue to operate properly in the event of a failure in
+one or more of its components."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Resiliency" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+ci-indicator:Stability  a ci-onto:KPIIndicator ;
+	rdfs:label "Stability"@en ;
+	rdfs:comment "The degree to which the service is resistant to change, deterioration, or displacement."@en ;
+	skos:definition "The degree to which the service is resistant to change, deterioration, or displacement."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Stability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+
+ci-indicator:Serviceability   a ci-onto:KPIIndicator ;
+	rdfs:label "Serviceability"@en ;
+	rdfs:comment "The ease and efficiency of performing maintenance and correcting problems with the service."@en ;
+	skos:definition "The ease and efficiency of performing maintenance and correcting problems with the service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Serviceability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Assurance .
+
+### Financial indicators
+
+ci-indicator:Acquisition   a ci-onto:KPIIndicator ;
+	rdfs:label "Acquisition"@en ;
+	rdfs:comment "Any client costs to acquire the rights and ability to use a service and to move from an existing service to the new one."@en ;
+	skos:definition "Any client costs to acquire the rights and ability to use a service and to move
+from an existing service to the new one."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Acquisition" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Financial .
+
+
+ci-indicator:OngoingCost   a ci-onto:KPIIndicator ;
+	rdfs:label "On-going Cost"@en ;
+	rdfs:comment "The client cost to operate a service. This includes both recurring flat costs (e.g.,
+monthly access fees) and usage-based costs."@en ;
+	skos:definition "The client cost to operate a service. This includes both recurring flat costs (e.g.,
+monthly access fees) and usage-based costs."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "OngoingCost" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Financial .
+
+
+ci-indicator:Profit   a ci-onto:KPIIndicator ;
+	rdfs:label "Profit"@en ;
+	rdfs:comment "Arrangement between client and provider(s) under which costs or profits of a
+service are shared by the involved parties, according to an agreed upon formula."@en ;
+	skos:definition "Arrangement between client and provider(s) under which costs or profits of a
+service are shared by the involved parties, according to an agreed upon formula."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Profit" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Financial .
+
+### Performance indicators
+
+
+ci-indicator:Accuracy    a ci-onto:KPIIndicator ;
+	rdfs:label "Accuracy"@en ;
+	rdfs:comment "The extent to which a service adheres to its requirements."@en ;
+	skos:definition "The extent to which a service adheres to its requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Accuracy" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Performance .
+
+
+
+ci-indicator:Functionality     a ci-onto:KPIIndicator ;
+	rdfs:label "Functionality"@en ;
+	rdfs:comment "The specific features provided by a service."@en ;
+	skos:definition "The specific features provided by a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Functionality" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Performance .
+
+
+
+
+
+ci-indicator:Suitability     a ci-onto:KPIIndicator ;
+	rdfs:label "Suitability"@en ;
+	rdfs:comment "How closely do the capabilities of the service match the needs of the client."@en ;
+	skos:definition "How closely do the capabilities of the service match the needs of the client."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Suitability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Performance .
+
+
+ci-indicator:Interoperability a ci-onto:KPIIndicator ;
+	rdfs:label "Suitability"@en ;
+	rdfs:comment "The ability of a service to easily interact with other services (from the same service provider and from other service providers)."@en ;
+	skos:definition "The ability of a service to easily interact with other services (from the same service provider and from other service providers)."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Interoperability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Performance .
+
+ci-indicator:ServiceResponseTime a ci-onto:KPIIndicator ;
+	rdfs:label "Service Response Time"@en ;
+	rdfs:comment "An indicator of the time between when a service is requested and when the response is available."@en ;
+	skos:definition "An indicator of the time between when a service is requested and when the response is available."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ServiceResponseTime" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Performance .
+
+
+### Security and Privacy indicators
+
+ci-indicator:AccessControl a ci-onto:KPIIndicator ;
+	rdfs:label "Access Control"@en ;
+	rdfs:comment "Policies and processes in use by the service provider to ensure that only the provider and client personnel with appropriate status/reasons to make use of or modify data/work products may do so."@en ;
+	skos:definition "Policies and processes in use by the service provider to ensure that only the provider and client personnel with appropriate status/reasons to make use of or modify data/work products may do so."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "AccessControl" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:GeographicalConstraint a ci-onto:KPIIndicator ;
+	rdfs:label "Geographical Constraint"@en ;
+	rdfs:comment "The client's constraints on service location based on geography."@en ;
+	skos:definition "The client's constraints on service location based on geography."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "GeographicalConstraint" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:PoliticalConstraint a ci-onto:KPIIndicator ;
+	rdfs:label "Political Constraint"@en ;
+	rdfs:comment "The client's constraints on service location based on politics."@en ;
+	skos:definition "The client's constraints on service location based on geography."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "PoliticalConstraint" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:DataIntegrity a ci-onto:KPIIndicator ;
+	rdfs:label "Data Integrity"@en ;
+	rdfs:comment "Keeping the data that is created, used, and stored in its correct form so that clients may be confident that it is accurate and valid."@en ;
+	skos:definition "Keeping the data that is created, used, and stored in its correct form so that clients may be confident that it is accurate and valid."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "DataIntegrity" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:DataPrivacy a ci-onto:KPIIndicator ;
+	rdfs:label "Data Privacy"@en ;
+	rdfs:comment "Client restrictions on access and use of client data are enforced by the service provider. Any failures of these protections are promptly detected and reported to the client."@en ;
+	skos:definition "Client restrictions on access and use of client data are enforced by the service provider. Any failures of these protections are promptly detected and reported to the client."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "DataPrivacy" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+
+ci-indicator:DataLoss a ci-onto:KPIIndicator ;
+	rdfs:label "Data Loss"@en ;
+	rdfs:comment "Client restrictions on access and use of client data are enforced by the service provider. Any failures of these protections are promptly detected and reported to the client."@en ;
+	skos:definition "Client restrictions on access and use of client data are enforced by the service provider. Any failures of these protections are promptly detected and reported to the client."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "DataLoss" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:EnvironmentSecurity a ci-onto:KPIIndicator ;
+	rdfs:label "Physical & Environmental Security"@en ;
+	rdfs:comment "Policies and processes in use by the service provider to protect the provider
+facilities from unauthorized access, damage or interference."@en ;
+	skos:definition "Policies and processes in use by the service provider to protect the provider
+facilities from unauthorized access, damage or interference."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "EnvironmentSecurity" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+ci-indicator:ProactiveThreat a ci-onto:KPIIndicator ;
+	rdfs:label "Proactive Threat &  Vulnerability Management"@en ;
+	rdfs:comment "Mechanisms in place to ensure that the service is protected against know
+recurring threats as well as new evolving vulnerabilities."@en ;
+	skos:definition "Mechanisms in place to ensure that the service is protected against know
+recurring threats as well as new evolving vulnerabilities."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ProactiveThreat" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+
+ci-indicator:Retention a ci-onto:KPIIndicator ;
+	rdfs:label "Retention/Disposition"@en ;
+	rdfs:comment "The service provider’s data retention and disposition processes meet the clients'
+ requirements."@en ;
+	skos:definition "The service provider’s data retention and disposition processes meet the clients'
+ requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Retention" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+
+ci-indicator:Disposition a ci-onto:KPIIndicator ;
+	rdfs:label "Retention/Disposition"@en ;
+	rdfs:comment "The service provider’s data retention and disposition processes meet the clients'
+ requirements."@en ;
+	skos:definition "The service provider’s data retention and disposition processes meet the clients'
+ requirements."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Disposition" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:SecurityPrivacy .
+
+### Usability indicators
+
+ci-indicator:Accessibility a ci-onto:KPIIndicator ;
+	rdfs:label "Accessibility"@en ;
+	rdfs:comment "The degree to which a service is operable by users with disabilities."@en ;
+	skos:definition "The degree to which a service is operable by users with disabilities."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Accessibility" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+
+ci-indicator:ClientPersonnelRequirements a ci-onto:KPIIndicator ;
+	rdfs:label "Client Personnel Requirements"@en ;
+	rdfs:comment "The minimum number of personnel satisfying roles, skills, experience, education,
+and certification required of the client to effectively utilize a service."@en ;
+	skos:definition "The minimum number of personnel satisfying roles, skills, experience, education,
+and certification required of the client to effectively utilize a service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "ClientPersonnelRequirements" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+ci-indicator:Installability a ci-onto:KPIIndicator ;
+	rdfs:label "Client Personnel Requirements"@en ;
+	rdfs:comment "Installability characterizes the time and effort required to get a service ready for
+delivery (where applicable)."@en ;
+	skos:definition "Installability characterizes the time and effort required to get a service ready for
+delivery (where applicable)."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Installability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+ci-indicator:Learnability a ci-onto:KPIIndicator ;
+	rdfs:label "Learnability"@en ;
+	rdfs:comment "The effort required of users to learn to use the service."@en ;
+	skos:definition "The effort required of users to learn to use the service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Learnability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+
+ci-indicator:Operability a ci-onto:KPIIndicator ;
+	rdfs:label "Operability"@en ;
+	rdfs:comment "The ability of a service to be easily operated by users."@en ;
+	skos:definition "The ability of a service to be easily operated by users."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Operability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+ci-indicator:Suitability a ci-onto:KPIIndicator ;
+	rdfs:label "Suitability"@en ;
+	rdfs:comment "How closely do the capabilities of the service match the needs of the client."@en ;
+	skos:definition "How closely do the capabilities of the service match the needs of the client."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Suitability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+ci-indicator:Transparency a ci-onto:KPIIndicator ;
+	rdfs:label "Transparency"@en ;
+	rdfs:comment "The extent to which users are able to determine when changes in a feature or component of the service occur and whether these changes impact usability."@en ;
+	skos:definition "The extent to which users are able to determine when changes in a feature or component of the service occur and whether these changes impact usability."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Transparency" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+ci-indicator:Understandability a ci-onto:KPIIndicator ;
+	rdfs:label "Understandability"@en ;
+	rdfs:comment "The ease with which users can understand the capabilities and operation of the service."@en ;
+	skos:definition "The ease with which users can understand the capabilities and operation of the service."@en ;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	ci-onto:weight "1.0"^^xsd:double ;
+	ci-onto:high-low ci-onto:High ;
+	skos:notation "Understandability" ;
+	time:intervalStarts "2013"^^xsd:int ;
+	time:intervalFinishes "2013"^^xsd:int ;
+	skos:broader ci-component:Usability .
+
+
+### Organizations
+ci-org:ds
+      a       void:Dataset ;
+      rdfs:label "SEERC | SeQoS | Organizations"@en ;
+      dcterms:created "2012-20-05"^^xsd:date;
+      dcterms:modified "2012-08-31"^^xsd:date;
+      dcterms:title "Organizations dataset involved in the development of Core SeQoS ontology"@en;
+      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:publisher  ci-people:Chema;
+      dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
+      dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
+      void:exampleResource ci-org:SEERC;
+      void:uriRegexPattern
+              "http://purl.org/seerc/seqos/organization/.+" ;
+      void:vocabulary  rdfs: , foaf: ;
+      foaf:homepage <http://purl.org/seerc/seqos/>.
+
+
+ci-org:SEERC  a org:Organization;
+ rdfs:label "South East Research European Center"@en;
+ org:identifier "SEERC";
+ foaf:homepage  <http://www.seerc.org>;
+.
+
+
+
+ci-org:SEERC a  org:Organization ;
+  rdfs:label "South East Research European Center"@en ;
+  rdfs:comment "South East Research European Center at the City College, an International Faculty of the University of Sheffield"@en ;            
+  org:identifier "SEERC"@en;
+  foaf:homepage <http://www.seerc.org>;
+  org:hasSite [
+ 	rdfs:label "South East Research European Center"@en ;
+ 	org:siteAddress [
+		  v:fn "South East Research European Center" ;
+		  v:org [ v:organisation-name "City College, an International Faculty of the University of Sheffield"@en  ;
+			  v:organisation-unit "South East Research European Center"@en  ] ;
+		  v:adr [ rdf:type v:Work ;
+			  v:country-name "Greece"@en  ;
+			  v:locality "Thessaloniki"@en  ;
+			  v:postal-code "54622" ;
+			  v:street-address "24 Proxenou Koromila Street" ] ;
+		  v:geo [ v:latitude "40.630703" ;
+			  v:longitude "22.944013" ] ;
+		  v:tel [ rdf:type v:Fax, v:Work ;
+			  rdf:value "+30 2310 253477"] ; 
+		  v:email <mailto:contact@seerc.org> ;
+		  v:logo <http://www.seerc.org/templates/seerc/images/seerc-logo-no-grad.png> .		
+ 		];
+
+   ].
+
+
+### People
+
+
+ci-people:ds
+      a       void:Dataset ;
+      rdfs:label "Web Foundation | Web Index | People"@en ;
+      dcterms:created "2012-20-05"^^xsd:date;
+      dcterms:modified "2012-08-31"^^xsd:date;
+      dcterms:title "Core SeQoS ontology"@en;
+      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:publisher  ci-people:Chema;
+      dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
+      dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
+      void:exampleResource ci-people:Chema;
+      void:uriRegexPattern
+              "http://purl.org/seerc/seqos/people/.+" ;
+      void:vocabulary  rdfs: , foaf: ;
+      foaf:homepage <http://purl.org/seerc/seqos/>.
+
+ci-people:Chema a foaf:Person;
+	foaf:depiction <http://www.weso.es/img/joseMaria.jpg>;
+	foaf:family_name "Alvarez Rodríguez";
+	foaf:givenname "Jose María";
+	foaf:homepage <http://www.josemalvarez.es>;
+	foaf:name "Jose María";
+	foaf:nick "chema";
+	foaf:title "Dr.";
+	org:memberOf ci-org:SEERC, ci-project:RELATE;
+	foaf:workInfoHomepage <http://www.weso.es/Contents/about>;
+	foaf:workplaceHomepage <http://www.weso.es/>;
+	rdfs:seeAlso <http://www.josemalvarez.es/foaf.rdf#me>.
+
+
+
+### Projects
+
+
+ci-project:RELATE  a org:Organization;
+ rdfs:label "RELATE"@en;
+ rdfs:comment "TO-DO it is a DOAP project"@en;
+ org:identifier "RELATE";
+ foaf:homepage  <http://www.relate-itn.eu/>;
+.
+
+ci-org:CSMIC  a org:Organization;
+ rdfs:label "Service Measurement Index Version 1.0"@en;
+ rdfs:comment "TO-DO it is a DOAP project"@en;
+ org:identifier "CSMIC";
+ foaf:homepage  <http://csmic.org/>;
+.
+
+
