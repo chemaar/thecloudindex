@@ -104,6 +104,14 @@ ci-onto:timestamp a owl:ObjectProperty, rdf:Property ;
 	rdfs:comment "It is used to specify the precise moment in which the observation has been generated."@en ;
 .
 
+ci-onto:pref-value a owl:ObjectProperty, rdf:Property ;
+	rdfs:label "Preferred  value"@en ;
+	rdfs:domain skos:Concept;
+	rdfs:range skos:Concept;
+	rdfs:comment "It is used to specify when a value is better."@en ;
+.
+
+
 
 ### Metadata of definitions providers
 
@@ -384,39 +392,39 @@ access to services, service data, and the physical facilities from which service
 		rdfindex:aggregation-operator rdfindex:OWA;
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:AccessControl; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:GeographicalConstraint; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:PoliticalConstraint; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:DataIntegrity; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:DataPrivacy; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:DataPrivacy; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:DataLoss; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:EnvironmentSecurity; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:ProactiveThreat; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:Retention; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 		rdfindex:part-of [
 			rdfindex:dataset ci-indicator:Disposition; 
-			rdfindex:weight 0.2];
+			rdfindex:weight 0.1];
 	];
-	qb:structure 	ci:PerformanceDSD ;  
+	qb:structure 	ci:SecurityPrivacyDSD ;  
 .
 
 	ci-component:SecurityPrivacy skos:narrower ci-indicator:AccessControl  .
@@ -438,18 +446,46 @@ ci-component:Usability a ci-onto:Component;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	#skos:broader ci-index:Readiness;
-	ci-onto:weight "0.3333"^^xsd:double;
-.
+	ci-onto:weight "1"^^xsd:double;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Accessibility; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:ClientPersonnelRequirements; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Installability; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Learnability; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Operability; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Suitability; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Transparency; 
+			rdfindex:weight 0.125];
+		rdfindex:part-of [
+			rdfindex:dataset ci-indicator:Understandability; 
+			rdfindex:weight 0.125];
+	];
+	qb:structure 	ci:UsabilityDSD ;  
+	.
 
 
-ci-component:Usability skos:narrower ci-indicator:Accessibility  .
-ci-component:Usability skos:narrower ci-indicator:ClientPersonnelRequirements .
-ci-component:Usability skos:narrower ci-indicator:Installability  .
-ci-component:Usability skos:narrower ci-indicator:Learnability .
-ci-component:Usability skos:narrower ci-indicator:Operability  .
-ci-component:Usability skos:narrower ci-indicator:Suitability  .
-ci-component:Usability skos:narrower ci-indicator:Transparency  .
-ci-component:Usability skos:narrower ci-indicator:Understandability  .
+	ci-component:Usability skos:narrower ci-indicator:Accessibility  .
+	ci-component:Usability skos:narrower ci-indicator:ClientPersonnelRequirements .
+	ci-component:Usability skos:narrower ci-indicator:Installability  .
+	ci-component:Usability skos:narrower ci-indicator:Learnability .
+	ci-component:Usability skos:narrower ci-indicator:Operability  .
+	ci-component:Usability skos:narrower ci-indicator:Suitability  .
+	ci-component:Usability skos:narrower ci-indicator:Transparency  .
+	ci-component:Usability skos:narrower ci-indicator:Understandability  .
 
 
 ### Indicators
@@ -457,10 +493,10 @@ ci-component:Usability skos:narrower ci-indicator:Understandability  .
 
 ci-indicator:ds
       a       void:Dataset ;
-      rdfs:label "SEERC| SEQoS | Indicators"@en ;
-      rdfs:comment "Indicators used to retrieve observations per country and year. They can also be taken as measures."@en ;
+      rdfs:label "SEERC| CloudIndex | Indicators"@en ;
+      rdfs:comment "Indicators used to retrieve observations according to the different dimensions. They can also be taken as measures."@en ;
       dcterms:created "2013-05-20"^^xsd:date;
-      dcterms:modified "2013-05-20-"^^xsd:date;
+      dcterms:modified "2013-06-20-"^^xsd:date;
       dcterms:title "Indicators of Core SeQoS ontology"@en;
       dcterms:author ci-people:Chema, ci-org:SEERC ;
       dcterms:publisher  ci-people:Chema;
@@ -468,7 +504,7 @@ ci-indicator:ds
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/>;
       void:exampleResource ci-component:CommunicationsInfrastructure ;
       void:uriRegexPattern
-              "http://purl.org/seerc/seqos/indicator/.+" ;
+              "http://purl.org/cloudindex/seqos/indicator/.+" ;
       void:vocabulary  rdfs: ,  skos: ;
       foaf:homepage <http://purl.org/seerc/seqos/>.
 
@@ -479,7 +515,7 @@ ci-indicator:Auditability  a ci-onto:KPIIndicator ;
 	skos:definition "The ability of a client to verify that the service provider is adhering to the standards, processes, and policies that they follow."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Auditability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -493,7 +529,7 @@ ci-indicator:Compliance  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Compliance" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -507,7 +543,7 @@ ci-indicator:ContractingExperience a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ContractingExperience" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -520,7 +556,7 @@ ci-indicator:DataOwnership a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "DataOwnership" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -534,7 +570,7 @@ ci-indicator:EaseDoingBusiness a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "EaseDoingBusiness" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -548,7 +584,7 @@ ci-indicator:Governance  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Governance" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -562,7 +598,7 @@ ci-indicator:Ownership   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Ownership" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -576,7 +612,7 @@ ci-indicator:ProviderStability   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderStability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -590,7 +626,7 @@ ci-indicator:ProviderCertifications   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderCertifications" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -605,7 +641,7 @@ ci-indicator:ProviderSLAVerification   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderSLAVerification" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -621,7 +657,7 @@ ci-indicator:ProviderEthics   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderEthics" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -635,7 +671,7 @@ ci-indicator:ProviderPersonnelRequirements   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderPersonnelRequirements" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -649,7 +685,7 @@ ci-indicator:ProviderSupplyChain   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderSupplyChain" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -662,7 +698,7 @@ ci-indicator:ProviderSecurityCapabilities   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProviderSecurityCapabilities" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -675,7 +711,7 @@ ci-indicator:Sustainability   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Sustainability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -690,7 +726,7 @@ ci-indicator:Adaptability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Adaptability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -704,7 +740,7 @@ ci-indicator:Capacity  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Capacity" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -718,7 +754,7 @@ ci-indicator:Elasticity  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Elasticity" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -732,7 +768,7 @@ ci-indicator:Extensibility a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Extensibility" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -746,7 +782,7 @@ ci-indicator:Flexibility  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Flexibility" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -759,7 +795,7 @@ ci-indicator:Portability  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Portability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -773,7 +809,7 @@ ci-indicator:Scalability  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Scalability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -791,7 +827,7 @@ ci-indicator:Availability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Availability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -804,7 +840,7 @@ ci-indicator:Maintainability  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Maintainability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -818,7 +854,7 @@ ci-indicator:Recoverability  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Recoverability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -834,7 +870,7 @@ given conditions during a given time period."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Reliability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -850,7 +886,7 @@ one or more of its components."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Resiliency" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -863,7 +899,7 @@ ci-indicator:Stability  a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Stability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -877,7 +913,7 @@ ci-indicator:Serviceability   a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Serviceability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -893,7 +929,7 @@ from an existing service to the new one."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Acquisition" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -909,7 +945,7 @@ monthly access fees) and usage-based costs."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "OngoingCost" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -925,7 +961,7 @@ service are shared by the involved parties, according to an agreed upon formula.
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Profit" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -941,7 +977,7 @@ ci-indicator:Accuracy    a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Accuracy" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -956,7 +992,7 @@ ci-indicator:Functionality     a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Functionality" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -973,7 +1009,7 @@ ci-indicator:Suitability     a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Suitability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -987,7 +1023,7 @@ ci-indicator:Interoperability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Interoperability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1000,7 +1036,7 @@ ci-indicator:ServiceResponseTime a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ServiceResponseTime" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1016,7 +1052,7 @@ ci-indicator:AccessControl a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "AccessControl" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1029,7 +1065,7 @@ ci-indicator:GeographicalConstraint a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "GeographicalConstraint" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1042,7 +1078,7 @@ ci-indicator:PoliticalConstraint a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "PoliticalConstraint" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1055,7 +1091,7 @@ ci-indicator:DataIntegrity a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "DataIntegrity" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1068,7 +1104,7 @@ ci-indicator:DataPrivacy a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "DataPrivacy" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1082,7 +1118,7 @@ ci-indicator:DataLoss a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "DataLoss" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1097,7 +1133,7 @@ facilities from unauthorized access, damage or interference."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "EnvironmentSecurity" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1112,7 +1148,7 @@ recurring threats as well as new evolving vulnerabilities."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ProactiveThreat" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1128,7 +1164,7 @@ ci-indicator:Retention a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Retention" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1144,7 +1180,7 @@ ci-indicator:Disposition a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Disposition" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1159,7 +1195,7 @@ ci-indicator:Accessibility a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Accessibility" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1175,7 +1211,7 @@ and certification required of the client to effectively utilize a service."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "ClientPersonnelRequirements" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1190,7 +1226,7 @@ delivery (where applicable)."@en ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Installability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1203,7 +1239,7 @@ ci-indicator:Learnability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Learnability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1217,7 +1253,7 @@ ci-indicator:Operability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Operability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1230,7 +1266,7 @@ ci-indicator:Suitability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Suitability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1243,7 +1279,7 @@ ci-indicator:Transparency a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Transparency" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1256,7 +1292,7 @@ ci-indicator:Understandability a ci-onto:KPIIndicator ;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
 	ci-onto:defined-by ci-org:CSMIC;
 	ci-onto:weight "1.0"^^xsd:double ;
-	ci-onto:high-low ci-onto:High ;
+	ci-onto:pref-value ci-onto:High ;
 	skos:notation "Understandability" ;
 	time:intervalStarts "2013"^^xsd:int ;
 	time:intervalFinishes "2013"^^xsd:int ;
@@ -1266,7 +1302,7 @@ ci-indicator:Understandability a ci-onto:KPIIndicator ;
 ### Organizations
 ci-org:ds
       a       void:Dataset ;
-      rdfs:label "SEERC | SeQoS | Organizations"@en ;
+      rdfs:label "SEERC | Cloud Index | Organizations"@en ;
       dcterms:created "2012-20-05"^^xsd:date;
       dcterms:modified "2012-08-31"^^xsd:date;
       dcterms:title "Organizations dataset involved in the development of Core SeQoS ontology"@en;
@@ -1276,7 +1312,7 @@ ci-org:ds
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
       void:exampleResource ci-org:SEERC;
       void:uriRegexPattern
-              "http://purl.org/seerc/seqos/organization/.+" ;
+              "http://purl.org/cloudindex/organization/.+" ;
       void:vocabulary  rdfs: , foaf: ;
       foaf:homepage <http://purl.org/seerc/seqos/>.
 
@@ -1321,9 +1357,9 @@ ci-org:SEERC a  org:Organization ;
 
 ci-people:ds
       a       void:Dataset ;
-      rdfs:label "Web Foundation | Web Index | People"@en ;
-      dcterms:created "2012-20-05"^^xsd:date;
-      dcterms:modified "2012-08-31"^^xsd:date;
+      rdfs:label "SEERC | Cloud Index | People"@en ;
+      dcterms:created "2013-20-05"^^xsd:date;
+      dcterms:modified "2013-08-31"^^xsd:date;
       dcterms:title "Core SeQoS ontology"@en;
       dcterms:author ci-people:Chema, ci-org:SEERC ;
       dcterms:publisher  ci-people:Chema;
@@ -1331,7 +1367,7 @@ ci-people:ds
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
       void:exampleResource ci-people:Chema;
       void:uriRegexPattern
-              "http://purl.org/seerc/seqos/people/.+" ;
+              "http://purl.org/cloudindex/people/.+" ;
       void:vocabulary  rdfs: , foaf: ;
       foaf:homepage <http://purl.org/seerc/seqos/>.
 
