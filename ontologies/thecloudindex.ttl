@@ -1,15 +1,15 @@
-@prefix : <http://purl.org/seerc/seqos/#> .
-@prefix ci-onto: <http://purl.org/cloudindex/ontology/> .
-@prefix ci: <http://purl.org/cloudindex/resource/> .
-@prefix ci-org: <http://purl.org/cloudindex/organization/> .
-@prefix ci-people: <http://purl.org/cloudindex/people/> .
-@prefix ci-project: <http://purl.org/cloudindex/project/> .
-@prefix rdfindex:  <http://purl.org/rdfindex/ontology/> .
-@prefix rdfindex-org: <http://purl.org/rdfindex/organization/> .
-@prefix rdfindex-people: <http://purl.org/rdfindex/people/> .
-@prefix rdfindex-project: <http://purl.org/rdfindex/project/> .
-@prefix rdfindex-component:  <http://purl.org/rdfindex/component/> .
-@prefix rdfindex-indicator:  <http://purl.org/rdfindex/indicator/> .
+@prefix : <http://purl.org/weso/cloudindex/#> .
+@prefix ci-onto: <http://purl.org/weso/cloudindex/ontology/> .
+@prefix ci: <http://purl.org/weso/cloudindex/> .
+@prefix ci-org: <http://purl.org/weso/cloudindex/organization/> .
+@prefix ci-people: <http://purl.org/weso/cloudindex/people/> .
+@prefix ci-project: <http://purl.org/weso/cloudindex/project/> .
+@prefix ci-component:  <http://purl.org/weso/cloudindex/component/> .
+@prefix ci-indicator:  <http://purl.org/weso/cloudindex/indicator/> .
+@prefix rdfindex:  <http://purl.org/weso/rdfindex/ontology/> .
+@prefix rdfindex-org: <http://purl.org/weso/rdfindex/organization/> .
+@prefix rdfindex-people: <http://purl.org/weso/rdfindex/people/> .
+@prefix rdfindex-project: <http://purl.org/weso/rdfindex/project/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -32,17 +32,22 @@
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix v:  <http://www.w3.org/2006/vcard/ns#> .
 
-<http://purl.org/cloudindex/ontology/>
+<http://purl.org/weso/cloudindex/ontology/>
     a owl:Ontology;
     owl:versionInfo "0.1";
     rdfs:label "Core Cloud Index structure and computation process"@en;
     rdfs:comment "This is the first version of the The CloudIndex taxonomy for representing QoS indicators and modeling an index."@en;
     dcterms:created "2012-05-20"^^xsd:date;
+    rdfs:seeAlso <http://purl.org/weso/rdfindex/ontology/>;
+    rdfs:seeAlso <http://purl.org/weso/cloudindex/index>;
+    rdfs:seeAlso ci-component:ds;
+    rdfs:seeAlso ci-indicator:ds;
+    rdfs:seeAlso ci-org:ds;
     dcterms:modified "2012-06-20"^^xsd:date;
     dcterms:title "The CloudIndex structure"@en;
-    dcterms:author ci-people:Chema, ci-org:SEERC ;
+    dcterms:author ci-people:Chema, rdfindex-org:SEERC ;
     dcterms:publisher  ci-people:Chema;
-    dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
+    dcterms:contributor  rdfindex-org:SEERC, rdfindex-project:RELATE ;
     dcterms:license <http://opendatacommons.org/licenses/by/1.0/> .
 
 
@@ -68,26 +73,26 @@ ci-onto:KPIIndicator a owl:Class, rdfs:Class;
 
 ### Metadata of observations: indicator|component, value, when, who
 
-ci-ont:ref-area a rdf:Property, qb:DimensionProperty; 
+ci-onto:ref-area a rdf:Property, qb:DimensionProperty; 
 	rdfs:label "URI to an Area"@en; 
 	rdfs:subPropertyOf sdmx-dimension:ref-area; 
 	rdfs:range skos:Concept; 
 	qb:concept sdmx-concept:ref-area . 
 
-ci-ont:ref-provider a rdf:Property, qb:DimensionProperty; 
+ci-onto:ref-provider a rdf:Property, qb:DimensionProperty; 
 	rdfs:label "URI to a provider"@en; 
 	rdfs:subPropertyOf sdmx-dimension:ref-area; 
 	rdfs:range skos:Concept; 
 	qb:concept sdmx-concept:ref-area . 
 
-ci-ont:ref-year  a rdf:Property, qb:DimensionProperty;
+ci-onto:ref-year  a rdf:Property, qb:DimensionProperty;
 	rdfs:label "Period and year"@en;
 	rdfs:subPropertyOf sdmx-dimension:ref-period;
 	rdfs:range interval:Interval;
 	qb:concept sdmx-concept:ref-period . 
 
 
-ci-ont:ref-period  a rdf:Property, qb:DimensionProperty;
+ci-onto:ref-period  a rdf:Property, qb:DimensionProperty;
 	rdfs:label "Period"@en;
 	rdfs:subPropertyOf sdmx-dimension:ref-period;
 	rdfs:range interval:Interval;
@@ -123,30 +128,72 @@ ci-onto:defined-by  a owl:ObjectProperty, rdf:Property;
 . 
 
 
+<http://purl.org/weso/cloudindex/index> a rdfindex:Index;
+rdfs:label "The CloudIndex"@en;
+	rdfs:comment "The index of components"@en;
+	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
+	ci-onto:defined-by ci-org:CSMIC;
+	rdfindex:aggregates [ 		
+		rdfindex:aggregation-operator rdfindex:OWA;
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Accountability; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Agility; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Assurance; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Financial; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Performance; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:SecurityPrivacy; 
+			rdfindex:weight 0.14];
+		rdfindex:part-of [
+			rdfindex:dataset ci-component:Usability; 
+			rdfindex:weight 0.14];
+		
+	];
+	qb:structure 	ci:CloundIndexDSD ;
+	.
+
+
+
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Accountability.
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Agility .
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Assurance.
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Financial.
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Performance.
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:SecurityPrivacy.
+	<http://purl.org/weso/cloudindex/index> skos:narrower ci-component:Usability.
 ### Components
 
 
 ci-component:ds
       a       void:Dataset ;
-      rdfs:label "SEERC| SEQoS | Components"@en ;
+      rdfs:label "SEERC| CloudIndex | Components"@en ;
       rdfs:comment "Dataset of components that aggregates different indicators and are part of a subindex."@en ;
       dcterms:created "2012-20-05"^^xsd:date;
       dcterms:modified "2012-08-31"^^xsd:date;
-      dcterms:title "Core SeQoS ontology"@en;
-      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:title "Core CloudIndex ontology"@en;
+      dcterms:author ci-people:Chema, rdfindex-org:SEERC ;
       dcterms:publisher  ci-people:Chema;
-      dcterms:contributor  ci-org:SEERC, ci-org:RELATE ;
+      dcterms:contributor  rdfindex-org:SEERC, rdfindex-project:RELATE ;
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/>;
-      void:exampleResource ci-component:CommunicationsInfrastructure ;
+      void:exampleResource ci-component:Accountability ;
       void:uriRegexPattern
-              "http://purl.org/seerc/seqos/component/.+" ;
+              "http://purl.org/weso/cloudindex/component/.+" ;
       void:vocabulary  rdfs: ,  skos: ;
-      foaf:homepage <http://purl.org/seerc/seqos/> .
+      foaf:homepage <http://purl.org/weso/cloudindex/> .
 
 
 
 
-ci-component:Accountability a ci-onto:Component;
+ci-component:Accountability a rdfindex:Component;
 	rdfs:label "Accountability"@en;
 	rdfs:comment "This component is used to measure the properties related to the service provider
 organization. These properties may be independent of the service being provided."@en;
@@ -221,7 +268,7 @@ organization. These properties may be independent of the service being provided.
 	ci-component:Accountability skos:narrower ci-indicator:ProviderSecurityCapabilities .
 	ci-component:Accountability skos:narrower ci-indicator:Sustainability .
 
-ci-component:Agility a ci-onto:Component;
+ci-component:Agility a rdfindex:Component;
 	rdfs:label "Agility"@en;
 	rdfs:comment "Indicates the impact of a service upon a client's ability to change direction, strategy, or tactics quickly
 and with minimal disruption."@en;
@@ -267,7 +314,7 @@ and with minimal disruption."@en;
 
 
 
-ci-component:Assurance a ci-onto:Component;
+ci-component:Assurance a rdfindex:Component;
 	rdfs:label "Assurance"@en;
 	rdfs:comment "This category includes key attributes that indicate how likely it is that the service will be available as
 specified."@en;
@@ -311,7 +358,7 @@ specified."@en;
 	ci-component:Assurance skos:narrower ci-indicator:Serviceability .
 
 
-ci-component:Financial a ci-onto:Component;
+ci-component:Financial a rdfindex:Component;
 	rdfs:label "Financial"@en;
 	rdfs:comment "The amount of money spent on the service by the client."@en;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
@@ -340,7 +387,7 @@ ci-component:Financial a ci-onto:Component;
 
 
 
-ci-component:Performance a ci-onto:Component;
+ci-component:Performance a rdfindex:Component;
 	rdfs:label "Performance"@en;
 	rdfs:comment "This category covers the features and functions of the provided services."@en;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
@@ -380,7 +427,7 @@ ci-component:Performance a ci-onto:Component;
 
 
 
-ci-component:SecurityPrivacy a ci-onto:Component;
+ci-component:SecurityPrivacy a rdfindex:Component;
 	rdfs:label "Security and Privacy"@en;
 	rdfs:comment "This category includes attributes that indicate the effectiveness of a service provider's controls on
 access to services, service data, and the physical facilities from which services are provided."@en;
@@ -440,7 +487,7 @@ access to services, service data, and the physical facilities from which service
 
 
 
-ci-component:Usability a ci-onto:Component;
+ci-component:Usability a rdfindex:Component;
 	rdfs:label "Usability"@en;
 	rdfs:comment "The ease with which a service can be used."@en;
 	ci-onto:defined-in <http://csmic.org/wp-content/uploads/2011/09/SMI-Overview-110913_v1F.pdf>;
@@ -497,16 +544,16 @@ ci-indicator:ds
       rdfs:comment "Indicators used to retrieve observations according to the different dimensions. They can also be taken as measures."@en ;
       dcterms:created "2013-05-20"^^xsd:date;
       dcterms:modified "2013-06-20-"^^xsd:date;
-      dcterms:title "Indicators of Core SeQoS ontology"@en;
-      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:title "Indicators of Core CloudIndex ontology"@en;
+      dcterms:author ci-people:Chema, rdfindex-org:SEERC ;
       dcterms:publisher  ci-people:Chema;
-      dcterms:contributor  ci-org:SEERC, ci-org:RELATE ;
+      dcterms:contributor  rdfindex-org:SEERC, rdfindex-project:RELATE ;
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/>;
       void:exampleResource ci-component:CommunicationsInfrastructure ;
       void:uriRegexPattern
-              "http://purl.org/cloudindex/seqos/indicator/.+" ;
+              "http://purl.org/weso/cloudindex/indicator/.+" ;
       void:vocabulary  rdfs: ,  skos: ;
-      foaf:homepage <http://purl.org/seerc/seqos/>.
+      foaf:homepage <http://purl.org/weso/cloudindex/>.
 
 
 ci-indicator:Auditability  a ci-onto:KPIIndicator ;
@@ -1305,56 +1352,23 @@ ci-org:ds
       rdfs:label "SEERC | Cloud Index | Organizations"@en ;
       dcterms:created "2012-20-05"^^xsd:date;
       dcterms:modified "2012-08-31"^^xsd:date;
-      dcterms:title "Organizations dataset involved in the development of Core SeQoS ontology"@en;
-      dcterms:author ci-people:Chema, ci-org:SEERC ;
+      dcterms:title "Organizations dataset involved in the development of Core CloudIndex ontology"@en;
+      dcterms:author ci-people:Chema, rdfindex-org:SEERC ;
       dcterms:publisher  ci-people:Chema;
-      dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
+      dcterms:contributor  rdfindex-org:SEERC, rdfindex-project:RELATE ;
       dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
-      void:exampleResource ci-org:SEERC;
+      void:exampleResource ci-org:CSMIC;
       void:uriRegexPattern
-              "http://purl.org/cloudindex/organization/.+" ;
+              "http://purl.org/weso/cloudindex/organization/.+" ;
       void:vocabulary  rdfs: , foaf: ;
-      foaf:homepage <http://purl.org/seerc/seqos/>.
+      foaf:homepage <http://purl.org/weso/cloudindex/>.
 
 
-ci-org:SEERC  a org:Organization;
- rdfs:label "South East Research European Center"@en;
- org:identifier "SEERC";
- foaf:homepage  <http://www.seerc.org>;
-.
-
-
-
-ci-org:SEERC a  org:Organization ;
-  rdfs:label "South East Research European Center"@en ;
-  rdfs:comment "South East Research European Center at the City College, an International Faculty of the University of Sheffield"@en ;            
-  org:identifier "SEERC"@en;
-  foaf:homepage <http://www.seerc.org>;
-  org:hasSite [
- 	rdfs:label "South East Research European Center"@en ;
- 	org:siteAddress [
-		  v:fn "South East Research European Center" ;
-		  v:org [ v:organisation-name "City College, an International Faculty of the University of Sheffield"@en  ;
-			  v:organisation-unit "South East Research European Center"@en  ] ;
-		  v:adr [ rdf:type v:Work ;
-			  v:country-name "Greece"@en  ;
-			  v:locality "Thessaloniki"@en  ;
-			  v:postal-code "54622" ;
-			  v:street-address "24 Proxenou Koromila Street" ] ;
-		  v:geo [ v:latitude "40.630703" ;
-			  v:longitude "22.944013" ] ;
-		  v:tel [ rdf:type v:Fax, v:Work ;
-			  rdf:value "+30 2310 253477"] ; 
-		  v:email <mailto:contact@seerc.org> ;
-		  v:logo <http://www.seerc.org/templates/seerc/images/seerc-logo-no-grad.png> .		
- 		];
-
-   ].
 
 
 ci-org:CSMIC  a org:Organization;
  rdfs:label "Service Measurement Index Version 1.0"@en;
- rdfs:comment "TO-DO it is a DOAP project"@en;
+ rdfs:comment "It is a common effort for defining a Service Measurement Index"@en;
  org:identifier "CSMIC";
  foaf:homepage  <http://csmic.org/>;
 .
@@ -1364,46 +1378,10 @@ ci-org:CSMIC  a org:Organization;
 ### People
 
 
-ci-people:ds
-      a       void:Dataset ;
-      rdfs:label "SEERC | Cloud Index | People"@en ;
-      dcterms:created "2013-20-05"^^xsd:date;
-      dcterms:modified "2013-08-31"^^xsd:date;
-      dcterms:title "Core SeQoS ontology"@en;
-      dcterms:author ci-people:Chema, ci-org:SEERC ;
-      dcterms:publisher  ci-people:Chema;
-      dcterms:contributor  ci-org:SEERC, ci-project:RELATE ;
-      dcterms:license <http://opendatacommons.org/licenses/by/1.0/> ;
-      void:exampleResource ci-people:Chema;
-      void:uriRegexPattern
-              "http://purl.org/cloudindex/people/.+" ;
-      void:vocabulary  rdfs: , foaf: ;
-      foaf:homepage <http://purl.org/seerc/seqos/>.
-
-ci-people:Chema a foaf:Person;
-	foaf:depiction <http://www.weso.es/img/joseMaria.jpg>;
-	foaf:family_name "Alvarez Rodríguez";
-	foaf:givenname "Jose María";
-	foaf:homepage <http://www.josemalvarez.es>;
-	foaf:name "Jose María";
-	foaf:nick "chema";
-	foaf:title "Dr.";
-	org:memberOf ci-org:SEERC, ci-project:RELATE;
-	foaf:workInfoHomepage <http://www.weso.es/Contents/about>;
-	foaf:workplaceHomepage <http://www.weso.es/>;
-	rdfs:seeAlso <http://www.josemalvarez.es/foaf.rdf#me>.
 
 
 
-### Projects
 
-
-ci-project:RELATE  a org:Organization;
- rdfs:label "RELATE"@en;
- rdfs:comment "TO-DO it is a DOAP project"@en;
- org:identifier "RELATE";
- foaf:homepage  <http://www.relate-itn.eu/>;
-.
 
 
 
