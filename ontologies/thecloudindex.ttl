@@ -117,6 +117,17 @@ ci-onto:pref-value a owl:ObjectProperty, rdf:Property ;
 .
 
 
+ci-onto:defined-by a rdf:Property, qb:DimensionProperty; 
+	rdfs:label "URI to a provider"@en; 
+	rdfs:subPropertyOf sdmx-dimension:ref-area; 
+	rdfs:range skos:Concept; 
+	qb:concept sdmx-concept:ref-area . 
+
+ci-onto:defined-in a rdf:Property, qb:DimensionProperty; 
+	rdfs:label "URI to a provider"@en; 
+	rdfs:subPropertyOf sdmx-dimension:ref-area; 
+	rdfs:range org:Organization; 
+	qb:concept sdmx-concept:ref-area . 
 
 ### Metadata of definitions providers
 
@@ -1265,7 +1276,7 @@ and certification required of the client to effectively utilize a service."@en ;
 	skos:broader ci-component:Usability .
 
 ci-indicator:Installability a ci-onto:KPIIndicator ;
-	rdfs:label "Client Personnel Requirements"@en ;
+	rdfs:label "Installability"@en ;
 	rdfs:comment "Installability characterizes the time and effort required to get a service ready for
 delivery (where applicable)."@en ;
 	skos:definition "Installability characterizes the time and effort required to get a service ready for
