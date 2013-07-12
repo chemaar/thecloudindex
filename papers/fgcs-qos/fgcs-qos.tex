@@ -1,0 +1,191 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+
+%% The `ecrc' package must be called to make the CRC functionality available
+%\usepackage{ecrc}
+
+%% set the volume if you know. Otherwise `00'
+%\volume{00}
+
+%% set the starting page if not 1
+%\firstpage{1}
+
+%% Give the name of the journal
+%\journalname{Expert Systems With Applications}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+%\runauth{}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.  Contact the journal editorial office if in any doubt
+%\jid{eswa}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{ESWA Logo}
+
+%% Provide the copyright line to appear in the abstract
+%% Usage:
+%   \CopyrightLine[<text-before-year>]{<year>}{<restt-of-the-copyright-text>}
+%   \CopyrightLine[Crown copyright]{2011}{Published by Elsevier Ltd.}
+%   \CopyrightLine{2011}{Elsevier Ltd. All rights reserved}
+%\CopyrightLine{2013}{Published by Elsevier Ltd.}
+
+
+
+%\usepackage{llncsdoc}
+\usepackage[figuresright]{rotating}
+%\usepackage{makeidx}  % allows for indexgeneration
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage{multirow}
+
+\usepackage{url}
+\usepackage{rotating}
+
+%%%Math
+\usepackage{latexsym}
+ \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsthm}
+%\usepackage{eurosans}
+
+\usepackage{eurosym}
+
+\usepackage{longtable}
+
+\usepackage{listings}
+
+\usepackage{color}
+\usepackage{textcomp}
+
+
+\definecolor{gray}{gray}{0.5}
+\definecolor{green}{rgb}{0,0.5,0}
+% 
+% \usepackage{inconsolata}
+
+
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+%\dochead{}
+%% Use \dochead if there is an article header, e.g. \dochead{Short communication}
+%% \dochead can also be used to include a conference title, if directed by the editors
+%% e.g. \dochead{17th International Conference on Dynamical Processes in Excited States of Solids}
+
+
+\title{Semantic-based QoS management in Cloud Systems: Current Status and Future Challenges}
+
+
+%% use optional labels to link authors explicitly to addresses:
+% \author[label1]{Jose María Alvarez-Rodríguez\corref{cor1}}
+% \address[label1]{The South East European Research Center, Thessaloniki, Greece.}
+% \ead{jmalvarez@seerc.org}
+% \ead[url]{http://www.seerc.org}
+% 
+% \author[label2]{José Emilio Labra-Gayo}
+% \address[label2]{WESO Research Group, Department of Computer Science, University of Oviedo, 33007, Oviedo, Spain.}
+% \ead{labra@uniovi.es}
+% 
+% \author[label3]{Alejandro Rodríguez-González}
+% \address[label3]{Bioinformatics at Centre for Plant Biotechnology and Genomics UPM-INIA, Polytechnic University of Madrid, Madrid, Spain.}
+% \ead{alejandro.rodriguezg@upm.es}
+% 
+% \author[label4]{Patricia Ordoñez De Pablos}
+% \address[label4]{WESO Research Group, Department of Business Administration, University of Oviedo, 33007, Oviedo, Spain.}
+% \ead{patriop@uniovi.es}
+
+
+
+
+
+\author{}
+
+\address{}
+
+\begin{abstract}
+The concept of Cloud Computing and Service Oriented Architectures have seen a 
+dramatic increase of the amount of applications, services, management platforms, 
+data, etc. gaining momentum in Information and Communication Technology and more 
+specifically in the deployment of the Future Internet. However this explosion 
+implies the necessity of new complex methods and techniques to deal with the 
+vast heterogeneity of data sources, services or platforms. In this sense Quality 
+of Service (QoS) seeks for providing an intelligent environment of 
+self-management components based on domain knowledge in which both functional 
+and nonfunctional properties of cloud components can be optimized in terms of 
+cost, efficiency or reliability easing the transition to an advanced resource 
+provisioning process. On the other hand, semantics and ontologies have emerged 
+as part of the Artificial Intelligence to afford a common and standard data 
+model that ease the interoperability, integration and monitorization of 
+knowledge-based systems. Furthermore the Linked Data initiative as practical 
+view of the Semantic Web has posed the baseline technology to easily integrate, 
+enrich and consume data in a distributed system. Taking into account the 
+necessity of an intelligent system to manage QoS in Cloud Systems and the 
+emerging application of semantics, ontologies and Linked Data in different 
+domains, this paper reviews the main approaches for semantic-based QoS 
+management as well as the principal methods, techniques and standards for 
+processing and exploiting diverse data providing advanced real-time monitoring 
+services for QoS. A discussion of existing efforts and challenges are also 
+provided to suggest future directions.
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+cloud systems \sep quality of service \sep  service oriented architectures \sep  semantics \sep  ontologies \sep  linked data \sep  sensor data \sep  big data 
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+
+\end{frontmatter}
+
+\section{Introduction}
+\section{Literature Review}\label{sect:related-work}
+
+\section{Evaluation}\label{sect:evaluation}
+
+\section{Conclusions and Future work}\label{sect:conclusions}
+
+\nocite{*}
+\bibliographystyle{plain}
+% %\bibliographystyle{unsrt}
+% % %\bibliographystyle{acm}
+\bibliography{cloud-references}
+ % \renewcommand{\bibname}{References}
+
+
+\end{document}
