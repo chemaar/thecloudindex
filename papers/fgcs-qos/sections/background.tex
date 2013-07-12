@@ -1,0 +1,47 @@
+Cloud Computing represents the next natural step in the evolution of on-demand services and applications. Several definitions have been made but the description~\cite{mell2011nist} 
+provided by the NIST institute has reached a major consensus:  ``A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of 
+abstracted, virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet''. 
+The NIST institute has also defined~\cite{mell2011nist,Garcia-Sanchez:2010:ASS:1852403.1852409}: 
+\begin{enumerate}
+ \item Five key characteristics: on-demand self-service, ubiquitous network access, location independent resource pooling, rapid elasticity and pay per use.
+ \item Three service models: Software-as-a-Service (SaaS), Platform-as-a-Service (PaaS) and Infrastructure-as-a-Service (IaaS).
+ \item Four development models: private, community, public and hybrid clouds. 
+\end{enumerate}
+
+These basic concepts in a cloud environment lead us to consider that QoS is a key-enabler of the five essential characteristics identified by 
+the NIST institute and it is closely related to the concepts of Autonomic and Utility Computing~\cite{Huebscher:2008:SAC:1380584.1380585}. As a consequence the QoS management 
+is clearly a key-enabler of cloud environments and it must play a major role in the Future Internet.
+
+On the other hand, the ITUT-T Recommendation E.800 defines QoS as ``collective effect of service performance that determines the degree of satisfaction by a user of the service''. 
+Thus QoS data is a key-enabler to design, identify and put in action SLAs. It should also influence software components and applications to ensure a 
+reliable environment for executing services. Some open issues in QoS management emerge to extend this definition including reputation-based mechanisms 
+for service selection or dynamic adaptation of resource provisioning. The application of QoS has been widely studied and applied~\cite{Conejero:2012:MSQ:2357487.2357591,Pedersen:2011:AMQ:2114495.2115542} 
+in the web services and grid computing area and it is gaining momentum in the new Cloud Computing paradigm. In order to facilitate the QoS management in the cloud-environment 
+some tools, called Cloud Management Platforms (CMPs) can be found to manage the different layers of cloud-based applications but the majority of them are 
+now focused on the IaaS layer. The use of these platforms can help to manage the growing of cloud applications and ease the deployment and monitoring of services across 
+public and private clouds. The six key capabilities~\cite{Kephart2012} that we should look for in a CMP are: simplify complexity, 
+manage multiple clouds, build for the future, support the whole application lifecycle, self-management (set-it and forget-it) and manage/control costs. 
+Apart from that most of the vendors offer cost forecasting, alert service and reporting to ensure an adequate intelligent management. 
+Examples of CMPs can be found in RightScale, Enstratus, ScaleUp, Cloudability, Cloudyn, CloudExpress, MyGratitant or Cloudbees among others. 
+Although these commercial products offer a very good option to manage cloud-based applications there is a lack of standardization and some 
+QoS features cannot be managed. That is why OASIS just launched a CAMP TC~\cite{OASISCamp} to create and interoperable protocol that cloud 
+implementers can use to package and deploy their applications. The idea is to provide a set of REST services, at the PaaS layer, to foster an ecosystem of 
+common tools, plugins, libraries and frameworks, which will allow vendors to offer greater value-add. In the particular case of QoS, the use of standards to gather data 
+from applications can improve the process of making decisions about resource provisioning or help in saving costs among others.
+
+Finally, the Semantic Web initiative tries to elevate the meaning of web information resources through common and shared data models 
+with the objective of improving the interoperability and integration in service oriented architectures.  In this sense two major efforts are being carried out: 1) the Linked Data~\cite{Berners-Lee-2006,Heath_Bizer_2011} 
+initiative that proposes a set of principles for publishing information and data using the Resource Description Framework (RDF) to ease the creation of 
+the new Web of Data realm. Thus data can be easily shared, exchanged and linked to other datasets through URIs. Existing works are focused on publishing and 
+consuming data via the SPARQL language. The main aim of this effort is to create a new environment of added-value services that can encourage and improve B2B (Business to Business), 
+B2C (Business to Client) or A2A (Administration to Administration) relationships. In the case of Cloud Computing and Linked Data there is a growing interest to process large datasets in the 
+cloud and works with regards to distributed query processing are emerging and 2) the design and development of logic formalisms and knowledge-based systems using ontologies 
+in OWL (Ontology Web Language). In this sense new expert systems are arisen to tackle existing problems in medical reasoning, analysis of social media, etc. in which data heterogeneities, 
+lack of standard knowledge representation and interoperability problems are common factors. Finally the use of semantic technologies in service oriented architectures has been widely 
+studied in the Semantic Web Services area and some interesting works [15] such as the W3C Recommendation Semantic Annotations for WSDL (SAWDL), the WSMO ontology, the WSML language, 
+the OWL-S language for describing web services, the WSMX execution environment, etc. can be found. Although Semantic Web Services were very promising and some advances 
+in discovery or selection processes were made but we consider these efforts are out of the scope of this review.
+
+Since the core concepts of this review are defined, it is clear that semantic web technologies offer a standard and unified way for representing information and data coming from cloud-based applications. 
+QoS management processes can take advantage of this situation building expert systems that exploit this data to support the abovementioned five key-characteristics of 
+Cloud Computing providing an intelligent and flexible environment for self-managed applications.
