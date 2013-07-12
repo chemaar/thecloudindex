@@ -13,6 +13,17 @@
   year = 2011
 }
 
+@techreport{secloud12,
+  author = {G. Ortegón Cortázar and J. J. Samper-Zapater and F. García-Sánchez},
+  institution = {Spanish Ministry of Economy},
+  organization = {Project SeCloud},
+  timestamp = {2013-03-01T12:10:43.000+0100},
+  title = {{Adding Semantics to Cloud Computing to Enhance Service Discovery and Access}},  
+  year = 2012
+}
+
+
+
 
 @article{Huebscher:2008:SAC:1380584.1380585,
  author = {Huebscher, Markus C. and McCann, Julie A.},
@@ -216,8 +227,7 @@
 % 
 @misc{Kephart2012,
   author = {Nicholas Kephart},
-  title = {Linked Data},
-  url = {Six Must-Have Cloud Management Features},
+  title = {{Six Must-Have Cloud Management Features}},
   year = 2012,
   timestamp = {2012-02-06},
   month = {jul}
@@ -233,6 +243,10 @@
   note = {\url{https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=camp}}
 }
 
+@misc{Armstrong17,
+author={D. Armstrong and K. Djemame},
+title={{Towards Quality of Service in the Cloud (FIXME)}}
+}
 
 
 @misc{Berners-Lee-2006,
@@ -255,7 +269,6 @@
  year={2011}, 
  pages={1--136}
 }
-
 
 @article{DBLP:journals/jucs/RodriguezRMPGP12,
   author    = {Miguel Garc\'{\i}a Rodr\'{\i}guez and
@@ -308,6 +321,15 @@
  address = {New York, NY, USA},
  keywords = {QoS, cloud, network, optimization, service composition, web services},
 }
+
+@INPROCEEDINGS{5682131, 
+author={Carapinha, J. and Bless, R. and Werle, C. and Miller, K. and Dobrota, V. and Rus, A.B. and Grob-Lipski, H. and Roessler, H.}, 
+booktitle={Kaleidoscope: Beyond the Internet? - Innovations for Future Networks and Services, 2010 ITU-T}, 
+title={{Quality of service in the Future Internet}}, 
+year={2010}, 
+pages={1-8}, 
+}
+
 
 
 %[17] D. Armstrong, K. Djemame, Towards Quality of Service in the Cloud. FIXME
@@ -459,7 +481,7 @@ pages={41-57}
 }
 
 
-@incollection{cloudle
+@incollection{cloudle,
 year={2011},
 isbn={978-3-642-24395-0},
 booktitle={Web Information Systems Engineering – WISE 2010 Workshops},
@@ -543,7 +565,7 @@ doi={10.1109/ICRTIT.2012.6206823},}
 
 %[30] Esper Project website, (access: 25.02.2012)
 
-@Misc{lod2-project,
+@Misc{esper-project,
 author = {ESPER Project},
 title = {{ESPER Project}},
 month = may,
@@ -572,7 +594,7 @@ note = {\url{http://esper.codehaus.org/}}
 
 
 
-@incollection{srt-15
+@incollection{srt-15,
 year={2012},
 isbn={978-3-642-29736-6},
 booktitle={Euro-Par 2011: Parallel Processing Workshops},
@@ -670,9 +692,14 @@ activities. This way, it is possible to perform an}},
   bibsource = {DBLP, http://dblp.uni-trier.de}
 }
 
-%[36] T. Cucinotta, S. Gogouvitis, K. Kostanteli, SLAs in Virtualized Cloud Computing  Infrastructures with QoS Assurance, eChallenges e-2011 Conference Proceedings. (2011).
-%http://www.cin.ufpe.br/~redis/intranet/bibliography/middleware/ferreti-qos-2010.pdf
 
+@inproceedings{DBLP:conf/compsac/CucinottaAA10,
+  author    = {Tommaso Cucinotta and Spyridon Gogouvitis and Kleopatra Konstanteli},
+  title     = {{SLAs in Virtualized Cloud Computing Infrastructures with QoS Assurance}},
+  booktitle = {Proceedings of the International Workshop on eContracting in the Clouds, co-located with the eChallenges 2011 Conference},
+  year      = {2011}
+  
+}
 @inproceedings{Van:2009:SVR:1673076.1674142,
  author = {Van, Hien Nguyen and Tran, Frederic Dang and Menaud, Jean-Marc},
  title = {{SLA-Aware Virtual Resource Management for Cloud Infrastructures}},
@@ -735,7 +762,7 @@ activities. This way, it is possible to perform an}},
 
 @article{Kim:2007:MWS:1359823.1359827,
  author = {Kim, Henry M. and Sengupta, Arijit and Evermann, Joerg},
- title = {{MOQ\&\#58; Web services ontologies for QoS and general quality evaluations}},
+ title = {{MOQ: Web services ontologies for QoS and general quality evaluations}},
  journal = {Int. J. Metadata Semant. Ontologies},
  issue_date = {March 2007},
  volume = {2},
@@ -925,7 +952,19 @@ activities. This way, it is possible to perform an}},
  keywords = {cloud computing, resource management, virtualization},
 }
 
-%[50] H. Kim, H. Lee, W. Kim, Y. Kim, A Trust Evaluation Model for QoS Guarantee in Cloud Systems, International Journal of Grid and Distributed Computing Vol.3, No.1. (2010).
+%[50],, International Journal of Grid and Distributed Computing Vol.3, No.1. (2010).
+
+
+@article{DBLP:journals/ijguc/Chang11,
+  author    = {Hyukho Kim and Hana Lee and Woongsup Kim and Yangwoo Kim},
+  title     = {{A Trust Evaluation Model for QoS Guarantee in Cloud Systems}},
+  journal   = {IJGUC},
+  volume    = {3},
+  number    = {1},
+  year      = {2010}
+}
+
+
 
 @INPROCEEDINGS{6468253, 
 author={Jundian Song and Shaohua Zhang and Yanxue Gong and Bingrong Dai}, 
@@ -939,17 +978,26 @@ doi={10.1109/ICEBE.2012.54},}
 
 %[51] P.M. Dew, S. Nizamani, QAComPS: A Quality-aware Federated Computational Semantic Web Service for Computational  Modellers. World Comp. (2011).
 
+@article{dewqacomps,
+  title={{QAComPS: A Quality-aware Federated Computational Semantic Web Service for Computational Modellers}},
+  author={Dew, Peter M and Nizamani, Shahzad},
+  url={\url{http://weblidi.info.unlp.edu.ar/worldcomp2011-mirror/SWW3720.pdf}}
+}
+
 @book{nizamani2012quality,
-  title={A Quality-aware Cloud Selection Service for Computational Modellers},
+  title={{A Quality-aware Cloud Selection Service for Computational Modellers}},
   author={Nizamani, S.A.},
   url={http://books.google.gr/books?id=wcrJmAEACAAJ},
   year={2012},
   publisher={University of Leeds (School of Computing)}
 }
 
-%[52] A.V. Dastjerdi, R. Buyya, A Taxonomy of QoS Management and Service Selection Methodologies for Cloud Computing. http://www.cloudbus.org/papers/QoSTaxonomyCloud2011.pdf . (2011)
-
-
+@misc{qos-taxonomy,
+author={A.V. Dastjerdi and R. Buyya},
+title={{A Taxonomy of QoS Management and Service Selection Methodologies for Cloud Computing}}
+year="2011",
+url={\url{http://www.cloudbus.org/papers/QoSTaxonomyCloud2011.pdf}}
+}
 
 
 @inproceedings{DBLP:conf/ic/BernsteinV10,
@@ -1017,10 +1065,23 @@ doi={10.1109/ICEBE.2012.54},}
  acmid = {2462312},
  publisher = {ACM},
  address = {New York, NY, USA},
- keywords = {autonomic computing, cloud application platform, mape-k, paas, self-management, semantic sensor web, sensor web},
+ keywords = {autonomic computing, cloud application platform, mape-k, paas, self-management, semantic sensor web, sensor web}
+ }
+
+@inproceedings{DBLP:conf/icsoc/KourtesisP11,
+  author    = {Dimitrios Kourtesis and
+               Iraklis Paraskakis},
+  title     = {{A Registry and Repository System Supporting Cloud Application
+               Platform Governance}},
+  booktitle = {ICSOC Workshops},
+  year      = {2011},
+  pages     = {255-256},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-31875-7_36},
+  crossref  = {DBLP:conf/icsoc/2011w},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
 
  
- %[57] D. Kourtesis, I. Paraskakis,  A.J.H. Simons,  Ontology-based framework for policy-driven governance in cloud application platforms. In Proceedings of the 7th International Conference on Formal Ontology in Information Systems (FOIS 2012). Graz, Austria. (2012).
  
  
  @inproceedings{Le-Phuoc:2011:NAA:2063016.2063041,
