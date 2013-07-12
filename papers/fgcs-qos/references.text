@@ -1,0 +1,104 @@
+[1] P. Mell, T. Grance, The NIST definition of Cloud Computing. Technical report, National Institute of Standards and Technology, Information Technology Laboratory, 2009. http://csrc.nist.gov/groups/SNS/cloud-computing/index.html.
+[2] M.C. Huebscher, J.A. McCann, A survey of Autonomic Computing , degrees, models and applications. Journal ACM Computing Surveys (CSUR) Surveys Homepage archive Volume 40 Issue 3, Article No. 7. (2008).
+[3] J. Conejero, L. Tomás, B. Caminero, C. Carrion, Multilevel SLA-based QoS Support in Grids. In Proceedings of the 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications (ISPA '12). IEEE Computer Society, Washington, DC, USA. (2012) 239-246.
+[4] J. M. Pedersen, M. Tahir Riaz, J, Celestino Junior, B. Dubalski, D. Ledzinski, A. Patel, Assessing Measurements of QoS for Global Cloud Computing Services. In Proceedings of the 2011 IEEE Ninth International Conference on Dependable, Autonomic and Secure Computing (DASC '11). IEEE Computer Society, Washington, DC, USA. (2011).
+[5] A. Bolles, M. Grawunder, J. Jacobi, Streaming SPARQL - Extending SPARQL to Process Data Streams. In ESWC’08: Proceedings of the 5th European semantic web conference on The semantic web. (2008) 448–462.
+[6]  D.F. Barbieri, D. Braga, S. Ceri, M. Grossniklaus, An execution environment for C-SPARQL queries. In EDBT 2010. (2010) 441–452.
+[7] D. Anicic, P. Fodor, S. Rudolph, N. Stojanovic, EP-SPARQL: A Unified Language for Event Processing and Stream Reasoning. Proceeding WWW '11 Proceedings of the 20th international conference on World Wide Web. (2011) 635-644.
+[8] N. Marz, J. Warren. Big Data: Principles and best practices of scalable realtime data systems. Manning Publications. (2012)
+[9] A. Rodríguez-González, J. Torres-Niño,  G. Hernández-Chan,  E. Jiménez-Domingo,  J.M. Alvarez-Rodríguez. Using agents to parallelize a medical reasoning system based on ontologies and description logics as an application case. Journal Expert Systems with Applications: An International Journal Volume 39 Issue 18. (2012) 13085-13092
+[10] F. García-Sanchex, E. Fernandez-Breis, R. Valencia-García, E. Jimenez, J.M. Gómez-Berbis, J. Torres-Niño, Adding Semantics to Software-as-a-Service and Cloud Computing, WSEAS TRANSACTIONS on COMPUTERS 2(9). (2010).
+[11] N. Kephart, Six Must-Have Cloud Management Features, http://www.wired.com/insights/2012/11/six-must-have-cloud-management-features/ (access: 25.02.2012)
+[12] OASIS Cloud Application Management for Platforms (CAMP) TC. https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=camp  (access: 25.02.2012) 
+[13] T. Berners-Lee, Linked Data. http://www.w3.org/DesignIssues/LinkedData.html (2006) 
+[14] T. Heath, Ch. Bizer, Linked Data: Evolving the Web into a Global Data Space (1). Morgan & Claypool. (2011).
+[15] M. García-Rodríguez, J.M. Alvarez-Rodríguez, D. Berueta-Muñoz, L. Polo-Paredes, J.E. Labra-Gayo, P.Ordoñez-De-Pablos.Towards a Practical Solution for Data Grounding in a Semantic Web Services Environment. Journal of Universal Computer Science, 18 (1). (2012). 
+[16] A. M. Pernas, M. A. R. Dantas, Using Ontology for Description of Grid Resources, 19th Int. Symposium on HPC Systems and Applications, Guelph, Canada. (2005) 223-229.
+[17] D. Armstrong, K. Djemame, Towards Quality of Service in the Cloud. FIXME
+[18] J. G. R. C. Lopes, A. C. M. A. Melo, M. A. R. Dantas, C. G. Ralha, A proposal and evaluation of a mechanism for grid ontology merge, 20th HPCS. (2006).
+[19] J. Ejarque, M. de Palol, I. Goiri, F. Julia, J. Guitart, J. Torres, R. M. Badia, Using Semantics for Resource Allocation in Computing Service Providers, IEEE MIPS based CPU performance. (2008).
+[20] H. Yoo, C. Hur, S. Kim, Y. Kim, An Ontology-based Resource Selection Service on Science Cloud, J. of Grid and Distributed Computing 2(4). (2009).
+[21] R.K. Grewal, P. K. Pateriya, A Rule-based Approach for Effective Resource Provisioning in Hybrid Cloud Environment, International Journal of Computer Science and Informatics Vol-1, Iss-4. (2012)  2231 –5292.
+[22] M. Zhang, R. Ranjan, S. Nepal, M. Menzel, A. Haller, A Declarative Recommender System for Cloud Infrastructure Services Selection. (2012).
+[23]  J. Carapinha, R. Bless, C. Werle, K. Miller, V. Dobrota, A. Bogdan Rus, H. Grob-Lipski5, H. Roessler ,Quality of Service in the Future Internet, ITU-T Kaleidoscope Academic Conference. (2010). 
+[24] H. CHEN S. LI, SRC: A Service Registry on Cloud Providing Behavior-aware and QoS-aware Service Discovery. Service-Oriented Computing and Applications (SOCA), IEEE International Conference on. (2010).
+[25] J. K. Kwang, M. Sim, Ontology and Search Engine for Cloud Computing System, Proceedings of 2011 International Conference on System Science and Engineering, Macau, China. (2011).
+[26] V. Nelson, V. Uma, Semantic based Resource Provisioning and Scheduling in Inter-cloud Environment, Recent Trends In Information Technology (ICRTIT), 2012 International Conference on. (2012) 250-254.
+[27] R. Buyya, R. Ranjan, R. N. Calheiros, InterCloud: Utility-Oriented Federation of Cloud Computing Environments for Scaling of Application Services, in Proceedings of the 10th International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP 2010), Busan, South Korea. (2010).
+
+[29] W. Funika, P. Koperek, Scalable Resource Provisioning in the Cloud Using Business Metrics, ADVCOMP 2011 : The Fifth International Conference on Advanced Engineering Computing and Applications in Sciences. (2011).
+[30] Esper Project website, http://esper.codehaus.org (access: 25.02.2012)
+[31] G. Cicotti, L. Coppolino, R. Cristaldi, S. D’Antonio, L. Roman, QoS Monitoring in a Cloud Services Environment: the SRT-15 Approach.  Euro-Par 2011: Parallel Processing Workshops, 15-24 (2012). http://link.springer.com/chapter/10.1007%2F978-3-642-29737-3_3 
+[32] G.F. Anastasi, Quality of Service Management in Service Oriented Architectures. PhD Dissertation, Scuola Superiore Sant’Anna. (2011).
+[33] T. Cucinotta, A. Mancina, G. F. Anastasi, G. Lipari, L. Mangeruca, R. Checcozzo, and F. Rusina, A real-time service-oriented architecture for industrial automation. Industrial Informatics, IEEE Transactions on, 5(3). (2009) 267–277.
+[34] K. Konstanteli, D. Kyriazis, T. Varvarigou, T. Cucinotta,  G.F. Anastasi,  Real-time guarantees in flexible advance reservations. In Computer Software and Applications Conference, 2009. COMPSAC ’09. 33rd Annual IEEE International, volume 2. (2009) 67–72.
+[35] T. Cucinotta, G.F. Anastasi, L. Abeni, Respecting temporal constraints in virtualised services. In Computer Software and Applications Conference, 2009. COMPSAC ’09. 33rd Annual IEEE International, volume 2. (2009) 73–78.
+[36] T. Cucinotta, S. Gogouvitis, K. Kostanteli, SLAs in Virtualized Cloud Computing  Infrastructures with QoS Assurance, eChallenges e-2011 Conference Proceedings. (2011).
+[37] N.B. Mabrouk, N. Georgantas, V. Issarny, A Semantic End-to-End QoS Model for Dynamic Service Oriented Environments, PESOS. (2009).
+[38]  E. M. Maximilien, M. P. Singh, A Framework and Ontology for Dynamic Web Services Selection. IEEE Internet Computing, 8(5). (2004) 84–93.
+[39] H. M. Kim, A. Sengupta, J. Evermann. MOQ: Web Services Ontologies for QoS and General Quality Evaluations. In European Conference on Information Systems. (2005).
+[40] G. Dobson, R. Lock, I. Sommerville, QoSOnt: a QoS Ontology for Service-Centric Systems. In EUROMI-CRO ’05: Proceedings of the 31st EUROMICRO Conference on Software Engineering and Advanced Applications, Washington, DC, USA. IEEE Computer Society. (2005) 80–87.
+[41] I. V. Papaioannou, D. T. Tsesmetzis, I. G. Roussaki, and M. E. Anagnostou. A QoS Ontology Language for Web-Services. In AINA ’06: Proceedings of the 20th International Conference on Advanced InformationNetworking and Applications - Volume 1 (AINA’06), Washington, DC, USA, IEEE Computer Society. (2006) 101–106.
+[42] G. Dobson, A. Sanchez-Macian. Towards Unified QoS/SLA Ontologies. In SCW ’06: Proceedings of the IEEE Services Computing Workshops, pages 169–174, Washing-ton, DC, USA. IEEE Computer Society. (2006) 169–174.
+[43] C. Marchetti, B. Pernici, and P. Plebani. A quality model for multichannel adaptive information. In WWW Alt. ’04: Proceedings of the 13th international World Wide Web conference on Alternate track papers & posters, New York, NY, USA, ACM. (2004) 48–54.
+[44] G. Resta, P. Santi. WiQoSM: An Integrated QoS-Aware Mobility and User Behavior Model for Wireless Data Net-works. IEEE Transactions on Mobile Computing, 7(2). (2008) 187–198.
+[45] D. Talia, Cloud Computing and Software Agents: Towards, Technical Report.
+[46] P. Haase, T. Mathab, M. Schmidt, Semantic Technologies for Enterprise Cloud Management, International Semantic Web Conference. (2010).
+[47] N.B. Mabrouk, S. Beauche, E. Kuznetsova, N. Georgantas, and V. Issarny,  QoS-aware Service Composition in Dynamic Service Oriented Environments, Middeware . (2009).
+[48] G. Cretella, B. Di Martino, V. Stankovski, Using the mOSAIC's semantic engine to design and develop civil engineering cloud applications, Proceedings of the 14th International Conference on Information Integration and Web-based Applications & Services. (2012) 378-386.
+[49] R. Nathuji, A. Kansa, A. Ghaffarkhah, Q-Clouds: Managing Performance Interference Effects for QoS-Aware Clouds, Proceeding EuroSys '10 Proceedings of the 5th European conference on Computer systems. (2010) 237-250.
+[50] H. Kim, H. Lee, W. Kim, Y. Kim, A Trust Evaluation Model for QoS Guarantee in Cloud Systems, International Journal of Grid and Distributed Computing Vol.3, No.1. (2010).
+[51] P.M. Dew, S. Nizamani, QAComPS: A Quality-aware Federated Computational Semantic Web Service for Computational  Modellers. World Comp. (2011).
+[52] A.V. Dastjerdi, R. Buyya, A Taxonomy of QoS Management and Service Selection Methodologies for Cloud Computing. http://www.cloudbus.org/papers/QoSTaxonomyCloud2011.pdf . (2011)
+[53] D. Bernstein, D. Vij, Using Semantic Web Ontology for Intercloud Directories and Exchanges, The 2010 InternationalConference on Internet Computing, WorldComp. (2010).
+[54] Q. Wu, A. Iyengar, R. Subramanian, I. Rouvellou, I. Silva-Lepe, T. Mikalsen, Combining Quality of Service and Social Information for Ranking Services. Proceedings of the 7th International Joint Conference on Service-Oriented Computing. (2009) 561 – 575.
+[55] G. Damiano, E. Giallonardo, E. Zimeo, onQoS-QL: A Query Language for QoS-Based Service Selection and Ranking , Service-Oriented Computing - ICSOC 2007 Workshops. (2007).
+[56] R. Dautov, I. Paraskakis, D. Kourtesis, An ontology-driven approach to self-management in cloud application platforms. In Proceedings of the 7th South East European Doctoral Student Conference (DSC 2012) Thessaloniki, Greece. (2012).
+[57] D. Kourtesis, I. Paraskakis,  A.J.H. Simons,  Ontology-based framework for policy-driven governance in cloud application platforms. In Proceedings of the 7th International Conference on Formal Ontology in Information Systems (FOIS 2012). Graz, Austria. (2012).
+[58] D. Le-Phuoc, J. X. Parreira, M. Hausenblas, M. Hauswirth, Unifying Stream Data and Linked Open Data. DERI Technical Report. (2010).
+[59] Sensor Web Enablement WG, http://www.opengeospatial.org/projects/groups/sensorweb (access: 25.02.2012)
+[60] Extended Environments Markup Language (EEML), http://www.eeml.org (access: 25.02.2012)
+[61] 52º North, http://52north.org (access: 25.02.2012)
+[62] NASA/JPL Sensor Webs Project, http://sensorwebs.jpl.nasa.gov (access: 25.02.2012).
+[63] European Space Agency, http://www.esa.int/esaCP/index.html (access: 25.02.2012).
+[64] A. Sheth, C.. Henson, S. S. Sahoo, Semantic Sensor Web. IEEE Internet Computing. Vol. 12. (2008).
+[65] K. Whitehouse, F. Zhao, J. Liu, Semantic streams: A framework for composable semantic interpretation of sensor data. In: EWSN’06. (2008) 5–20.
+[66] E. Bouilet, M. Feblowitz, Z. Liu, A. Ranganathan, A. Riabov, F. Ye, A Semantics-Based Middleware for Utilizing Heterogeneous Sensor Networks. In: DCOSS’07. (2007).
+[67] M. Compton, P. Barnaghi, L. Bermudez, R. Garcia-Castro, O. Corcho, S. Cox, J. Graybeal, M. Hauswirth, C. Henson, A. Herzog, V. Huang et al.,' The SSN Ontology of the W3C Semantic Sensor Network Incubator Group, Journal of Web Semantics, 15 (3). (2012).
+[68] S. Auer, Ch. Bizer, G. Kobilarov, J. Lehmann, R. Cyganiak,  Z. Ives,  DBpedia: a nucleus for a web of open data, Proceeding ISWC'07/ASWC'07 Proceedings of the 6th international The semantic web and 2nd Asian conference on Asian semantic web conference. (2007) 722-735.
+[69] P.J. Sadalage, M. Fowler. NoSQL Distilled. Pearson Education. (2013).
+[70] T. White. Hadoop: The Definitive Guide MapReduce for the Cloud. O'Reilly Media. (2009).
+[71] J. Dean, S. Ghemawat. MapReduce: Simplied Data Processing on Large Clusters. In  roceedings of OSDI. (2004).
+[72]  Nathan Marz, Storm: Distributed and Fault-tolerant Real-time Computation. 2013 (access: http://www.infoq.com/presentations/Storm)
+[73] J. Z. Pan, E. Della Valle. Stream Reasoning For Linked Data. Tutorial at Semtech. (2012).
+[74] W. Kleiminger,  Stream Processing in the Cloud. Master Degree Thesis, Imperial College. (2010).
+[75]  J. Urbani, S. Kotoulas, E. Oren, and F. van Harmelen, Scalable distributed reasoning using mapreduce. In Proceedings of the ISWC ’09.  (2009).
+[76] J. Urbani, F. van Harmelen, S. Schlobach, H. Bal, QueryPIE: Backward reasoning for OWL Horst over very large knowledge bases, in 'Research Papers Track of the ISWC2011, Bonn, Germany'. (2011).
+[77] H. J. ter Horst, Completeness, decidability and complexity of entailment for RDF schema and a semantic extension involving the OWL vocabulary. Journal of Web Semantics, 3(2–3). (2005) 79–115.
+[78] A. Hogan, A. Polleres, A. Harth,  Saor: Authoritative reasoning for the web. In Proceedings of the Asian Semantic Web Conference (ASWC). (2008). 
+ [79] A. Hogan, A. Harth, A. Polleres, Scalable authoritative OWL reasoning for the web. International Journal on Semantic Web and Information Systems, 5(2). (2009).
+[80] J. Umbrich, A.Hogan, A. Polleres, S Decker, Improving the Recall of Live Linked Data Querying through Reasoning. RR 2011 conference. (2011).
+[81] J. Umbrich, M. Karnstedt, A. Hogan, J.X. Parreira, Freshening Up While Staying Fast: Towards Hybrid SPARQL Queries. Knowledge Engineering and Knowledge Management, Springer . Volume 7603. (2012) 164-174. 
+[82] J. Weaver, J. Hendler, Parallel materialization of the finite rdfs closure for hundreds of millions of triples. In Proceedings of the ISWC ’09. (2009).
+[83] J. Huang, D. J. Abadi, K. Ren, Scalable SPARQL Querying of Large RDF Graphs, PVLDB, Vol. 4-11. (2011) 1123-1134.
+[84] A. Schätzle,  M. Przyjaciel-Zablock, Georg Lausen, PigSPARQL: Mapping SPARQL to Pig Latin. SWIM 2011 Conference. (2011).
+[85] C. Liu, J. Qu, G. Qi, H. Wang, Y.Yu, HadoopSPARQL : A Hadoop-based Engine for Multiple SPARQL Query Answering, Extended Semantic Web Conference. (2012). 
+[86] M.F. Husain, P.  Doshi, L. Khan, B. Thuraisingham. Storage and Retrieval of Large RDF Graph Using Hadoop and MapReduce. CloudCom. (2009) 680–686.
+[87] N. Papailiou, I. Konstantinou, D. Tsoumakos, N. Koziris, H2RDF: Adaptive Query Processing on RDF Data in the Cloud. WWW 2012 Demo track. (2012).
+[88] V. Khadilkar, M. Kantarcioglu, B. Thuraisingham, P.Castagna, Jena-HBase: A Distributed, Scalable and Eﬃcient RDF Triple Store. The University of Texas at Dallas, Technical Report. (2011).
+[89] P. Kulkarni, Distributed SPARQL query engine using MapReduce. Master thesis, University of Edimburgh. (2010).
+[90] R. I. Kabacoff, R in Action Data Analysis and Graphics with R, Manning Publications. (2012).
+[97] J.D. Fernández,  M. A. Martínez-Prieto, C. Gutiérrez, A. Polleres, M. Arias, Binary RDF representation for publication and exchange (HDT). Journal of Web Semantics. (2013).
+[98] S. Vijayakumar, Q. Zhu, G. Agrawal, Dynamic Resource Provisioning for Data Streaming Applications in a Cloud Environment, 2nd IEEE International Conference on Cloud Computing Technology and Science. (2010).
+[99] C. Aggarwal, J. Han, J. Wang, P. Yu. A framework for clustering evolving data streams. In The 29th International Conference on Very Large Data Bases. (2003).
+[100] S. Schneider, H. Andrade, B. Gedik, A. Biem, K.L. Wu, Elastic scaling of data parallel operators in stream processing. In Proceedings of the 23rd International Parallel and Distributed Processing Sympo- sium (IPDPS09). (2009) 1–12.
+[101] A. Ishii, T. Suzumura, Elastic Stream Computing with Clouds,  IEEE 4th International Conference on Cloud Computing. (2011).
+[102] [6] M. Creeger, Cloud computing: An overview. ACM Queue 7(5):2. (2009).
+[103] I. T. Foster, Y. Zhao, I. Raicu, S. Lu, Cloud computing and grid computing 360-degree compared. Computing Research Repository (CoRR), abs/0901.0131. (2009).
+ [104] N. Loutas,V. Peristeras, T. Bouras, E. Kamateri, D. Zeginis, Towards a reference architecture for semantically interoperable clouds. IEEE Second International Conference on Cloud Computing Technology and Science(CloudCom). (2010).
+[105] L. Youseff, M. Butrico, D. Da Silva, Toward a unified ontology of cloud computing. In Grid Computing Environments Workshop, 2008. GCE ’08. (2008) 295–305.
+[106] P. de Leuss, P. Periorellis, T. Dimitrakos, P. Watson, An architecture for non functional properties management in distributed computing. In M. Helfert, editor, DCSOFT, INSTICC Press. (2008) 26–37.
+[107] A. Sheth, Ch. Thomas, M. Pankaj: http://wiki.knoesis.org/index.php/Continuous_Semantics_to_Analyze_Real_Time_Data (access: 25.02.2012).
+[108] P. Mika, G. Tummarello, Web semantics in the clouds. IEEE Intelligent Systems, 23(5). (2008) 82–87.
+[109] M. Hausenblas, R. Grossman, A. Harth, P. Cudré-Mauroux, Large-Scale Linked Data Processing: Cloud Computing To The Rescue?, CLOSER 2012 - Proceedings of the 2nd International Conference on Cloud Computing and Services Science, Porto, Portugal. (2012).
+[110] H. Liu, D. Orban-Gridbatch, Cloud computing for large-scale data-intensive batch applications. In CCGRID IEEE Computer Society. (2008) 295–305.
