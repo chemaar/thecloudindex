@@ -1,0 +1,187 @@
+% %Policy making requirements
+% %Big Data
+% %Forbes checklist
+% %Forrester
+% %Gartner
+% 
+
+% he emergence of new applications such as real-time
+% search, high frequency trading, and social networks is push-
+% ing the limits of what can be accomplished with traditional
+% data processing systems [11]. There is a clear need for
+% highly scalable stream computing solutions that can operate
+% at high data rates and process massive amounts of data.
+% For example, to personalize search advertising, we need to
+% process thousands of queries per second from millions of
+% unique users in real-time, which typically involves analyzing
+% recent user activity such as queries and clicks. We found that
+% user session features can increase the accuracy of the models
+% used to predict ad relevance. This performance improvement
+% is used to improve the relevance of the ads shown to each
+% individual user [12]. S4 addresses the need for a general-
+% purpose distributed stream computing platform.
+% It is worth mentioning that many real world systems
+% implement a streaming strategy of partitioning the input data
+% into fixed-size segments that are processed by a MapReduce
+% platform. The disadvantage of this approach is that the
+% latency is proportional to the length of the segment plus
+% the overhead required to do the segmentation and initiate
+% the processing jobs. Small segments will reduce latency,
+% add overhead, and make it more complex to manage inter-
+% segment dependencies (eg. A segment may need information
+% from prior segments). On the other hand, large segments
+% would increase latency. The optimal segment size will de-
+% pend on the application. Rather than trying to fit a square
+% peg into a round hole we decided to explore a programming
+% paradigm that is simple and can operate on data streams in
+% real-time. The design goals were as follows:
+
+
+% % %There is currently~\cite{Pavlo:2009:CAL:1559845.1559865} considerable enthusiasm around the MapReduce (MR) paradigm
+% % for large-scale data analysis [17]. Although the basic control flow of this
+% % framework has existed in parallel SQL database management systems (DBMS) for
+% % over 20 years, some have called MR a dramatically new computing model [8, 17].
+% % In this paper, we describe and compare both paradigms. Furthermore, we evaluate
+% % both kinds of systems in terms of performance and development complexity. To
+% % this end, we define a benchmark consisting of a collection of tasks that we have
+% % run on an open source version of MR as well as on two parallel DBMSs. For each
+% % task, we measure each system's performance for various degrees of parallelism on
+% % a cluster of 100 nodes. Our results reveal some interesting trade-offs. Although
+% % the process to load data into and tune the execution of parallel DBMSs took much
+% % longer than the MR system, the observed performance of these DBMSs was
+% % strikingly better. We speculate about the causes of the dramatic performance
+% % difference and consider implementation concepts that future systems should take
+% % from both kinds of architectures.
+% 
+% Vendors Must Rise To The Challenge of Big data predictive analytics
+% With the rise of big data, the predictive analytics market has woken up; firms now
+% understand the opportunity to use big data to increase their knowledge of their
+% business, their competitors, and their customers. Firms can use predictive analytics
+% models to reduce risks, make better decisions, and deliver more personal customer
+% experiences.
+% The Big data Market is Growing as organizations scramble To
+% harness predictive analytics
+% The big data predictive analytics market is growing because more business and
+% technology professionals see these solutions as a way to address opportunities. Big
+% data involves finding patterns in heterogeneous sources of data; business analysts
+% and data scientists can use these to create predictive models to improve business
+% outcomes.
+% Big data handling, Modeling Tools, and algorithms are Key
+% differentiators
+% Better big data handling, easy-to-learn/use modeling tools, and a wide choice of
+% analysis algorithms for structured and unstructured data dictate which of these
+% 10 vendors will lead this market. We expect the market for big data predictive
+% analytics solutions to be vibrant, highly competitive, and flush with new entrants
+% over the next three years.
+% 
+% 
+% redictive analytics enables firms to reduce risks, make intelligent decisions, and create differentiated,
+% more personal customer experiences. But predictive analytics is hard to do without the right tools and
+% technologies, given the increasing challenge of storing, processing, and accessing the volume, velocity, and
+% variety of big data. In Forrester’s 51-criteria evaluation of big data predictive analytics solution vendors, we
+% evaluated 10 solutions from Angoss Software, IBM, KXEN, Oracle, Revolution Analytics, Salford Systems,
+% SAP, SAS, StatSoft, and Tibco Software. This report details our findings about how well each solution
+% fulfills the criteria and where they stand in relation to each other, and it helps application development and
+% delivery professionals select the right big data predictive analytics solution.
+% 
+% 
+% Predictive analytics uses algorithms to find patterns in data that might predict similar outcomes
+% in the future. A common example of predictive analytics is to find a model that will predict which
+% customers are likely to churn. 
+% 
+% 
+% In order to maximize success with predictive analytics programs, organizations must (see Figure 1):
+% 
+% Set the business goals. Clearly stated business goals lie at the center of any successful predictive
+% analytics project. For example, the goal might be to recommend items to upsell to existing
+% customers — or to prevent life-threatening and costly hospital re-admittance. Businesses can
+% also use predictive analytics to achieve more generic business goals, such as increasing revenue,
+% because it enables them to discover correlations that may suggest strategy improvements.
+% 
+% 
+% 	 Understand data from a variety of sources. In large organizations, potentially valuable data
+% often exists in multiple siloes. In addition, many firms are now using external data from social
+% media, government data, and other public sources of data to augment their internal data.
+% Advanced data visualization tools can help data analysts explore the data from various sources
+% to determine what might be relevant for a predictive analytics project. Increasingly, many data
+% analysts collect every shred of data available to let the predictive analysis algorithms find what is
+% most relevant.
+% Prepare the data. Data preparation for predictive analysis is a key challenge.3 Raw data is often
+% unsuitable for predictive analytics. Data analysts must often perform extensive preprocessing
+% of the data before running analysis algorithms. For example, data analysts might need to enrich
+% the data with calculated aggregate fields, strip out extraneous characters or information that
+% would choke the algorithms, or combine data from multiple sources.
+% 
+% Create the predictive model. Data analysts use predictive analytics modeling tools to run
+% analysis algorithms against the data. There are hundreds of different statistical and machine
+% learning algorithms and combinations that data analysts can run against the data to find
+% predictive models. Data analysts typically run the analysis on a subset of the data called
+% “training data” and set aside “test data” that they will use to evaluate the model. For example,
+% data analysts may run the algorithms on a training data set that is 70% of the entire data set;
+% they will then use the remaining 30% as the test data set to evaluate the predictive model.
+% 
+% 	 Evaluate the model. Predictive analytics is not about absolutes; it is about probabilities. To
+% evaluate the predictive power of the model, data analysts run it against the test data set. If the
+% predictive model is more effective than a random selection of the outcome, then they’ve found
+% an effective predictive model. Data analysts can continue to run other types of algorithms until
+% they find the one that is most predictive; alternatively, they may not find any because there
+% is not enough data or the data is too random to uncover a predictive model for the desired
+% business outcome.
+% ■	 Deploy the model. Analysts must deploy effective predictive models in production applications
+% to accrue the business benefits. A deployed model consists of logic to run the predictive rules
+% and/or formulas and a method to get the data that the model needs and return the result.
+% ■	 Monitor the effectiveness of the model. As financial firms caution, “Past results do not
+% guarantee future performance.” It is essential to monitor the effectiveness of the predictive
+% model. For example, if mobile carrier A starts to offer a free data plan, then the reasons why
+% customers churn from carrier B can change. Firms must continue the predictive analytics
+% process to stay on top of business goals, understand new data, prepare better data, refine models
+% with new algorithms, evaluate the models, and deploy and monitor the models in a never-
+% ending cycle.
+% 
+% 
+% he vendors evaluated in this Forrester Wave provide general purpose big data predictive analytics
+% solutions to facilitate the predictive analytics process and ease the burden of this never-ending,
+% continuous cycle of model discovery, deployment, and optimization that can be applied to most
+% industries and business domains. In addition to the general purpose solutions evaluated in this
+% Forrester Wave, firms that wish to benefit from big data predictive analytics solutions can also
+% choose among:
+% ■	 Vertical or horizontal solutions. Many vendors provide solutions that focus on specific
+% industry or horizontal domains, such as customer analytics. For example, Forrester has
+% evaluated solutions offered by Fair Isaac (FICO) and Pitney Bowes that specifically focus on
+% customer-focused programs and initiatives that drive acquisition, retention, cross-sell/upsell,
+% and targeted marketing campaigns.4 Other examples of vertical solutions include cloud-based
+% offerings such as BloomReach, which uses predictive analytics to help eCommerce companies
+% sell more online by showing customers more relevant content, and startup company Objective
+% Logistics, which uses big data predictive analytics to help restaurants increase sales by
+% improving workforce planning.
+% 
+% 
+% Embedded solutions. Other platforms increasingly embed predictive analytics capabilities.
+% BI platforms such as Alteryx and Pentaho include embedded predictive analytics features
+% in addition to BI functionality. Business process management (BPM) platforms such as
+% Pegasystems and Rage Frameworks also offer predictive analytics capabilities.
+% ■	 Database analytics. Relational database management systems (RDBMS), EDWs, NoSQL,
+% Hadoop, and other data-focused hardware and software have some predictive analytics
+% capabilities, but they tend to be oriented toward technical users and require programming or
+% SQL. For example, Teradata’s Aster provides a big data predictive analytics capability that allows
+% developers to use SQL and MapReduce together to perform sophisticated analysis on very
+% large data sets. Similarly, programmers can use open source machine learning libraries such as
+% Apache Mahout for Hadoop or a Java library such as Weka for predictive analytics.
+% ■	 Offerings from consulting firms. Enterprises that lack expertise in predictive analytics or that
+% wish to outsource can choose from among many mainstream or boutique consulting firms that
+% focus on predictive analytics. For example, Opera Solutions is a consulting firm that creates
+% predictive models that focus on specific business outcomes. These firms will often use general
+% purpose solutions such as those evaluated in this Forrester Wave, but they also provide deep
+% knowledge and expertise in analyzing data and creating predictive models.
+% 
+% 
+% % 
+% % Evaluation Criteria: Current Offering, Strategy, And Market Presence
+% % After examining past research, user need assessments, and vendor and expert interviews, we
+% % developed a comprehensive set of evaluation criteria. We evaluated vendors against 51 criteria,
+% % which we grouped into three high-level buckets:
+% 
+% 
+% 
+% 
+% 
