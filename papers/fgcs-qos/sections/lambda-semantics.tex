@@ -9,7 +9,7 @@ can be found:
 \begin{itemize}
  \item Human fault-tolerance. The system is unsusceptible to data loss or data corruption because at scale it could be irreparable.
  \item Data immutability. Data is stored in a raw form to be immutable and for perpetuity.
- \item Recomputation. Following the two previous principles it is always possible 
+ \item Re-computation. Following the two previous principles it is always possible 
  to re-compute results by performing a function on the raw data.
 \end{itemize}
 
@@ -17,14 +17,14 @@ Therefore Figure~\ref{fig:lambda-qos} depicts the building blocks and layers of 
 an adaptation to support semantics. 
 
 \begin{itemize}
- \item \textbf{Batch layer.} It contains inmutable, constantly growing dataset stoored on a distributed file system like HDFS. This layer 
+ \item \textbf{Batch layer.} It contains immutable, constantly growing dataset stored on a distributed file system like HDFS. This layer 
  receives as input the raw data coming from a queue. Data is then computed by means of some function and results are finally exposed 
  as batch views. As an extra step and with the aim of supporting the use of semantics these final views are promoted as RDF and thus SPARQL queries 
  can be executed on the computed results. This approach of adding an extra layer to ease queries over batch views has been 
  already address using SQL as a formal query language, e.g. SploutSQL. In this case SPARQL and RDF is selected to support the implicit 
  creation of queries from a semantic model. This layer is usually implemented using a MapReduce-based framework such as Apache Hadoop or 
  a more high-level framework such as Apache Pig. A final remark in this layer lies in the off-line execution of the algorithms or functions 
- that eases the precomputation of results when large dataset processing is required.
+ that eases the pre-computation of results when large dataset processing is required.
  
  \item \textbf{Serving layer.} The responsibility of this layer is to manage both batch and real-time views 
  with the aim of providing a way of querying and merging both views and populate results to be consumed by 
@@ -45,7 +45,7 @@ can be used to keep synchronization in a distributed system.
 The ``semantized'' Lambda Architecture using RDF and SPARQL on top of the batch and real-time views enables 
 the possibility of handling the complexity of Big Data systems by defining a clear set of principles. Specifically 
 the use of semantics serve to integrate data under a common data model that can be queried using a formal 
-query language such as SPARQL. Furthermore immutability, human fault-tolerance and recomputation basic principles 
+query language such as SPARQL. Furthermore immutability, human fault-tolerance and re-computation basic principles 
 that can be easily adopted with the Hadoop platform. Finally and depending on the real-time requirements of 
 the system some parts can be omitted and integrated in a further stage.
 
@@ -55,4 +55,16 @@ the system some parts can be omitted and integrated in a further stage.
  \caption{A semantic-based Lambda Architecture for real-time processing of diverse datastreams.}
  \label{fig:lambda-qos}
 \end{figure}
+
+
+
+
+\begin{figure}[!ht]
+\centering
+	\includegraphics[width=12cm]{./imgs/qos-framework}
+ \caption{QoS Framework.}
+ \label{fig:qos-framework}
+\end{figure}
+
+
 
