@@ -13,6 +13,17 @@ can be found:
  to re-compute results by performing a function on the raw data.
 \end{itemize}
 
+FIXME: EXPLAIN THE FRAMEWORK
+
+\begin{figure}[!ht]
+\centering
+	\includegraphics[width=12cm]{./imgs/qos-framework}
+ \caption{QoS Framework.}
+ \label{fig:qos-framework}
+\end{figure}
+
+
+
 Therefore Figure~\ref{fig:lambda-qos} depicts the building blocks and layers of the Lambda architecture with 
 an adaptation to support semantics. 
 
@@ -28,8 +39,8 @@ an adaptation to support semantics.
  
  \item \textbf{Serving layer.} The responsibility of this layer is to manage both batch and real-time views 
  with the aim of providing a way of querying and merging both views and populate results to be consumed by 
- a third-service. In this case, this layer is in charge of executing the SPARQL queries (using a federated extension 
- such as SPARQL-Fedex) and publish the results as RDF. At a first glance this job does not require 
+ a third-service. In this case, this layer is in charge of executing the SPARQL queries (using a federated extension~\cite{DBLP:journals/corr/RakhmawatiUKHH13} 
+ such as SPARQL-FedX~\cite{DBLP:conf/esws/SchwarteHHSS11}) and publish the results as RDF. At a first glance this job does not require 
  random writers but must support batch updates and random reads. In this case the implementation of joining 
  results is also designed as a Storm/Trident topology to enable and distributed real-time updates.
 %  However it can be extraordinarily simple (candidates could be ElephantDB or Voldemort).
@@ -58,13 +69,6 @@ the system some parts can be omitted and integrated in a further stage.
 
 
 
-
-\begin{figure}[!ht]
-\centering
-	\includegraphics[width=12cm]{./imgs/qos-framework}
- \caption{QoS Framework.}
- \label{fig:qos-framework}
-\end{figure}
 
 
 

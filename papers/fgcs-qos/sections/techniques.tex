@@ -70,7 +70,8 @@ adoption in a Linked Sensor Data context to bridge the new era of Internet of
 Things and Internet of Services fostering their potential adoption in the OGC 
 community.
 
-Following the review of approaches to mix semantic technologies and stream data processing is presented with special focus on storage, stream processing, analytics and some applications:
+Following the review of approaches to mix semantic technologies and stream data processing is 
+presented with special focus on storage, stream processing, analytics and some applications:
 \begin{itemize}
  \item In the case of storage, RDF triple stores such as Sesame, Apache Jena 
 (Joseki), RISC-3X, YARS2, Oracle Semantic, OWLim, OpenLink Virtuoso have gained 
@@ -94,6 +95,18 @@ scalability problems. In this context there are also some projects providing
 data flows such as Storm~\cite{BigDataManing} (a distributed and fault-tolerant teal-time 
 computation environment), most of these efforts are boosted by the main social 
 media sites such as Facebook, Twitter or Linkedin. 
+
+\item There is a growing set of both commercial and open tools that 
+claims to provide large scale and distributed data stream processing, inspired in Apache Drill~\cite{hausenblas2013apache}. 
+All of them use their own internal data models, cluster processing, a formal query language and different kinds of 
+predictive analytics. In this context Impala~\cite{impala-project}, SPARK~\cite{zaharia2012discretized}, Sparrow~\cite{ousterhout2013sparrow},
+Shark~\cite{DBLP:conf/sigmod/XinRZFSS13}, S4~\cite{neumeyer2010s4}, Druid~\cite{yangdruid} or MapR~\cite{mapr-project} technologies to name a 
+few deliver such predictive services on big data through off-line and real-time queries. Usually they 
+also take advantage of: 1) programming languages with functional and parallel capabilities such as Scala, Clojure or Python; 
+2) NoSQL stores and 3) MapReduce-based frameworks such as Apache Hadoop. Finally an advanced dashboard to manage jobs is 
+commonly provided as a graphical interface for controlling the distributed execution and the results of predictive 
+analysis functions.
+
 
 \item Data stream management systems (DSMS) are other possibility to manage data streams GraphgCQ, Amazon/Cougar, Aurora, Gigascope, 
 Hancock, Niagara, OpenCQ, Stream, Stream Mill, Tapestry, Tribeca, Streambase, Coral8, Apama or Truviso among others were implemented to overcome the 
@@ -119,9 +132,8 @@ over Linked Streams (CQELS) project to unify data coming from both the Linked
 Open Data cloud and sensor stream data. They focus on continuous queries that 
 is, queries that are registered in the system, and executed every time new data 
 matches their criteria considering the queries themselves as input parameters. 
-Finally a complete study of stream processing in the cloud is also depicted in~\cite{Backman:2012:MPS:2169090.2169091} 
-[74].
-FIXME: SPARK
+Finally a complete study of stream processing in the cloud 
+is also depicted in~\cite{Backman:2012:MPS:2169090.2169091}.
 
 \item On the other hand, the CEP community is concerned with timely detection of 
 compound events in streams of simple events. Nevertheless event processing 
