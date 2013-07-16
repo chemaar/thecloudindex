@@ -24,7 +24,7 @@ service can be seen as a data sensor producing data and information about their
 current status that can be processed in an automatic way with the objective of 
 enabling self-management cloud systems and applications. Nevertheless some 
 problems arise to manage a stream of data: storage, semantics, inference and 
-querying, among others. As authors present ie~\cite{deri2010}] traditional data stream 
+querying, among others. As authors present in~\cite{deri2010} traditional data stream 
 management systems (DSMS) assumes stream data has a bigger impact in query 
 performance than static metadata. In the case of Linked Data this situation is 
 more dramatic due to the existence of different vocabularies and the possibility 
@@ -188,9 +188,8 @@ present a work to store RDF in HDFS (Hadoop File System) and an algorithm to ask
 SPARQL queries. H2RDF [87], Jena-HBase~\cite{DBLP:conf/semweb/KhadilkarKTC12} and the proposal in [90] are similar 
 works trying to manage large RDF datasets and execute distributed SPARQL queries. 
 
-\item The use of the R statistics package [90] is widely accepted in the Big 
-Data community to make decisions, 
-predictions or analysis and perform statistical methods on large datasets. In 
+\item The use of the R statistics package is widely accepted in the Big 
+Data community to make decisions, predictions or analysis and perform statistical methods on large datasets. In 
 the context of SPARQL, there is a specific package, \texttt{r-sparql}, to work with R that enables the 
 connection to existing RDF endpoints from the R processor. The analysis and exploitation of large datasets is not easy to solve and data 
 mining frameworks as Weka or Apache Mahout offer scalable methods and algorithms 
@@ -235,5 +234,140 @@ not use any semantic feature to address the needs of managing a cloud
 environment and it is just based on an optimization algorithm to select 
 adequately the allocation of resources in the cloud.
 
-
 \end{itemize}
+
+\subsection{Summary and Evaluation}
+This section presents a summary of the aforementioned techniques with the aim
+of establishing a factsheet and a tool for making decisions when a technique 
+has to be selected for some use. We have created a set of feature, see Table~\ref{features-techniques}, 
+to list those references that present some evidence for validating its application 
+and contribution to datastream and big data processing. This list is not exclusive 
+but remarks main characteristics to take into account when a monitoring tool 
+is required. Each feature is evaluated following the next techniques:
+\begin{itemize}
+ \item Open ended questions using a word/sentence associated to the feature, for instance ``Apache Hadoop'' or ``SQL''.
+ \item Multiple choice using the Likert scale value: 1-Strongly disagree, 2-Disagree, 3-Neither agree nor disagree, 4-Agree and 5-Strongly agree.
+ \item Closed ended questions with a Yes/No value. 
+\end{itemize}
+
+
+% \begin{table}[!ht]
+% \renewcommand{\arraystretch}{1.3}
+% \tiny
+% \begin{center}
+% \begin{tabular}[c]{|p{1cm}|p{2.5cm}|p{5cm}|p{3cm}|} 
+% \hline
+%   \textbf{Feature}& \textbf{Label} &  \textbf{Definition}  &  \textbf{Type} \\\hline
+%   $f_1$&Data model & This feature indicates how data is represented & Word/sentence associated \\ \hline
+%   $f_2$&Programming Language & The programming language used to implement this tool/technique & Word/sentence associated \\ \hline
+%   $f_3$&Reasoning & The tool enables some kind of reasoning process & Yes/No and Word/sentence associated  \\ \hline
+%   $f_4$&Input Format & The input formats that the technique can process & Word/sentence associated  \\ \hline
+%   $f_5$&Output Format & The output format that the technique can generate & Word/sentence associated  \\ \hline
+%   $f_6$&Data integration & The tool enables the consumption of different datasources &  Yes/No \\ \hline
+%   $f_7$&Architecture & The type of architecture for data processing & Word/sentence associated\\ \hline
+%   $f_8$&Programming Model & The type of programming model for data processing  & Word/sentence associated\\ \hline
+%   $f_9$&API & The tool provides and API to manage all processes & Yes/No  \\ \hline
+%   $f_{10}$&Accesibility & The tool can be easily used in different context & Likert scale  \\ \hline
+%   $f_{11}$&Adaptability & The tool can be easily configured to meet new requiremens & Likert scale  \\ \hline
+%   $f_{12}$&Auditability & The tool provides a mechanism to know how it is working & Likert scale  \\ \hline
+%   $f_{13}$&Elasticity & The tool can be adjusted its resource consumption to meet demand & Likert scale  \\ \hline
+%   $f_{14}$&Extensibility & The tool can be easily extended & Likert scale  \\ \hline
+%   $f_{15}$&Flexibility & The tool can be configured on-demand adding/removing features & Likert scale  \\ \hline  
+%   $f_{16}$&Interoperability & The tool can be integrated with third-parties  & Likert scale  \\ \hline
+%   $f_{17}$&Portability & The tool can be easily move to different architectures & Likert scale  \\ \hline
+%   $f_{18}$&Usability & The tool can be easily configured  & Likert scale  \\ \hline
+%   $f_{19}$&Security & The tool can be used under a protocol for secure communication & Likert scale  \\ \hline
+%   $f_{20}$&Standards & The tool is based in the use of standars (compliance) & Likert scale\ \\ \hline
+%   $f_{21}$&Off-line processing & The technique enables off-line/batch processing & Yes/No  \\ \hline
+%   $f_{22}$&Real-time processing & The technique enables real-time processing & Yes/No  \\ \hline
+%   $f_{23}$&Storage & The database to store data &  Word/sentence associated \\ \hline
+%   $f_{24}$&Query & The formal query language to accesss to results & Word/sentence associated\\ \hline
+%   $f_{25}$&Dashboard & The technique provides a graphical tool to manage processes, export data, etc. & Likert scale\ \\ \hline
+%   $f_{26}$&Licensing and pricing & The type of license & Word/sentence associated \\ \hline
+%   $f_{27}$&Maturity & The level of maturity or development of the tool & Likert scale\\ \hline
+%   $f_{28}$&Presence & The level of presence in existing products & Likert scale\\ \hline
+%   $f_{29}$&Update and evolution & The tool is frequently updated & Likert scale\\ \hline
+%   $f_{30}$&Certification & The tool provides courses and other methods to learn its use & Likert scale\\ \hline
+%   $f_{31}$&Financial support & The tool is supported for investors/venture capital, etc. & Likert scale\\ \hline
+% \hline
+% \end{tabular}
+% \caption{Features for selecting a technique of datastream processing.}\label{features-techniques}
+%   \end{center}
+% \end{table} 
+
+\begin{table}[!ht]
+\renewcommand{\arraystretch}{1.3}
+\tiny
+\begin{center}
+\begin{tabular}[c]{|p{2.5cm}|p{5cm}|p{3cm}|} 
+\hline
+  \textbf{Feature} &  \textbf{Definition}  &  \textbf{Type} \\\hline
+  Data model & This feature indicates how data is represented & Word/sentence associated \\ \hline
+  Programming Language & The programming language used to implement this tool/technique & Word/sentence associated \\ \hline
+  Reasoning & The tool enables some kind of reasoning process & Yes/No and Word/sentence associated  \\ \hline
+  Input Format & The input formats that the technique can process & Word/sentence associated  \\ \hline
+  Output Format & The output format that the technique can generate & Word/sentence associated  \\ \hline
+  Data integration & The tool enables the consumption of different datasources &  Yes/No \\ \hline
+  Architecture & The type of architecture for data processing & Word/sentence associated\\ \hline
+  Programming Model & The type of programming model for data processing  & Word/sentence associated\\ \hline
+  API & The tool provides and API to manage all processes & Yes/No  \\ \hline
+  Accesibility & The tool can be easily used in different context & Likert scale  \\ \hline
+  Adaptability & The tool can be easily configured to meet new requiremens & Likert scale  \\ \hline
+  Auditability & The tool provides a mechanism to know how it is working & Likert scale  \\ \hline
+  Elasticity & The tool can be adjusted its resource consumption to meet demand & Likert scale  \\ \hline
+  Extensibility & The tool can be easily extended & Likert scale  \\ \hline
+  Flexibility & The tool can be configured on-demand adding/removing features & Likert scale  \\ \hline  
+  Interoperability & The tool can be integrated with third-parties  & Likert scale  \\ \hline
+  Portability & The tool can be easily move to different architectures & Likert scale  \\ \hline
+  Usability & The tool can be easily configured  & Likert scale  \\ \hline
+  Security & The tool can be used under a protocol for secure communication & Likert scale  \\ \hline
+  Standards & The tool is based in the use of standars (compliance) & Likert scale\ \\ \hline
+  Off-line processing & The technique enables off-line/batch processing & Yes/No  \\ \hline
+  Real-time processing & The technique enables real-time processing & Yes/No  \\ \hline
+  Storage & The database to store data &  Word/sentence associated \\ \hline
+  Query & The formal query language to accesss to results & Word/sentence associated\\ \hline
+  Dashboard & The technique provides a graphical tool to manage processes, export data, etc. & Likert scale\ \\ \hline
+  Licensing and pricing & The type of license & Word/sentence associated \\ \hline
+  Maturity & The level of maturity or development of the tool & Likert scale\\ \hline
+  Presence & The level of presence in existing products & Likert scale\\ \hline
+  Update and evolution & The tool is frequently updated & Likert scale\\ \hline
+  Certification & The tool provides courses and other methods to learn its use & Likert scale\\ \hline
+  Financial support & The tool is supported for investors/venture capital, etc. & Likert scale\\ \hline
+\hline
+\end{tabular}
+\caption{Features for selecting a technique of datastream processing.}\label{features-techniques}
+  \end{center}
+\end{table} 
+
+
+\begin{sidewaystable}[!ht]
+\renewcommand{\arraystretch}{1.3}
+\tiny
+\begin{center}
+%\begin{tabular}[c]{|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.6cm}|p{0.6cm}|p{0.7cm}|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.8cm}|}
+\begin{tabular}[c]{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
+\hline
+ % \textbf{Tool/Feature} & \textbf{Data model} & \textbf{Programming Language} & \textbf{Reasoning} & \textbf{Input Format} & \textbf{Output Format} & \textbf{Data integration} & \textbf{Architecture} & \textbf{Programming Model} & \textbf{API} & \textbf{Accesibility} & \textbf{Adaptability} & \textbf{Auditability} & \textbf{Elasticity} & \textbf{Extensibility} & \textbf{Flexibility} & \textbf{Interoperability} & \textbf{Portability} & \textbf{Usability} & \textbf{Security} & \textbf{Standards} & \textbf{Off-line processing} & \textbf{Real-time processing} & \textbf{Storage} & \textbf{Query} & \textbf{Dashboard} & \textbf{Licensing and pricing} & \textbf{Maturity} & \textbf{Presence} & \textbf{Update and evolution} & \textbf{Certification} & \textbf{Financial support} \\\hline
+ \textbf{Tool/ Feature} & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline
+  Data model & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline 
+  
+\hline
+\end{tabular}
+\caption{Selected Tools and Techniques (I).}\label{table:tools-1}
+  \end{center}
+\end{sidewaystable} 
+
+\begin{sidewaystable}[!ht]
+\renewcommand{\arraystretch}{1.3}
+\tiny
+\begin{center}
+\begin{tabular}[c]{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
+\hline
+ \textbf{Tool/ Feature} & SSN &  Streaming SPARQL & C-SPARQL & CQELS & EP-SPARQL & WebPIE & QueryPIE & SAOR & Pig SPARQL & Hadoop SPARQL  \\ \hline
+  Data model & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline  \\ \hline
+\hline
+\end{tabular}
+\caption{Selected Tools and Techniques (II).}\label{table:tools-ii}
+  \end{center}
+\end{sidewaystable} 
+
