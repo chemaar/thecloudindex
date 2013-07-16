@@ -1,7 +1,7 @@
 Cloud Computing represents the next natural step in the evolution of on-demand services and applications. 
 Several definitions have been made but the description~\cite{mell2011nist} provided by the NIST institute has reached a major consensus:  
-``A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of 
-abstracted, virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet''. 
+\textit{A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of 
+abstracted, virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet}. 
 The NIST institute has also defined~\cite{mell2011nist,Garcia-Sanchez:2010:ASS:1852403.1852409}: 
 \begin{enumerate}
  \item Five key characteristics: on-demand self-service, ubiquitous network access, location independent resource pooling, rapid elasticity and pay per use.
@@ -11,11 +11,11 @@ The NIST institute has also defined~\cite{mell2011nist,Garcia-Sanchez:2010:ASS:1
 
 These basic concepts~\cite{mell2011nist} and usages~\cite{cloud-usage} in a cloud environment lead us to consider that QoS is a key-enabler of the five essential characteristics identified by 
 the NIST institute and it is closely related to the concepts of Autonomic and Utility Computing~\cite{Huebscher:2008:SAC:1380584.1380585}. 
-As a consequence the QoS management is clearly a key-enabler of cloud environments and it must play a major role in the Future Internet to 
+As a consequence the QoS management must play a major role in cloud environments and in the Future Internet to 
 afford, from a quality point of view, the implementation of the ``Measured Service'' concept, see Figure~\ref{fig:qos-intro}.
 
-On the other hand, the ITUT-T Recommendation E.800 defines QoS as ``collective effect of service performance that determines the degree of 
-satisfaction by a user of the service''. Thus QoS data is a key-enabler to design, identify and put in action SLAs. It should also influence 
+On the other hand, the ITUT-T Recommendation E.800 defines QoS as \textit{collective effect of service performance that determines the degree of 
+satisfaction by a user of the service}. Thus QoS data is a key-enabler to design, identify and put in action SLAs. It should also influence 
 software components and applications to ensure a reliable environment for executing services. Some open issues in 
 QoS management emerge to extend this definition including reputation-based mechanisms for service selection or 
 dynamic adaptation of resource provisioning. The application of QoS has been widely studied and 
@@ -23,7 +23,7 @@ applied~\cite{Conejero:2012:MSQ:2357487.2357591,Pedersen:2011:AMQ:2114495.211554
 gaining momentum in the new Cloud Computing paradigm. 
 
 In order to facilitate the QoS management in the cloud-environment some tools, called Cloud Management Platforms (CMPs) can be found 
-to manage the different layers of cloud-based applications but the majority of them are now focused on the IaaS layer. 
+to manage the different layers of cloud-based applications but the majority of them are now focused on the IaaS and PaaS layers. 
 The use of these platforms can help to manage the growing of cloud applications and ease the deployment and monitoring of services across 
 public and private clouds. The six key capabilities~\cite{Kephart2012} that we should look for in a CMP are: simplify complexity, 
 manage multiple clouds, build for the future, support the whole application lifecycle, self-management (set-it and forget-it) and manage/control costs. 
@@ -108,13 +108,13 @@ and some of the big players have launched some relevant indexes such as:
  that provide a standardized method for measuring and comparing a business service regardless of whether that service is internally provided or sourced from an outside company for any cloud service (IaaS, PaaS, SaaS, etc.). It is designed to become a 
  standard method to help organizations measure cloud-based services based on their specific business and technology requirements.} As 
  an implementation of the SMI Index the ``Ranking Clouds''~\cite{DBLP:journals/fgcs/GargVB13} presents a framework to manage this index 
- and makes a ranking of different PaaS providers using the AHP method to weight some key performance indicators.
+ and makes a ranking of different PaaS providers using the Analytic Hierarchy Process (AHP) method to weight some key performance indicators.
  
  \item The Cisco Global Cloud Index (GCI) by Cisco~\cite{cisco}. \textit{It is an ongoing effort to forecast the growth of global data 
  center and cloud-based IP traffic. The forecast includes trends associated with data center virtualization and cloud computing. }
  It also provides a visual representation of countries ranging  from ``Cloud Prepared'' to ``Cloud Emerging''.
 
- \item The CSC Cloud Usage index~\cite{csc}. It is an index created through a survey of more than ·$3500$ cloud computing users 
+ \item The CSC Cloud Usage index~\cite{csc}. It is an index created through a survey of more than $3500$ cloud computing users 
  in eight countries around the world. The survey is focused on capturing user information about outcomes and 
  experiences rather than predictions and intentions.
 
@@ -124,7 +124,11 @@ and some of the big players have launched some relevant indexes such as:
 
 \end{itemize}
 
-FIXME: some concluding remarks?
+As final remark, the creation of a quantitative index of QoS indicators seems to be a promising approach because 
+it represents a joint effort to establish a common set of KPI's and it can be applied to the different cloud types and models. Furthermore 
+the participation of big players validates and ensures their potential development. Nevertheless, as other existing quantitative indexes, 
+the structure and the computing process are completely closed and there is not any framework to automatically compute observations. Apart from 
+that it would also be necessary the definition of an API for exposing quality indicators that could be part of existing CAMPs.
 
 % 
 % 

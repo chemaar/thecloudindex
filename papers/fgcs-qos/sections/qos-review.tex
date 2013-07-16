@@ -1,6 +1,7 @@
-n this section a literature review of ontology-based frameworks for QoS management is presented, see a summary in Table~\ref{qos-summary} , as well as a survey of the 
-main techniques for processing large dynamic data streams, see a summary in Table~\ref{big-summary} . These issues are considered to be key-enablers of the future 
-semantic-based QoS management in cloud environments.
+In this section a literature review of main ontology-based frameworks for QoS management is presented. After that 
+an empirical evaluation of some selected features, see Table~\ref{features-qos-models}, is also outlined to finally present 
+a summary, see Table~\ref{summary-features-qos-models}, of the most relevant approaches for semantic-based QoS management.
+% These issues are considered to be key-enablers of the future semantic-based QoS management in cloud environments.
 \subsection{Ontology-based frameworks for QoS management}
 Ontology-based resource description is proposed to solve problems in~\cite{Pernas:2005:UOD:1068510.1069326,Armstrong17} with regards to the difficulty of 
 resource information management, no standard definitions of resource requirements and the difficulty of guaranteeing compatibility of resource allocation. 
@@ -77,7 +78,7 @@ node of the cloud and the OWL classes in every node of the cloud. That is why,
 even if the tables are divided into chunks and each chunk is stored in an 
 exclusive node, when they look for all the semantic information of a service, 
 they do not need to do any inter-node query. The main drawback of this approach 
-lies in the necessity of ensuring synched multiple copies of OWL definitions on 
+lies in the necessity of ensuring synced multiple copies of OWL definitions on 
 all nodes.
 
 In~\cite{cloudle} a search engine and an architecture for cloud systems (Cloudle) is 
@@ -86,7 +87,7 @@ Cloudle system works as follows: a user send a query through a web interface,
 cloud providers are registered in the system with a rating, a service discovery 
 agent works by means of a query processor that takes the user profile and 
 performs a similarity reasoning process against registered services trying to 
-optimize price and timeslots. Two ontologies have been also designed in order to 
+optimize price and time-slots. Two ontologies have been also designed in order to 
 assist this similarity reasoning process and are used to improve the accuracy of 
 results. The difference between these two ontologies lies in their structure, 
 the first one only includes a concept hierarchy and the second one also includes 
@@ -108,7 +109,7 @@ use of RDF could be solved some of the interoperability issues it is still under
 study.
 
 
-In~\cite{Buyya:2010:IUF:2143583.2143586} a framework called Reference Architecture for Semantically Interoperable 
+In~\cite{Buyya:2010:IUF:2143583.2143586} a framework called Reference Architecture for Semantically Inter-operable 
 Clouds (RASIC) is presented to facilitate the management of inter-cloud 
 components and to provide reliable end to end services that meet the SLA 
 requirements. This work tries to capture the concepts and attributes of 
@@ -142,7 +143,7 @@ and technical issues. In order to add flexibility to this system they use
 ontologies, rules and an event processing engine. They also suggest as future 
 work the creation of a web interface to manage the functionalities and support 
 other cloud stacks such as OpenStack or OpenNebula to make their tool 
-interoperable in a heterogeneous environments.
+inter-operable in a heterogeneous environments.
 
 
 In~\cite{srt-15} authors present QoSMONaaS (Quality of Service MONitoring as a Service), 
@@ -290,6 +291,19 @@ to/from the QAComPS service and QABroker. The final objective is to demonstrate
 a promising framework to make cloud computing more accessible and cost effective 
 for computational modelers.
 
+Authors present in~\cite{stantchev2009negotiating} an approach (a three-step method) 
+to map SLAs and QoS requirements of business processes. They formalize the capabilities 
+and requirements to finally compare them with the objective of detecting performance 
+or reliability gaps. This method is evaluated as a dynamic technique to accommodate 
+and improve the performance of individual services deployed in a grid or 
+a cloud computing infrastructure. In~\cite{stantchev2011addressing} 
+an application of a SLA management is proposed to address dependability in 
+a SOA lifecycle. Authors describe the concepts and formalisms of each 
+lifecycle stage (Model, Assemble, Deploy, and Manage). The final objective 
+of this approach is to meet the user requirements offering optimized levels 
+of dependability.
+
+
 A taxonomy of QoS management and Service Selection Methodologies in cloud 
 computing is presented in~\cite{qos-taxonomy}. This survey reviews the current 
 status of QoS in web services and purpose a taxonomy to model the resources on 
@@ -301,7 +315,7 @@ preferences, roles, etc. Finally the taxonomy is tested using the Analytic
 Hierarchy Process (AHP) technique to make decisions about service selection.
 
 In~\cite{DBLP:conf/ic/BernsteinV10} authors make a proposal for in inter-cloud 
-exchanges using an ontology and XMPP for cataloguing computing resources. They 
+exchanges using an ontology and XMPP for cataloging computing resources. They 
 make queries via SPARQL to select the components of being exchanged. The main 
 aim of this work is to provide a federated cloud environment but it is still an 
 early stage of development.
@@ -315,7 +329,7 @@ situational applications. The main outcome of this work is the combination of
 QoS metrics with social aspects but no semantics is applied in any of the 
 process to select services. 
 
-Other QoS ontology, onQoS, is presented in~\cite{Damiano:2009:OQL:1506129.150614}. Authors make a study of the impact of 
+Other QoS ontology, onQoS, is presented in~\cite{Damiano:2009:OQL:1506129.1506143}. Authors make a study of the impact of 
 Semantics for the management of QoS requirements in service-based 
 applications and they also present the aforementioned ontology, its role for 
 specifying service requirements and the onQoS-QL language to support queries for 
@@ -326,10 +340,10 @@ governance in cloud application platforms is also presented
 in~\cite{DBLP:conf/icsoc/KourtesisP11}.
 
 \subsection{Summary and Evaluation}
-This section presents a summary of the most relevant aforementioned semantic approaches for QoS management 
+This section presents a summary/questionnaire of the most relevant aforementioned semantic approaches for QoS management 
 with the aim of establishing a simple but empirical comparison among the different QoS models. 
-The evaluation of ``quality'' in ontologies is not a mere process as some works~\cite{DBLP:conf/dexa/dAquinSSS07,DBLP:conf/nldb/SabouFM09,Brank05asurvey} have already demonstrated. 
-That is why we summarize these models according to a set of features, see Table~\ref{features-qos-models}. 
+The evaluation of ``quality'' in ontologies is not a mere process as some works~\cite{DBLP:conf/dexa/dAquinSSS07,DBLP:conf/nldb/SabouFM09,Brank05asurvey} 
+have already demonstrated. That is why we summarize these models according to a set of features, see Table~\ref{features-qos-models}. 
 This list is inspired in previous works but not exclusive in order to remark characteristics 
 to take into account when we want to re-use or extend some of the existing QoS models. 
 Each feature is evaluated following the next approaches:
@@ -337,7 +351,7 @@ Each feature is evaluated following the next approaches:
  \item Open ended questions using a word/sentence associated to the feature.
  \item Multiple choice using the Likert scale~\cite{albaum1997likert} value: 1-Strongly disagree, 2-Disagree, 3-Neither agree nor disagree, 4-Agree and 5-Strongly agree.
  \item Closed ended questions with a Yes (Y)/No (N) value. 
- \item Finally the symbol ``-'' is used to represent those unkown/missing/not applicable features.
+ \item Finally the symbol ``-'' is used to represent those unknown/missing/not applicable features.
 \end{itemize}
 
 \begin{table}[!ht]
@@ -350,7 +364,7 @@ Each feature is evaluated following the next approaches:
   Language & This feature indicates how data is modeled & Word/sentence associated \\ \hline
   Reasoning & The model enables some kind of reasoning process & Yes/No and Word/sentence associated  \\ \hline
   Accessibility & The model can be easily accessed in different context & Likert scale  \\ \hline
-  Adaptability & The model can be easily configured to meet new requiremens & Likert scale  \\ \hline
+  Adaptability & The model can be easily configured to meet new requirements & Likert scale  \\ \hline
   Auditability & The model provides a mechanism to know how it is working & Likert scale  \\ \hline
   Extensibility & The model can be easily extended & Likert scale  \\ \hline
   Flexibility & The model can be configured on-demand adding/removing features & Likert scale  \\ \hline  
@@ -359,7 +373,7 @@ Each feature is evaluated following the next approaches:
   Usability & The model can be easily configured and exploited & Likert scale  \\ \hline
   Standards & The model is based in the (re) use of standards and vocabularies (compliance) & Likert scale\ \\ \hline
   Licensing & The type of license & Word/sentence associated \\ \hline
-  Maturity & The model presents a gool level of maturity, development or presence & Likert scale\\ \hline
+  Maturity & The model presents a good level of maturity, development or presence & Likert scale\\ \hline
   Update & The model is frequently updated & Likert scale\\ \hline
 \hline
 \end{tabular}
@@ -402,15 +416,28 @@ Each feature is evaluated following the next approaches:
    QAComPS~\cite{dewqacomps} & OWL2 + SAWSDL & Y & 1 & 3 &3 &4 &4 &4 &4 &3 &4 &- &1 &1 \\ \hline
    ServiceRank~\cite{Wu:2009:CQS:1696051.1696105} & - & - & 1 & 3 &3 &2 &3 &34 &3 &2 &2 &- &2 &2 \\ \hline
    onQoS~\cite{Damiano:2009:OQL:1506129.1506143} & OWL + onQoS-QL & Y & 1 & 3 &3 &3 &4 &4 &4 &3 &2 &- &1 &1 \\ \hline
-   Prism & & & & & & & & & & & & & & \\ \hline
-   QoS Taxonomy~\cite{qos-taxonomy} & - & - & 1 & 3 & 3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline
-   Review 1 & & & & & & & & & & & & & & \\ \hline
-   Review 2 & & & & & & & & & & & & & & \\ \hline     
+   QoS \& SLAs~\cite{stantchev2009negotiating} & - & - & 1 & 4 & 4 &4 &4 &4 &4 &4 &3 &- &2 &2 \\ \hline
+   SOA \& Dependability~\cite{stantchev2011addressing} & - & - & 1 & 4 & 4 &4 &4 &4 &4 &4 &3 &- &2 &2 \\ \hline   
+   QoS Taxonomy~\cite{qos-taxonomy} & - & - & 1 & 3 & 3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline   
 \hline
 \end{tabular}
-\caption{Summary of Ontology-based frameworks for QoS management.}
+\caption{Summary of Ontology-based frameworks for QoS management.}\label{summary-features-qos-models}
   \end{center}
 \end{sidewaystable} 
 
-FIXME: COMMENT
+At a first glance and according to results in Table~\ref{summary-features-qos-models} it seems that most of the QoS models 
+based on semantics are not publicly available. Although in most of them some uses of OWL or SPARQL are very promising 
+to define profiles, restrictions, SLAs, ECA rules, etc. there is no way of re-using them avoiding one of the main 
+principles of semantic web technologies. In most of cases they have been developed within the execution of some 
+research project but, at the moment, are not up-to-date. Apart from that the number of QoS models implies that 
+there is no consensus in building a common set of QoS indicators and, maybe, this is one of the reasons that 
+prevents the real deployment of quality-based methods. Although the use of the Likert scale to evaluate 
+some features presents some disadvantages it can serve as a guide to ranking different approaches. As a final remark, semantic 
+technologies have been applied to QoS but violating some of the basic principles: 1) re-use of existing vocabularies and 2) 
+build on the top of a common and shared understanding. Further steps in this area should be the creation of a common set 
+of quality indicators and their representation using semantic web technologies with the aim of enabling a better 
+re-use of knowledge and dissemination. Although it is not easy to reach an agreement in a broad field like QoS some 
+minimal common definitions should be established. In this sense, the initiatives presented in Section~\ref{qos-cloud-index} 
+can be a step-forward to boost the application of QoS in real environments.
 
+\clearpage
