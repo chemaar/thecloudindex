@@ -349,36 +349,36 @@ is required. Each feature is evaluated following the next approaches:
 \hline
  % \textbf{Tool/Feature} & \textbf{Data model} & \textbf{Programming Language} & \textbf{Reasoning} & \textbf{Input Format} & \textbf{Output Format} & \textbf{Data integration} & \textbf{Architecture} & \textbf{Programming Model} & \textbf{API} & \textbf{Accesibility} & \textbf{Adaptability} & \textbf{Auditability} & \textbf{Elasticity} & \textbf{Extensibility} & \textbf{Flexibility} & \textbf{Interoperability} & \textbf{Portability} & \textbf{Usability} & \textbf{Security} & \textbf{Standards} & \textbf{Off-line processing} & \textbf{Real-time processing} & \textbf{Storage} & \textbf{Query} & \textbf{Dashboard} & \textbf{Licensing and pricing} & \textbf{Maturity} & \textbf{Presence} & \textbf{Update and evolution} & \textbf{Certification} & \textbf{Financial support} \\\hline
  \textbf{Tool/ Feature} & IEEE 1451 &  EEML~\cite{eeml} & SWE~\cite{sensorweb-wb} & SSN~\cite{Compton:2012:OPS:2400766.2401456} & Semantic Streams~\cite{Whitehouse:2006:SSF:2180141.2180148} & Storm~\cite{BigDataManing} & Impala~\cite{impala-project} & SPARK~\cite{zaharia2012discretized} & Druid~\cite{yangdruid} & S4~\cite{neumeyer2010s4}  & MapR~\cite{mapr-project}\\ \hline
-  Data model & TEDS~\footnote{Transducer electronic data sheet} & EEML & SensorML & OWL / RDF & -  & Topology &  &  &  &  & \\ \hline  
-  Programming Language & - &  Java & - & -& - & Java and JVM-based languages & Java & Scala, Java \& Python. & Java &  & \\ \hline  
-  Reasoning & - & - &  - & Y & Y & N & N & N & N &  & \\ \hline  
-  Formats & 1451.x & EEML & SensorML & RDF syntaxes & - & - & Sequence Files (Snappy, Avro, Gzip, Bzip, LZO etc.) & Hadoop Input Formats & - &  & \\ \hline  
+  Data model & TEDS~\footnote{Transducer electronic data sheet} & EEML & SensorML & OWL / RDF & -  & Topology & - & - & - & - & \\ \hline  
+  Programming Language & - &  Java & - & -& - & Java and JVM-based languages & Java & Scala, Java \& Python. & Java & Java & \\ \hline  
+  Reasoning & - & - &  - & Y & Y & N & N & N & N &  N & \\ \hline  
+  Formats & 1451.x & EEML & SensorML & RDF syntaxes & - & - & Sequence Files (Snappy, Avro, Gzip, Bzip, LZO etc.) & Hadoop Input Formats & - & - &Hadoop Input Formats \\ \hline  
   Data integration & Y & Y & Y  & Y & Y & N & N & N & N & N & N \\ \hline  
   Architecture & S/D~\footnote{Sensor/Distributed (cluster)} & S/D  & S/D  & S/D  & S/D & D & D & D & D  & D  & D  \\ \hline  
-  Programming Model & Service & Service & Service & - & -  & MapReduce~\footnote{It is based on MapReduce in the sense of batch processing.} & MapReduce & MapReduce &  &  & \\ \hline  
-  API & 1451.x & Pachube  & SOS~\footnote{Sensor Observation Service} and SPS~\footnote{Sensor Planning Service}  & - & Y & Y & Y & Y & Y  &  & \\ \hline  
-  Accesibility & 4 & 4 & 4 & 5 & 2 & 5 & 5 & 5 & 5 &  & \\ \hline  
-  Adaptability & 4 & 4& 5 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
-  Auditability & 3 &3 & 3 & 3 & 3 & 5 &  5& 4 & 3 &  & \\ \hline  
-  Elasticity & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 &4  &  & \\ \hline  
-  Extensibility & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
-  Flexibility &4  & 5& 5 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
-  Interoperability & 4 &5& 5 & 5 & 4 & 4 & 4 & 4& 3 &  & \\ \hline  
-  Portability & 4 &5 & 3 &5  & 4 & 5 & 5 & 5 & 3 &  & \\ \hline  
-  Usability & 3 &4 & 4 & 1 & 4 & 4 &5  & 4 & 3 &  & \\ \hline  
-  Security & 3 & 3& 3 & 3 & 3 & 4 & 5 & 3 & 3 &  & \\ \hline  
-  Standards & 5 & 4 & 5& 5 & 3 & 3 & 4 & 3 & 3 &  & \\ \hline  
-  Off-line processing & 3 &3  &3 & - & - & 2 & 4 & 4 & 4 &  & \\ \hline  
-  Real-time processing & 3 &4 & 4 & - & 4 & 5 & 4 & 4 & 4 &  & \\ \hline  
-  Storage & 3 &3 & 3 & 3 & 3 & 4 (DFS~\footnote{Distributed File System}) & HDFS & HDFS & -  &  & \\ \hline  
-  Query & - & Y& Y & Y (SPARQL) & Y  & Y (Trident) & Hive SQL & Hive SQL (iif Shark)  & Y (SQL-based) &  & \\ \hline  
-  Dashboard & 3 & 4 & 4 & 1 & 4 & 2 & 5 & 3 & 3 & 3 & \\ \hline  
-  Licensing and pricing & Open & Open & Fee on TGAR~\footnote{Total Gross Annual Revenue} & W3C & - & EPL v1.0 & Apache & Apache & GPL &  & \\ \hline  
-  Maturity & 4 & 4&  4& 2 & 4 & 5  & 5  & 4 & 4 &  & \\ \hline  
-  Presence & 4 & 4 & 5 & 2 & 2 & 4 & 5 & 4 & 5 &  & \\ \hline  
-  Update and evolution & 4 & 4 & 5  & 4 & 2 & 5 & 5 & 5 & 5 &  & \\ \hline  
-  Certification & 4 &4 & 5 & 2 & 2 & 3 & 5 & 4 & 3 &  & \\ \hline  
-  Financial support & 4 & 4&  5 & 2 & 3 & 4 & 5 & 4 (Apache Spark) & 4  &  & \\ \hline  
+  Programming Model & Service & Service & Service & - & -  & MapReduce~\footnote{It is based on MapReduce in the sense of batch processing.} & MapReduce & MapReduce & MapReduce &EP~\footnote{Event Processing}  &  MapReduce\\ \hline  
+  API & 1451.x & Pachube  & SOS~\footnote{Sensor Observation Service} and SPS~\footnote{Sensor Planning Service}  & - & Y & Y & Y & Y & Y  & Y & Y \\ \hline  
+  Accesibility & 4 & 4 & 4 & 5 & 2 & 5 & 5 & 5 & 5 & 5 & 5 \\ \hline  
+  Adaptability & 4 & 4& 5 & 5 & 4 & 5 & 5 & 5 & 4 & 5 & 5 \\ \hline  
+  Auditability & 3 &3 & 3 & 3 & 3 & 5 &  5& 4 & 3 & 4 & 4 \\ \hline  
+  Elasticity & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 &4  & 5 & 4 \\ \hline  
+  Extensibility & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 & 4 & 5 & 5 \\ \hline  
+  Flexibility &4  & 5& 5 & 5 & 4 & 5 & 5 & 5 & 4 & 5 & 5 \\ \hline  
+  Interoperability & 4 &5& 5 & 5 & 4 & 4 & 4 & 4& 3 & 4 & 4\\ \hline  
+  Portability & 4 &5 & 3 &5  & 4 & 5 & 5 & 5 & 3 & 5 & 5\\ \hline  
+  Usability & 3 &4 & 4 & 1 & 4 & 4 &5  & 4 & 3 & 4 & 4\\ \hline  
+  Security & 3 & 3& 3 & 3 & 3 & 4 & 5 & 3 & 3 & 3 & 4 \\ \hline  
+  Standards & 5 & 4 & 5& 5 & 3 & 3 & 4 & 3 & 3 & 4 & 4 \\ \hline  
+  Off-line processing & 3 &3  &3 & - & - & 2 & 4 & 4 & 4 & 3 & 5 \\ \hline  
+  Real-time processing & 3 &4 & 4 & - & 4 & 5 & 54 & 5 & 5 & 5 & 4  \\ \hline  
+  Storage & 3 &3 & 3 & 3 & 3 & 4 (DFS~\footnote{Distributed File System}) & HDFS & HDFS & -  & DFS & HDFS \\ \hline  
+  Query & - & Y& Y & Y (SPARQL) & Y  & Y (Trident) & Hive SQL & Hive SQL (iif Shark)  & Y (SQL-based) &  - & Hive SQL / Pig\\ \hline  
+  Dashboard & 3 & 4 & 4 & 1 & 4 & 2 & 5 & 3 & 3 & 3 & 4\\ \hline  
+  Licensing and pricing & Open & Open & Fee on TGAR~\footnote{Total Gross Annual Revenue} & W3C & - & EPL v1.0 & Apache & Apache & GPL & Apache  & M3 Edition is free, M5 \& M7 commercial licenses\\ \hline  
+  Maturity & 4 & 4&  4& 2 & 4 & 5  & 5  & 4 & 4 & 5 &4 \\ \hline  
+  Presence & 4 & 4 & 5 & 2 & 2 & 4 & 5 & 4 & 5 & 5 &5 \\ \hline  
+  Update and evolution & 4 & 4 & 5  & 4 & 2 & 5 & 5 & 5 & 5 & 4 &5\\ \hline  
+  Certification & 4 &4 & 5 & 2 & 2 & 3 & 5 & 4 & 3 & 4 & 3\\ \hline  
+  Financial support & 4 & 4&  5 & 2 & 3 & 4 & 5 & 4 (Apache Spark) & 4  & 4 (Apache S4) & 5 \\ \hline  
   
 \hline
 \end{tabular}
