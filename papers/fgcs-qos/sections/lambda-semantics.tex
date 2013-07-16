@@ -13,7 +13,19 @@ can be found:
  to re-compute results by performing a function on the raw data.
 \end{itemize}
 
-FIXME: EXPLAIN THE FRAMEWORK
+In order to depict a semantic-based framework for QoS management that can leverage existing datastream processing 
+tools such as those presented in Section~\ref{data-stream} and improve/boost the user experience (technicians and business users), 
+we present in Figure~\ref{fig:qos-framework} the building blocks to implement a semantic ``WatchDog''~\cite{watchdog} cloud pattern. This framework is build 
+upon any cloud to manage and control QoS indicators. As any knowledge-based system it comprises a knowledge layer in which 
+ontologies are used to represent a QoS model and the quality functions to be deployed on the monitoring tool. The formalization of a 
+QoS model is not an easy task since a lot of tries have been already done, see Section~\ref{qos-semantics}. Nevertheless the 
+effort of the CSMIC consortium in the creation of the SMI index, see Section~\ref{qos-cloud-index}, represents a good starting point to unify quality indicators 
+and metrics. Thus the proposed framework can be seen as an implementation of the SMI index but modeling the index (structure and computation process) 
+using semantic web technologies such as SPARQL and the RDF Data Cube vocabulary (a W3C recommendation to represent statistical data). 
+The second layer outlines some required capabilities to support lowering and lifting processes~\cite{DBLP:journals/jucs/RodriguezRMPGP12} 
+between the abstract QoS model and the real execution in the monitoring tool. Since SPARQL queries can be translated into SQL (or Pig~\cite{Schatzle:2011:PMS:1999299.1999303}) queries 
+it is obvious than any execution framework supporting a SQL-based language (or Apache Hadoop) can execute our semantic model generating new observations in RDF. Furthermore a dashboard is also provided to manage quality indicators. In this case 
+tools such as CubeViz enable the automatic visualization of RDF Data Cube observations easing the creation and customization of the graphical interface.
 
 \begin{figure}[!ht]
 \centering
@@ -22,9 +34,7 @@ FIXME: EXPLAIN THE FRAMEWORK
  \label{fig:qos-framework}
 \end{figure}
 
-
-
-Therefore Figure~\ref{fig:lambda-qos} depicts the building blocks and layers of the Lambda architecture with 
+On the other hand Figure~\ref{fig:lambda-qos} outlines the layers of the Lambda architecture (in this case the monitoring tool) with 
 an adaptation to support semantics. 
 
 \begin{itemize}
