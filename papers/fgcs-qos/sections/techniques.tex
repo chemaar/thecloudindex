@@ -349,10 +349,10 @@ is required. Each feature is evaluated following the next approaches:
 \hline
  % \textbf{Tool/Feature} & \textbf{Data model} & \textbf{Programming Language} & \textbf{Reasoning} & \textbf{Input Format} & \textbf{Output Format} & \textbf{Data integration} & \textbf{Architecture} & \textbf{Programming Model} & \textbf{API} & \textbf{Accesibility} & \textbf{Adaptability} & \textbf{Auditability} & \textbf{Elasticity} & \textbf{Extensibility} & \textbf{Flexibility} & \textbf{Interoperability} & \textbf{Portability} & \textbf{Usability} & \textbf{Security} & \textbf{Standards} & \textbf{Off-line processing} & \textbf{Real-time processing} & \textbf{Storage} & \textbf{Query} & \textbf{Dashboard} & \textbf{Licensing and pricing} & \textbf{Maturity} & \textbf{Presence} & \textbf{Update and evolution} & \textbf{Certification} & \textbf{Financial support} \\\hline
  \textbf{Tool/ Feature} & IEEE 1451 &  EEML~\cite{eeml} & SWE~\cite{sensorweb-wb} & SSN~\cite{Compton:2012:OPS:2400766.2401456} & Semantic Streams~\cite{Whitehouse:2006:SSF:2180141.2180148} & Storm~\cite{BigDataManing} & Impala~\cite{impala-project} & SPARK~\cite{zaharia2012discretized} & Druid~\cite{yangdruid} & S4~\cite{neumeyer2010s4}  & MapR~\cite{mapr-project}\\ \hline
-  Data model & TEDS~\footnote{Transducer electronic data sheet} & EEML & SensorML & OWL / RDF & -  & Topology & - & - & - & - & \\ \hline  
-  Programming Language & - &  Java & - & -& - & Java and JVM-based languages & Java & Scala, Java \& Python. & Java & Java & \\ \hline  
+  Data model & TEDS~\footnote{Transducer electronic data sheet} & EEML & SensorML & OWL / RDF & -  & Topology & - & - & - & - & - \\ \hline  
+  Programming Language & - &  Java & - & -& - & Java and JVM-based languages & Java & Scala, Java \& Python. & Java & Java &  Java\\ \hline  
   Reasoning & - & - &  - & Y & Y & N & N & N & N &  N & \\ \hline  
-  Formats & 1451.x & EEML & SensorML & RDF syntaxes & - & - & Sequence Files (Snappy, Avro, Gzip, Bzip, LZO etc.) & Hadoop Input Formats & - & - &Hadoop Input Formats \\ \hline  
+  Formats & 1451.x & EEML & SensorML & RDF syntax~\footnote{RDF/XML normative syntax, Turtle, N3, etc.} & - & - & Sequence Files (Snappy, Avro, Gzip, Bzip, LZO etc.) & Hadoop Input Formats & - & - &Hadoop Input Formats \\ \hline  
   Data integration & Y & Y & Y  & Y & Y & N & N & N & N & N & N \\ \hline  
   Architecture & S/D~\footnote{Sensor/Distributed (cluster)} & S/D  & S/D  & S/D  & S/D & D & D & D & D  & D  & D  \\ \hline  
   Programming Model & Service & Service & Service & - & -  & MapReduce~\footnote{It is based on MapReduce in the sense of batch processing.} & MapReduce & MapReduce & MapReduce &EP~\footnote{Event Processing}  &  MapReduce\\ \hline  
@@ -392,37 +392,37 @@ is required. Each feature is evaluated following the next approaches:
 \begin{center}
 \begin{tabular}[c]{|p{1.7cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
 \hline
- \textbf{Tool/ Feature}  &  Streaming SPARQL~\cite{Bolles:2008:SSE:1789394.1789438} & C-SPARQL~\cite{Barbieri:2010:EEC:1739041.1739095} & CQELS~\cite{deri2010} & EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} & WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} & QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} & SAOR~\cite{DBLP:journals/ijswis/HoganHP09} & Pig SPARQL~\cite{Schatzle:2011:PMS:1999299.1999303} & H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058} & Hadoop SPARQL~\cite{liuhadoopsparql}  \\ \hline
-  Data model &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Programming Language &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Reasoning &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Formats &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Data integration &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Architecture &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Programming Model &  &   &  &  &  &  &  &  &  & \\ \hline  
-  API &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Accesibility &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Adaptability &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Auditability &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Elasticity &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Extensibility &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Flexibility &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Interoperability &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Portability &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Usability &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Security &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Standards &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Off-line processing &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Real-time processing &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Storage &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Query &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Dashboard &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Licensing and pricing &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Maturity &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Presence &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Update and evolution &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Certification &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Financial support &  &   &  &  &  &  &  &  &  & \\ \hline  
+ \textbf{Tool/ Feature}  &  Streaming SPARQL~\cite{Bolles:2008:SSE:1789394.1789438} & C-SPARQL~\cite{Barbieri:2010:EEC:1739041.1739095} & CQELS~\cite{deri2010} & EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} & WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} & QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} & SAOR~\cite{DBLP:journals/ijswis/HoganHP09} & Pig SPARQL~\cite{Schatzle:2011:PMS:1999299.1999303}& Hadoop SPARQL~\cite{liuhadoopsparql} & H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058}   \\ \hline
+  Data model & OWL / RDF & OWL / RDF   &  & OWL / RDF & - & - &  OWL / RDF & - & - & -\\ \hline  
+  Programming Language & Java & Java  & Java & Java & Java &  Java & Java &  Java &  Java & Java \\ \hline  
+  Reasoning & N & N  & N & Y & Y (RDFS / OWL-Horst backward) & Y (RDFS / OWL-Horst backward) & Y (OWL / RDFS) & N & N & N \\ \hline  
+  Formats & RDF syntax & RDF syntax  &RDF syntax  & RDF syntax & Hadoop Input Formats & Hadoop Input Formats & - & Hadoop Input Formats & Hadoop Input Formats & RDF syntax\\ \hline  
+  Data integration & Y & Y & Y & Y &  N & N & N & N & N & Y\\ \hline  
+  Architecture & C~\footnote{Centralized} & C  &  D& C & D & D & D & D & D & D\\ \hline  
+  Programming Model & MapReduce & Events  & Events & Events &  MapReduce &  MapReduce & - & MapReduce & MapReduce & MapReduce\\ \hline  
+  API & N & Y  & Y & Y & N & N & N & N & N & N \\ \hline  
+  Accesibility & 3 & 4  & 4  & 4 & 4 & 4 & 4 & 3 & 2 & 3\\ \hline  
+  Adaptability & 4 & 3  & 4 & 4 & 3 & 4 & 4 & 3 & 3 & 3\\ \hline  
+  Auditability & 2 & 2  & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 3\\ \hline  
+  Elasticity & 3 & 2  & 4 & 4 & 3 & 4 & 4 & 4 & 4 & 4\\ \hline  
+  Extensibility & 3 & 2  & 4 & 4 & 4 & 4 & 3 & 3 & 3 &4 \\ \hline  
+  Flexibility & 2 & 2  & 3  & 4 & 3 & 3 & 3 & 4 & 3 & 4\\ \hline  
+  Interoperability & 4 & 3  & 4 &4  & 4 & 4 & 4 & 3 & 3 & 4\\ \hline  
+  Portability & 4 & 3  & 4 & 4 & 4 & 4 & 4 & 4 & 3 &4 \\ \hline  
+  Usability & 2 & 2  & 3 & 4 & 4 & 4 & 4 & 4 & 3 & 4\\ \hline  
+  Security & 3 & 2  & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3\\ \hline  
+  Standards & 4 & 4  & 4 & 4 & 4 & 4 & 4 & 3 & 3 & 4\\ \hline  
+  Off-line processing & 4 & 2  & 2 & 2 & 4 & 4 & 4 & 4 & 4 & 4\\ \hline  
+  Real-time processing & 2 & 4  & 4 & 4 & 2 & 2 & 2 & 2 & 2 & 3\\ \hline  
+  Storage &  M~\footnote{Memory}&M  & - & M &  HDFS & HDFS & - & HDFS & HDFS &HDFS \\ \hline  
+  Query & Y (SPARQL) & Y (SPARQL)  & Y (CQELS language) & Y (SPARQL) & Y (SPARQL) & Y (SPARQL) & - & Y (SPARQL / Pig) & Y (SPARQL) & Y (SPARQL)\\ \hline  
+  Dashboard & N & N &  & N & N & N & N & N & N & N\\ \hline  
+  Licensing and pricing & - & CC BY-NC-SA 3.0  & LGPLv3.0 & GPL (Etalis Engine) & Apache & Apache & - & -  & - & GPL \\ \hline  
+  Maturity & 2 &  3 & 4 & 4 & 4 & 4 & 4  & 3 & 2 & 3\\ \hline  
+  Presence & 2 &  3 & 3 & 4 & 2 & 2  & 3 & 2 & 2 & 2\\ \hline  
+  Update and evolution & 2 & 2  & 4 & 4 & 2 & 2 & 3 & 3 & 2 & 3\\ \hline  
+  Certification & 1 & 1  & 3 & 3 & 2 & 2 & 2 & 3 & 2 & 3\\ \hline  
+  Financial support & 1 & 1  & 3 & 3 & 2 & 2 & 3 & 3 & - & 3\\ \hline  
 
 \hline
 \end{tabular}
