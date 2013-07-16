@@ -102,7 +102,7 @@ All of them use their own internal data models, cluster processing, a formal que
 predictive analytics. In this context Impala~\cite{impala-project}, SPARK~\cite{zaharia2012discretized}, Sparrow~\cite{ousterhout2013sparrow},
 Shark~\cite{DBLP:conf/sigmod/XinRZFSS13}, S4~\cite{neumeyer2010s4}, Druid~\cite{yangdruid} or MapR~\cite{mapr-project} technologies to name a 
 few deliver such predictive services on big data through off-line and real-time queries. Usually they 
-also take advantage of: 1) programming languages with functional and parallel capabilities such as Scala, Clojure or Python; 
+also take advantage of: 1) programming languages with functional and parallel capabilities such as Scala, Clojure, Erlang or Python; 
 2) NoSQL stores and 3) MapReduce-based frameworks such as Apache Hadoop. Finally an advanced dashboard to manage jobs is 
 commonly provided as a graphical interface for controlling the distributed execution and the results of predictive 
 analysis functions.
@@ -306,8 +306,7 @@ is required. Each feature is evaluated following the next approaches:
   Data model & This feature indicates how data is represented & Word/sentence associated \\ \hline
   Programming Language & The programming language used to implement this tool/technique & Word/sentence associated \\ \hline
   Reasoning & The tool enables some kind of reasoning process & Yes/No and Word/sentence associated  \\ \hline
-  Input Format & The input formats that the technique can process & Word/sentence associated  \\ \hline
-  Output Format & The output format that the technique can generate & Word/sentence associated  \\ \hline
+  Formats & The input formats that the technique can process & Word/sentence associated  \\ \hline
   Data integration & The tool enables the consumption of different datasources &  Yes/No \\ \hline
   Architecture & The type of architecture for data processing & Word/sentence associated\\ \hline
   Programming Model & The type of programming model for data processing  & Word/sentence associated\\ \hline
@@ -326,11 +325,11 @@ is required. Each feature is evaluated following the next approaches:
   Off-line processing & The technique enables off-line/batch processing & Yes/No  \\ \hline
   Real-time processing & The technique enables real-time processing & Yes/No  \\ \hline
   Storage & The database to store data &  Word/sentence associated \\ \hline
-  Query & The formal query language to accesss to results & Word/sentence associated\\ \hline
+  Query & The formal query language to accesss to results & Yes/No\\ \hline
   Dashboard & The technique provides a graphical tool to manage processes, export data, etc. & Likert scale\ \\ \hline
   Licensing and pricing & The type of license & Word/sentence associated \\ \hline
-  Maturity & The level of maturity or development of the tool & Likert scale\\ \hline
-  Presence & The level of presence in existing products & Likert scale\\ \hline
+  Maturity & The tool has reached a good level of maturity or development & Likert scale\\ \hline
+  Presence & The tool has reached a good level of presence in existing products & Likert scale\\ \hline
   Update and evolution & The tool is frequently updated & Likert scale\\ \hline
   Certification & The tool provides courses and other methods to learn its use & Likert scale\\ \hline
   Financial support & The tool is supported for investors/venture capital, etc. & Likert scale\\ \hline
@@ -349,38 +348,37 @@ is required. Each feature is evaluated following the next approaches:
 \begin{tabular}[c]{|p{1.7cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
 \hline
  % \textbf{Tool/Feature} & \textbf{Data model} & \textbf{Programming Language} & \textbf{Reasoning} & \textbf{Input Format} & \textbf{Output Format} & \textbf{Data integration} & \textbf{Architecture} & \textbf{Programming Model} & \textbf{API} & \textbf{Accesibility} & \textbf{Adaptability} & \textbf{Auditability} & \textbf{Elasticity} & \textbf{Extensibility} & \textbf{Flexibility} & \textbf{Interoperability} & \textbf{Portability} & \textbf{Usability} & \textbf{Security} & \textbf{Standards} & \textbf{Off-line processing} & \textbf{Real-time processing} & \textbf{Storage} & \textbf{Query} & \textbf{Dashboard} & \textbf{Licensing and pricing} & \textbf{Maturity} & \textbf{Presence} & \textbf{Update and evolution} & \textbf{Certification} & \textbf{Financial support} \\\hline
- \textbf{Tool/ Feature} & IEEE 1451 &  EEML~\cite{eeml} & SWE~\cite{sensorweb-wb} & SSN~\cite{Compton:2012:OPS:2400766.2401456} & Semantic Streams~\cite{Whitehouse:2006:SSF:2180141.2180148} & Storm~\cite{BigDataManing} & Impala~\cite{impala-project} & SPARK~\cite{zaharia2012discretized} & S4~\cite{neumeyer2010s4} & Druid~\cite{yangdruid} & MapR~\cite{mapr-project}\\ \hline
-   Data model &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Programming Language &  &   &  & & &  &  &  &  &  & \\ \hline  
-  Reasoning &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Input Format &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Output Format &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Data integration & & &   &  &  &  &  &  &  &  & \\ \hline  
-  Architecture &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Programming Model & & &   &  &  &  &  &  &  &  & \\ \hline  
-  API &  &   &  &  & & &  &  &  &  & \\ \hline  
-  Accesibility &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Adaptability &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Auditability &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Elasticity &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Extensibility &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Flexibility &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Interoperability &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Portability &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Usability &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Security &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Standards &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Off-line processing &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Real-time processing &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Storage &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Query &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Dashboard &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Licensing and pricing &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Maturity &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Presence &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Update and evolution &  &  & &  &  &  &  &  &  &  & \\ \hline  
-  Certification &  & &  &  &  &  &  &  &  &  & \\ \hline  
-  Financial support &  & & &  &  &  &  &  &  &  & \\ \hline  
+ \textbf{Tool/ Feature} & IEEE 1451 &  EEML~\cite{eeml} & SWE~\cite{sensorweb-wb} & SSN~\cite{Compton:2012:OPS:2400766.2401456} & Semantic Streams~\cite{Whitehouse:2006:SSF:2180141.2180148} & Storm~\cite{BigDataManing} & Impala~\cite{impala-project} & SPARK~\cite{zaharia2012discretized} & Druid~\cite{yangdruid} & S4~\cite{neumeyer2010s4}  & MapR~\cite{mapr-project}\\ \hline
+  Data model & TEDS~\footnote{Transducer electronic data sheet} & EEML & SensorML & OWL / RDF & -  & Topology &  &  &  &  & \\ \hline  
+  Programming Language & - &  Java & - & -& - & Java and JVM-based languages & Java & Scala, Java \& Python. & Java &  & \\ \hline  
+  Reasoning & - & - &  - & Y & Y & N & N & N & N &  & \\ \hline  
+  Formats & 1451.x & EEML & SensorML & RDF syntaxes & - & - & Sequence Files (Snappy, Avro, Gzip, Bzip, LZO etc.) & Hadoop Input Formats & - &  & \\ \hline  
+  Data integration & Y & Y & Y  & Y & Y & N & N & N & N & N & N \\ \hline  
+  Architecture & S/D~\footnote{Sensor/Distributed (cluster)} & S/D  & S/D  & S/D  & S/D & D & D & D & D  & D  & D  \\ \hline  
+  Programming Model & Service & Service & Service & - & -  & MapReduce~\footnote{It is based on MapReduce in the sense of batch processing.} & MapReduce & MapReduce &  &  & \\ \hline  
+  API & 1451.x & Pachube  & SOS~\footnote{Sensor Observation Service} and SPS~\footnote{Sensor Planning Service}  & - & Y & Y & Y & Y & Y  &  & \\ \hline  
+  Accesibility & 4 & 4 & 4 & 5 & 2 & 5 & 5 & 5 & 5 &  & \\ \hline  
+  Adaptability & 4 & 4& 5 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
+  Auditability & 3 &3 & 3 & 3 & 3 & 5 &  5& 4 & 3 &  & \\ \hline  
+  Elasticity & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 &4  &  & \\ \hline  
+  Extensibility & 4 & 4& 4 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
+  Flexibility &4  & 5& 5 & 5 & 4 & 5 & 5 & 5 & 4 &  & \\ \hline  
+  Interoperability & 4 &5& 5 & 5 & 4 & 4 & 4 & 4& 3 &  & \\ \hline  
+  Portability & 4 &5 & 3 &5  & 4 & 5 & 5 & 5 & 3 &  & \\ \hline  
+  Usability & 3 &4 & 4 & 1 & 4 & 4 &5  & 4 & 3 &  & \\ \hline  
+  Security & 3 & 3& 3 & 3 & 3 & 4 & 5 & 3 & 3 &  & \\ \hline  
+  Standards & 5 & 4 & 5& 5 & 3 & 3 & 4 & 3 & 3 &  & \\ \hline  
+  Off-line processing & 3 &3  &3 & - & - & 2 & 4 & 4 & 4 &  & \\ \hline  
+  Real-time processing & 3 &4 & 4 & - & 4 & 5 & 4 & 4 & 4 &  & \\ \hline  
+  Storage & 3 &3 & 3 & 3 & 3 & 4 (DFS~\footnote{Distributed File System}) & HDFS & HDFS & -  &  & \\ \hline  
+  Query & - & Y& Y & Y (SPARQL) & Y  & Y (Trident) & Hive SQL & Hive SQL (iif Shark)  & Y (SQL-based) &  & \\ \hline  
+  Dashboard & 3 & 4 & 4 & 1 & 4 & 2 & 5 & 3 & 3 & 3 & \\ \hline  
+  Licensing and pricing & Open & Open & Fee on TGAR~\footnote{Total Gross Annual Revenue} & W3C & - & EPL v1.0 & Apache & Apache & GPL &  & \\ \hline  
+  Maturity & 4 & 4&  4& 2 & 4 & 5  & 5  & 4 & 4 &  & \\ \hline  
+  Presence & 4 & 4 & 5 & 2 & 2 & 4 & 5 & 4 & 5 &  & \\ \hline  
+  Update and evolution & 4 & 4 & 5  & 4 & 2 & 5 & 5 & 5 & 5 &  & \\ \hline  
+  Certification & 4 &4 & 5 & 2 & 2 & 3 & 5 & 4 & 3 &  & \\ \hline  
+  Financial support & 4 & 4&  5 & 2 & 3 & 4 & 5 & 4 (Apache Spark) & 4  &  & \\ \hline  
   
 \hline
 \end{tabular}
@@ -395,11 +393,10 @@ is required. Each feature is evaluated following the next approaches:
 \begin{tabular}[c]{|p{1.7cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
 \hline
  \textbf{Tool/ Feature}  &  Streaming SPARQL~\cite{Bolles:2008:SSE:1789394.1789438} & C-SPARQL~\cite{Barbieri:2010:EEC:1739041.1739095} & CQELS~\cite{deri2010} & EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} & WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} & QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} & SAOR~\cite{DBLP:journals/ijswis/HoganHP09} & Pig SPARQL~\cite{Schatzle:2011:PMS:1999299.1999303} & H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058} & Hadoop SPARQL~\cite{liuhadoopsparql}  \\ \hline
-   Data model &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Data model &  &   &  &  &  &  &  &  &  & \\ \hline  
   Programming Language &  &   &  &  &  &  &  &  &  & \\ \hline  
   Reasoning &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Input Format &  &   &  &  &  &  &  &  &  & \\ \hline  
-  Output Format &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Formats &  &   &  &  &  &  &  &  &  & \\ \hline  
   Data integration &  &   &  &  &  &  &  &  &  & \\ \hline  
   Architecture &  &   &  &  &  &  &  &  &  & \\ \hline  
   Programming Model &  &   &  &  &  &  &  &  &  & \\ \hline  
