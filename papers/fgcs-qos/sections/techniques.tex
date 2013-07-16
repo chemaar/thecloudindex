@@ -41,7 +41,7 @@ cloud resources.
 
 First efforts to address the data stream challenges were made in the IEEE 1451 
 definition, the Radiation Detection Standards (ANSI N42), the OGC Sensor Web 
-Enablement (SWE)~\cite{sensorweb-wb,} or the Extended Environments Markup Language~\cite{eeml} (EEML). 
+Enablement (SWE)~\cite{sensorweb-wb} or the Extended Environments Markup Language~\cite{eeml} (EEML). 
 They followed a domain-specific approach that cannot be easily applied in other 
 contexts. A standard with a broader application was the Sensor Web Enablement 
 standard which was implemented by the 52º North project~\cite{52project}, the NASA/JPL~\cite{nasajpl}
@@ -125,7 +125,7 @@ sense C-SPARQL is supposed to be more stable than StreamSPARQL and it also
 provides a service for splitting the continuous queries into two groups: static 
 and dynamic which are merged through orchestration service binding the required 
 facts when new RDF triples arise. A complete summary and tutorial on semantic 
-stream reasoning is provided in [73]. Authors also outline all the features that 
+stream reasoning is provided in~\cite{stream-reasoning-linked-data}. Authors also outline all the features that 
 stream reasoning should address such as the use of continuous semantics instead 
 of ``static'' semantics. In~\cite{deri2010} authors present the Continuous Query Evaluation 
 over Linked Streams (CQELS) project to unify data coming from both the Linked 
@@ -181,12 +181,12 @@ into Pig Latin for the scalable processing of complex queries on very large RDF
 datasets. They introduce PigSPARQL, a system which processes the SPARQL queries 
 as Map/Reduce jobs, and make an evaluation using the benchmark SP2Bench (a 
 specific SPARQL performance benchmark) getting good results. Following a similar 
-approach HadoopSPARQL [85] is a tool that allows user to submit multiple queries 
+approach HadoopSPARQL~\cite{liuhadoopsparql} is a tool that allows user to submit multiple queries 
 at the same time. These queries are handled by an algorithm that is in charge of 
 creating and distributing sub queries using Map/Reduce jobs. In~\cite{FarhanHusain:2009:SRL:1695659.1695734} authors 
 present a work to store RDF in HDFS (Hadoop File System) and an algorithm to ask 
-SPARQL queries. H2RDF [87], Jena-HBase~\cite{DBLP:conf/semweb/KhadilkarKTC12} and the proposal in [90] are similar 
-works trying to manage large RDF datasets and execute distributed SPARQL queries. 
+SPARQL queries. H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058}, Jena-HBase~\cite{DBLP:conf/semweb/KhadilkarKTC12} and the proposal in~\cite{maindonald2007data} 
+are similar works trying to manage large RDF datasets and execute distributed SPARQL queries. 
 
 \item The use of the R statistics package is widely accepted in the Big 
 Data community to make decisions, predictions or analysis and perform statistical methods on large datasets. In 
@@ -237,12 +237,12 @@ adequately the allocation of resources in the cloud.
 \end{itemize}
 
 \subsection{Summary and Evaluation}
-This section presents a summary of the aforementioned techniques with the aim
+This section presents a summary of the most relevant aforementioned techniques with the aim
 of establishing a factsheet and a tool for making decisions when a technique 
-has to be selected for some use. We have created a set of feature, see Table~\ref{features-techniques}, 
+has to be selected for some use. We have created a set of features, see Table~\ref{features-techniques}, 
 to list those references that present some evidence for validating its application 
 and contribution to datastream and big data processing. This list is not exclusive 
-but remarks main characteristics to take into account when a monitoring tool 
+but remarks main characteristics to take into account when a monitoring tool/technique 
 is required. Each feature is evaluated following the next techniques:
 \begin{itemize}
  \item Open ended questions using a word/sentence associated to the feature, for instance ``Apache Hadoop'' or ``SQL''.
@@ -345,11 +345,41 @@ is required. Each feature is evaluated following the next techniques:
 \tiny
 \begin{center}
 %\begin{tabular}[c]{|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.6cm}|p{0.6cm}|p{0.7cm}|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.8cm}|}
-\begin{tabular}[c]{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
+\begin{tabular}[c]{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
 \hline
  % \textbf{Tool/Feature} & \textbf{Data model} & \textbf{Programming Language} & \textbf{Reasoning} & \textbf{Input Format} & \textbf{Output Format} & \textbf{Data integration} & \textbf{Architecture} & \textbf{Programming Model} & \textbf{API} & \textbf{Accesibility} & \textbf{Adaptability} & \textbf{Auditability} & \textbf{Elasticity} & \textbf{Extensibility} & \textbf{Flexibility} & \textbf{Interoperability} & \textbf{Portability} & \textbf{Usability} & \textbf{Security} & \textbf{Standards} & \textbf{Off-line processing} & \textbf{Real-time processing} & \textbf{Storage} & \textbf{Query} & \textbf{Dashboard} & \textbf{Licensing and pricing} & \textbf{Maturity} & \textbf{Presence} & \textbf{Update and evolution} & \textbf{Certification} & \textbf{Financial support} \\\hline
- \textbf{Tool/ Feature} & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline
-  Data model & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline 
+ \textbf{Tool/ Feature} & IEEE 1451 &  EEML~\cite{eeml} & SWE~\cite{sensorweb-wb} & SSN~\cite{Compton:2012:OPS:2400766.2401456} & Semantic Streams~\cite{Whitehouse:2006:SSF:2180141.2180148} & Storm~\cite{BigDataManing} & Impala~\cite{impala-project} & SPARK~\cite{zaharia2012discretized} & S4~\cite{neumeyer2010s4} & Druid~\cite{yangdruid} & MapR~\cite{mapr-project}\\ \hline
+   Data model &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Programming Language &  &   &  & & &  &  &  &  &  & \\ \hline  
+  Reasoning &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Input Format &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Output Format &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Data integration & & &   &  &  &  &  &  &  &  & \\ \hline  
+  Architecture &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Programming Model & & &   &  &  &  &  &  &  &  & \\ \hline  
+  API &  &   &  &  & & &  &  &  &  & \\ \hline  
+  Accesibility &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Adaptability &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Auditability &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Elasticity &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Extensibility &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Flexibility &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Interoperability &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Portability &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Usability &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Security &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Standards &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Off-line processing &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Real-time processing &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Storage &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Query &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Dashboard &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Licensing and pricing &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Maturity &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Presence &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Update and evolution &  &  & &  &  &  &  &  &  &  & \\ \hline  
+  Certification &  & &  &  &  &  &  &  &  &  & \\ \hline  
+  Financial support &  & & &  &  &  &  &  &  &  & \\ \hline  
   
 \hline
 \end{tabular}
@@ -363,8 +393,39 @@ is required. Each feature is evaluated following the next techniques:
 \begin{center}
 \begin{tabular}[c]{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|} 
 \hline
- \textbf{Tool/ Feature} & SSN &  Streaming SPARQL & C-SPARQL & CQELS & EP-SPARQL & WebPIE & QueryPIE & SAOR & Pig SPARQL & Hadoop SPARQL  \\ \hline
-  Data model & IEEE 1451 &  EEML & SWE & Semantic Streams & Storm & Impala & SPARK & S4 & Druid & MapR\\ \hline  \\ \hline
+ \textbf{Tool/ Feature}  &  Streaming SPARQL~\cite{Bolles:2008:SSE:1789394.1789438} & C-SPARQL~\cite{Barbieri:2010:EEC:1739041.1739095} & CQELS~\cite{deri2010} & EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} & WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} & QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} & SAOR~\cite{DBLP:journals/ijswis/HoganHP09} & Pig SPARQL~\cite{Schatzle:2011:PMS:1999299.1999303} & H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058} & Hadoop SPARQL~\cite{liuhadoopsparql}  \\ \hline
+   Data model &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Programming Language &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Reasoning &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Input Format &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Output Format &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Data integration &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Architecture &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Programming Model &  &   &  &  &  &  &  &  &  & \\ \hline  
+  API &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Accesibility &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Adaptability &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Auditability &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Elasticity &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Extensibility &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Flexibility &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Interoperability &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Portability &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Usability &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Security &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Standards &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Off-line processing &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Real-time processing &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Storage &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Query &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Dashboard &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Licensing and pricing &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Maturity &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Presence &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Update and evolution &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Certification &  &   &  &  &  &  &  &  &  & \\ \hline  
+  Financial support &  &   &  &  &  &  &  &  &  & \\ \hline  
+
 \hline
 \end{tabular}
 \caption{Selected Tools and Techniques (II).}\label{table:tools-ii}
