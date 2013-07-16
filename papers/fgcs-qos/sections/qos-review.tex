@@ -327,11 +327,12 @@ in~\cite{DBLP:conf/icsoc/KourtesisP11}.
 
 \subsection{Summary and Evaluation}
 This section presents a summary of the most relevant aforementioned semantic approaches for QoS management 
-with the aim of establishing a simple but real comparison. The evaluation of ``quality'' in ontologies 
-is not a mere process as some works~\cite{DBLP:conf/dexa/dAquinSSS07,DBLP:conf/nldb/SabouFM09,Brank05asurvey} have already demonstrated. 
-That is why we summarize these models according to a set of features, see Table~\ref{features-qos-models}. This list is inspired in previous works but 
-not exclusive in order to remark characteristics to take into account when we want to re-use or extend some of 
-the existing QoS models. Each feature is evaluated following the next approaches:
+with the aim of establishing a simple but empirical comparison among the different QoS models. 
+The evaluation of ``quality'' in ontologies is not a mere process as some works~\cite{DBLP:conf/dexa/dAquinSSS07,DBLP:conf/nldb/SabouFM09,Brank05asurvey} have already demonstrated. 
+That is why we summarize these models according to a set of features, see Table~\ref{features-qos-models}. 
+This list is inspired in previous works but not exclusive in order to remark characteristics 
+to take into account when we want to re-use or extend some of the existing QoS models. 
+Each feature is evaluated following the next approaches:
 \begin{itemize}
  \item Open ended questions using a word/sentence associated to the feature.
  \item Multiple choice using the Likert scale~\cite{albaum1997likert} value: 1-Strongly disagree, 2-Disagree, 3-Neither agree nor disagree, 4-Agree and 5-Strongly agree.
@@ -346,9 +347,9 @@ the existing QoS models. Each feature is evaluated following the next approaches
 \begin{tabular}[c]{|p{2.5cm}|p{5cm}|p{3cm}|} 
 \hline
   \textbf{Feature} &  \textbf{Definition}  &  \textbf{Type} \\\hline
-  Logic & This feature indicates how data is represented under a certain logic formalism & Word/sentence associated \\ \hline
+  Language & This feature indicates how data is modeled & Word/sentence associated \\ \hline
   Reasoning & The model enables some kind of reasoning process & Yes/No and Word/sentence associated  \\ \hline
-  Accessibility & The model can be easily used in different context & Likert scale  \\ \hline
+  Accessibility & The model can be easily accessed in different context & Likert scale  \\ \hline
   Adaptability & The model can be easily configured to meet new requiremens & Likert scale  \\ \hline
   Auditability & The model provides a mechanism to know how it is working & Likert scale  \\ \hline
   Extensibility & The model can be easily extended & Likert scale  \\ \hline
@@ -358,7 +359,7 @@ the existing QoS models. Each feature is evaluated following the next approaches
   Usability & The model can be easily configured and exploited & Likert scale  \\ \hline
   Standards & The model is based in the (re) use of standards and vocabularies (compliance) & Likert scale\ \\ \hline
   Licensing & The type of license & Word/sentence associated \\ \hline
-  Maturity & The level of maturity, development or presence of the model & Likert scale\\ \hline
+  Maturity & The model presents a gool level of maturity, development or presence & Likert scale\\ \hline
   Update & The model is frequently updated & Likert scale\\ \hline
 \hline
 \end{tabular}
@@ -372,42 +373,44 @@ the existing QoS models. Each feature is evaluated following the next approaches
 \tiny
 \begin{center}
 %\begin{tabular}[c]{|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.6cm}|p{0.6cm}|p{0.7cm}|p{0.5cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.8cm}|}
-\begin{tabular}[c]{|p{2.5cm}|p{1cm}|p{1.2cm}|p{1.2cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|} 
+\begin{tabular}[c]{|p{2.5cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|} 
 \hline
-  \textbf{Model/ Feature} & \textbf{Logic} & \textbf{Reasoning} & \textbf{Access.} & \textbf{Adapt.} & \textbf{Audit.} & \textbf{Extens.} & \textbf{Flex.} & \textbf{Interoper.} & \textbf{Port.} & \textbf{Usability} & \textbf{Standards} & \textbf{Licensing} & \textbf{Maturity} & \textbf{Update} \\ \hline
-   SERA~\cite{Ejarque:2008:USR:1443230.1444322} & & & & & & & & & & & & & & \\ \hline
-   OReSS~\cite{2009gdc..conf..221Y} & & & & & & & & & & & & & & \\ \hline
-   SITIO~\cite{Garcia-Sanchez:2010:ASS:1852403.1852409} & & & & & & & & & & & & & & \\ \hline
-   Cloud Recommender~\cite{DBLP:conf/gecon/ZhangRNMH12} & & & & & & & & & & & & & & \\ \hline
-   FP7 4WARD~\cite{5682131} & & & & & & & & & & & & & & \\ \hline
-   SRC~\cite{DBLP:conf/soca/ChenL10} & & & & & & & & & & & & & & \\ \hline
-   Cloudle~\cite{5682131} & & & & & & & & & & & & & & \\ \hline
-   IRPS~\cite{6206823} & & & & & & & & & & & & & & \\ \hline
-   RASIC~\cite{Buyya:2010:IUF:2143583.2143586} & & & & & & & & & & & & & & \\ \hline
-   SAMM~\cite{fg-2266} & & & & & & & & & & & & & & \\ \hline
-   QoSMONaaS~\cite{srt-15} & & & & & & & & & & & & & & \\ \hline
-   IRMOS~\cite{DBLP:conf/compsac/CucinottaAA10}  & & & & & & & & & & & & & & \\ \hline
-   QoS model~\cite{Mabrouk:2009:SEQ:1564601.1564724} & & & & & & & & & & & & & & \\ \hline
-   Maximilien~\cite{Maximilien:2004:FOD:1024866.1025003} & & & & & & & & & & & & & & \\ \hline
-   MOQ~\cite{Kim:2007:MWS:1359823.1359827} & & & & & & & & & & & & & & \\ \hline
-   Papaioannou\cite{Papaioannou:2006:QOL:1129027.1129054} & & & & & & & & & & & & & & \\ \hline
-   Dobson~\cite{Dobson:2006:TUQ:1173701.1174285} & & & & & & & & & & & & & & \\ \hline
-   Marchetti~\cite{Marchetti:2004:QMM:1013367.1013377} & & & & & & & & & & & & & & \\ \hline
-   WiQoSM~\cite{Resta:2008:WIQ:1340085.1340215} & & & & & & & & & & & & & & \\ \hline
-   QoSOnt~\cite{Dobson:2005:QQO:1090946.1091252} & & & & & & & & & & & & & & \\ \hline
-   eCloudManager~\cite{Haase:2010:STE:1940334.1940342} & & & & & & & & & & & & & & \\ \hline
-   mOSAIC~\cite{Cretella:2012:UMS:2428736.2428805} & & & & & & & & & & & & & & \\ \hline
-   Q-Clouds~\cite{Nathuji:2010:QMP:1755913.1755938} & & & & & & & & & & & & & & \\ \hline
-   QAComPS~\cite{dewqacomps}  & & & & & & & & & & & & & & \\ \hline
-   ServiceRank~\cite{Wu:2009:CQS:1696051.1696105} & & & & & & & & & & & & & & \\ \hline
-   onQoS~\cite{Damiano:2009:OQL:1506129.1506143} & & & & & & & & & & & & & & \\ \hline
+  \textbf{Model/ Feature} & \textbf{Language} & \textbf{Reasoning} & \textbf{Access.} & \textbf{Adapt.} & \textbf{Audit.} & \textbf{Extens.} & \textbf{Flex.} & \textbf{Interoper.} & \textbf{Port.} & \textbf{Usability} & \textbf{Standards} & \textbf{Licensing} & \textbf{Maturity} & \textbf{Update} \\ \hline
+   SERA~\cite{Ejarque:2008:USR:1443230.1444322} & OWL & Y & 1 & 3 & 4 & 3 & 2 & 4 & 3 & 3 & 4 & - (Project) & 2 & 2 \\ \hline
+   OReSS~\cite{2009gdc..conf..221Y} & OWL & Y & 1 & 2 & 3 & 4 & 4 & 2 & 2 & 3 & 4 & - (Project) & 2 & 2 \\ \hline
+   SITIO~\cite{Garcia-Sanchez:2010:ASS:1852403.1852409} & OWL + Rules & Y & 1 & 4 & 4  & 3 & 4 & 3 & 4 & 4 & 4 & -(Project) & 2 & 2 \\ \hline
+   Cloud Recommender~\cite{DBLP:conf/gecon/ZhangRNMH12} & - & 1 & 4 & 3 & 4 & 2 & 2 & 3 & 2 & 4 & 3 & - & 2 & 1 \\ \hline
+   FP7 4WARD~\cite{5682131} & OWL & Y & 3 & 2 & 4 & 2 & 2 & 3 & 2& 3 & 3 & -& 1 & 1 \\ \hline
+   SRC~\cite{DBLP:conf/soca/ChenL10} & OWL & Y & 1 & 3 & 3 & 4 & 2 & 2 &3 & 3  & 3 & - & 2 & 2 \\ \hline
+   Cloudle~\cite{5682131} & OWL & Y & 1 & 2 & 4 & 3& 2& 2 & 3& 2& 3& -&2 &1 \\ \hline
+   IRPS~\cite{6206823} & OWL + RDQL& Y & 1 & 4&3 &4 & 3& 4& 2& 3& 2& -&1&1 \\ \hline
+   RASIC~\cite{Buyya:2010:IUF:2143583.2143586} &- & -& 1 & 4 & 4& 3& 4& 4& 4& 3& -&1 &1 \\ \hline
+   SAMM~\cite{fg-2266} & OWL + ESPER & Y & 1 & 4&4 &4 &4 &4 & 4& 3& 3&- & 1&1 \\ \hline
+   QoSMONaaS~\cite{srt-15} & OWL + CEP + SLA& Y & 1&3 &4 &4 & 4& 4& 3& 4& 3& -& 1&1 \\ \hline
+   IRMOS~\cite{DBLP:conf/compsac/CucinottaAA10}  & -&- &1 & 3& 4& 4& 4& 2& 2& 2& 3& -&2 &2 \\ \hline
+   QoS model~\cite{Mabrouk:2009:SEQ:1564601.1564724} & WSQM & - &1 &4 &2 &4 &4 &4 &2 &2 &4 &- &1 &1 \\ \hline
+   Maximilien~\cite{Maximilien:2004:FOD:1024866.1025003} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+   MOQ~\cite{Kim:2007:MWS:1359823.1359827} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+   Papaioannou\cite{Papaioannou:2006:QOL:1129027.1129054} & OWL & Y & 1&3 &3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline
+   Dobson~\cite{Dobson:2006:TUQ:1173701.1174285} & OWL & Y & 1&3 &4 &4 &4 &4 &3 &4 &4 &- &1 &1 \\ \hline
+   Marchetti~\cite{Marchetti:2004:QMM:1013367.1013377} & - & - & 1 &2 &2 &2 &2 &2 &2 &3 &3 &- &1 &1 \\ \hline
+   WiQoSM~\cite{Resta:2008:WIQ:1340085.1340215} & - & - & 1 &2 &2 &2 &2 &2 &2 &2 &2 &- &1 &1 \\ \hline
+   QoSOnt~\cite{Dobson:2005:QQO:1090946.1091252} & OWL & Y & 1&  &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+   eCloudManager~\cite{Haase:2010:STE:1940334.1940342} & RDF & Y & 1& 3 &3 &3 &3 &3 &3 &2 &4 &- &1 &1 \\ \hline
+   mOSAIC~\cite{Cretella:2012:UMS:2428736.2428805} & OWL-S + SPARQL & Y & 1 & 4 &4 &4 &4 &3 &3 &4 &4 &- &1 &1 \\ \hline
+   Q-Clouds~\cite{Nathuji:2010:QMP:1755913.1755938} & MIMO & - & 1 & 3 &3 &4 &4 &3 &3 &3 &3 &- &1 &1 \\ \hline
+   QAComPS~\cite{dewqacomps} & OWL2 + SAWSDL & Y & 1 & 3 &3 &4 &4 &4 &4 &3 &4 &- &1 &1 \\ \hline
+   ServiceRank~\cite{Wu:2009:CQS:1696051.1696105} & - & - & 1 & 3 &3 &2 &3 &34 &3 &2 &2 &- &2 &2 \\ \hline
+   onQoS~\cite{Damiano:2009:OQL:1506129.1506143} & OWL + onQoS-QL & Y & 1 & 3 &3 &3 &4 &4 &4 &3 &2 &- &1 &1 \\ \hline
    Prism & & & & & & & & & & & & & & \\ \hline
-   QoS Taxonomy~\cite{qos-taxonomy} & & & & & & & & & & & & & & \\ \hline
+   QoS Taxonomy~\cite{qos-taxonomy} & - & - & 1 & 3 & 3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline
    Review 1 & & & & & & & & & & & & & & \\ \hline
    Review 2 & & & & & & & & & & & & & & \\ \hline     
 \hline
 \end{tabular}
-\caption{Selected Tools and Techniques (I).}
+\caption{Summary of Ontology-based frameworks for QoS management.}
   \end{center}
 \end{sidewaystable} 
+
+FIXME: COMMENT
 
