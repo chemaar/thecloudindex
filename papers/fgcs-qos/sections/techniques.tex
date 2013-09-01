@@ -80,13 +80,12 @@ presented with special focus on storage, stream processing, analytics and some a
 \begin{itemize}
  \item In the case of storage, RDF triple stores such as Sesame, Apache Jena 
 (Joseki), RISC-3X, YARS2, Oracle Semantic, OWLim, OpenLink Virtuoso have gained 
-importance in recent times due to the deployment of the Linked Open Data 
-initiative~\cite{Auer:2007:DNW:1785162.1785216}. Most of them are based on a SQL-backend and offer distinct 
+importance in recent times due to the deployment of the Linked Open Data initiative. Most of them are based on a SQL-backend and offer distinct 
 services such as basic reasoning processes and a query service via a SPARQL 
 endpoint. The main focus of these repositories is the scalability in terms of 
 the number of triples they can manage. There is mainly adequate when data do not 
 change frequently and a better performance can be reached applying well-known 
-techniques of indexing. Moreover the current initiative of NoSQL databases~\cite{NoSQLdistilled} 
+techniques of indexing. Moreover the current initiative of NoSQL databases 
 brings the opportunity of using new representation and retrieving models (key-value, document oriented, column-family or graph) to deal with the vast amount of data in contexts such as Social Media 
 or in our case of study data coming from dozen of applications.
 
@@ -161,7 +160,7 @@ is being addressed in WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} and QueryPIE~\
 implemented in the context of the LarKC project. These projects show how to use 
 a Map/Reduce framework for building an inference engine. WebPIE is focused on 
 the calculation of the transitive closure of OWL semantics, more specifically 
-RDFS and OWL-Horst~\cite{terHorst:2005:CDC:1741305.1741318}. This inference engine proposes a scalable technique to 
+RDFS and OWL-Horst. This inference engine proposes a scalable technique to 
 parallelize OWL Horst forward inference over $100$ billion of RDF triples. The 
 main drawback of this approach lies in the necessity of executing the whole 
 reasoning process when new facts arise that is why it cannot be considered 
@@ -169,11 +168,10 @@ adequate for stream reasoning. On the other hand and with the objective of
 processing dynamic data QueryPIE offers a backward inference engine to execute 
 queries over large datasets performing a reasoning process before retrieving 
 results. This approach is similar to the traditional backtracking technique used 
-in Prolog engines. In this context of reasoning over large datasets, in~\cite{Hogan:2008:SAR:1484143.1484150,DBLP:journals/ijswis/HoganHP09,Umbrich:2012:IRL:2415113.2415129,Umbrich:2012:FUW:2413941.2413963} 
+in Prolog engines. In this context of reasoning over large datasets, in~\cite{DBLP:journals/ijswis/HoganHP09,Umbrich:2012:IRL:2415113.2415129,Umbrich:2012:FUW:2413941.2413963} 
 a system to compute the closure of RDF graphs is also presented but it 
 only supports a fragment of OWL Horst to enable efficient materialization and 
-(live) query processing on the Linked Data realm. In~\cite{Weaver:2009:PMF:1693684.1693728} a straightforward 
-parallel RDFS reasoning on a cluster is also presented.
+(live) query processing on the Linked Data realm. 
 
 \item As we have seen in the previous works the implementation of SPARQL 
 extensions to be executed in a distributed environment is currently a good 
