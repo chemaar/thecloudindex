@@ -46,6 +46,7 @@
 \usepackage[utf8]{inputenc}
 % \usepackage{multirow}
 
+\usepackage{natbib}
 \usepackage{url}
 \usepackage{rotating}
 
@@ -110,23 +111,34 @@
 \title{Semantic-based QoS management in Cloud Systems: Current Status and Future Challenges}
 
 
+ \author[seerc]{Dimitrios Kourtesis}
+ \ead{dkourtesis@seerc.org}
+ 
+ \author[seerc]{Jose Mar\'{i}a Alvarez-Rodr\'{i}guez\corref{cor1}}
+ \ead{jmalvarez@seerc.org}
+ 
+ \author[seerc]{Iraklis Paraskakis}
+ \ead{iparaskakis@seerc.org}
+ 
+ \cortext[cor1]{Corresponding author}
+ \address[seerc]{South East European Research Centre (SEERC), 24 Proxenou Koromila Street, Thessaloniki, 54622, Greece}
+
+    
 %% use optional labels to link authors explicitly to addresses:
+
+% \author[label3]{Dimitrios Kourtesis}
+% \address[label2]{The South East European Research Center, 54622, Thessaloniki, Greece.}
+% \ead{dkourtesis@seerc.org}
+% 
 % \author[label1]{Jose María Alvarez-Rodríguez\corref{cor1}}
-% \address[label1]{The South East European Research Center, Thessaloniki, Greece.}
+% \address[label1]{The South East European Research Center, 54622, Thessaloniki, Greece.}
 % \ead{jmalvarez@seerc.org}
 % \ead[url]{http://www.seerc.org}
 % 
-% \author[label2]{José Emilio Labra-Gayo}
-% \address[label2]{WESO Research Group, Department of Computer Science, University of Oviedo, 33007, Oviedo, Spain.}
-% \ead{labra@uniovi.es}
-% 
-% \author[label3]{Alejandro Rodríguez-González}
-% \address[label3]{Bioinformatics at Centre for Plant Biotechnology and Genomics UPM-INIA, Polytechnic University of Madrid, Madrid, Spain.}
-% \ead{alejandro.rodriguezg@upm.es}
-% 
-% \author[label4]{Patricia Ordoñez De Pablos}
-% \address[label4]{WESO Research Group, Department of Business Administration, University of Oviedo, 33007, Oviedo, Spain.}
-% \ead{patriop@uniovi.es}
+% \author[label2]{Iraklis Paraskakis}
+% \address[label2]{The South East European Research Center, 54622, Thessaloniki, Greece.}
+% \ead{iparaskakis@seerc.org}
+
 
 
 
@@ -148,20 +160,17 @@ self-management components based on domain knowledge in which both functional
 and nonfunctional properties of cloud components can be optimized in terms of 
 cost, efficiency or reliability easing the transition to an advanced resource 
 provisioning process. On the other hand, semantics and ontologies have emerged 
-as part of the Artificial Intelligence to afford a common and standard data 
-model that eases the interoperability, integration and monitoring of 
+to afford a common and standard data model that eases the interoperability, integration and monitoring of 
 knowledge-based systems. Furthermore the Linked Data initiative as practical 
 view of the Semantic Web has posed the baseline technology to easily integrate, 
 enrich and consume data in a distributed system. Taking into account the 
 necessity of an intelligent system to manage QoS in Cloud Systems and the 
-emerging application of semantics, ontologies and Linked Data in different 
-domains, this paper reviews the main approaches for semantic-based QoS 
-management as well as the principal methods, techniques and standards for 
-processing and exploiting diverse data providing advanced real-time monitoring 
-services. A semantic-based framework is also outlined taking into account the 
-QoS requirements and capabilities of semantic technologies and distributed 
-datastream processing techniques. 
-Finally a discussion of existing efforts and challenges are also provided to suggest future directions.
+emerging application of semantics in different domains, this paper reviews the 
+main approaches for semantic-based QoS management as well as the principal methods, techniques and standards for 
+processing and exploiting diverse data providing advanced real-time monitoring services. 
+A semantic-based framework is also outlined taking into account the QoS requirements and capabilities of semantic technologies and distributed 
+datastream processing techniques. Finally a discussion of existing efforts 
+and challenges are also provided to suggest future directions.
 \end{abstract}
 
 \begin{keyword}
@@ -212,19 +221,16 @@ collaboration between the academic and industrial areas fostering both the open
 issues and the generated know-how among all interested parties.
 
 \section{Acknowledgements}\label{sect:ack}
-This work is part of the · FP7 Marie Curie Initial Training Network ``RELATE'' (cod. 264840) and developed in the context of the workpackage 4 and more 
-specifically under the project ``Quality Management in Service-based Systems and Cloud Applications''.
+The research leading to these results has received funding from the European Union’s Seventh Framework Programme (FP7-PEOPLE-2010-ITN) 
+under grant agreement n°264840 and developed in the context of the workpackage 4 and more specifically under the project 
+``Quality Management in Service-based Systems and Cloud Applications''.
 
-% To-do
-% 3-Explain in detail lambda architecture
-% 5-Conclusions
-% 6-Reponse to reviewers
 
 
 % 
 % \nocite{*}
+%\bibliographystyle{elsarticle-num}
 \bibliographystyle{plain}
-% %\bibliographystyle{unsrt}
 % % %\bibliographystyle{acm}
 \bibliography{cloud-references,linked-data,references}
  % \renewcommand{\bibname}{References}
