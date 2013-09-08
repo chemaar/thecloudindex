@@ -1,0 +1,31 @@
+% Since 
+The vast amount of cloud infrastructures, platforms and services are 
+becoming a major challenge for technicians and IT/Business managers. According 
+to FIXME one of the next big things in this environmens lies in the creation 
+of cloud brokers that can automatically fulfill the requirements of an application, user 
+or organization in an automatic way. In this the accomplishment of QoS indicators, 
+SLA aggremeents, ECA rules, etc. is consider a key-enabler to enable the creation 
+of cloud brokers. The aim of these brokers is then the simplification and 
+the transition to other cloud services helping to overcome some issues such as 
+the recommendation of service (XaaS) providers according to a profile. Cloud brokering 
+is consider as an accelerant to help organizations to overcome their initial lack 
+of experience and to manage the different service levels of an organization.
+
+Therefore a cloud service brokerage (CSB) FIXME: Gartner,is a kind of services intermediation 
+``in which a company or other entity adds value to one or more (generally public or hybrid, but possibly private) 
+cloud services on behalf of one or more consumers of that service''. Some of the capabilities of a 
+CSB must include: governance, community management, service enrichment and deliver, distributed quality of service, 
+analytics and operational intelligence and SaaS and custom SaaS (to support business processes). 
+Although its benefiting rating is set as ``High'', the market penetration is just ``1\% to 5\% of target audience'' 
+and its maturity is still in an ``Adolescent'' status. According to the ``MUST'' capabilities of a CSB it 
+seems that a QoS-driven CSB can really help organizations to improve or deploy the business models 
+using a cloud infrastructure. Nevertheless a right deployment of a CSB will depend on its capability 
+to process diverse data and perform analytics processes in an adequate fashion. Furthermore 
+the use CSB is supposed to be used for both technicians and business users to make their 
+own decisions in different aspects: 1) select a service provider or an API and 2) select 
+the ``best'' cloud infrastructure for organization business.
+
+
+
+
+
