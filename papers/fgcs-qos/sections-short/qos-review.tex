@@ -81,22 +81,22 @@ they do not need to do any inter-node query. The main drawback of this approach
 lies in the necessity of ensuring synced multiple copies of OWL definitions on 
 all nodes.
 
-In~\cite{cloudle} a search engine and an architecture for cloud systems (Cloudle) is 
-outlined to semantically look up services according to a user profile. The 
-Cloudle system works as follows: a user send a query through a web interface, 
-cloud providers are registered in the system with a rating, a service discovery 
-agent works by means of a query processor that takes the user profile and 
-performs a similarity reasoning process against registered services trying to 
-optimize price and time-slots. Two ontologies have been also designed in order to 
-assist this similarity reasoning process and are used to improve the accuracy of 
-results. The difference between these two ontologies lies in their structure, 
-the first one only includes a concept hierarchy and the second one also includes 
-individuals, semantic relationships, etc. that improves the performance of the 
-similarity matchmaking process providing reasoning over data type and object 
-properties and concepts. The main finding of this study is that an enriched 
-ontology can improve the selection of cloud services. However all concepts, 
-properties, etc. are defined by the authors from the scratch without any reuse 
-of existing standard concepts.
+% In~\cite{cloudle} a search engine and an architecture for cloud systems (Cloudle) is 
+% outlined to semantically look up services according to a user profile. The 
+% Cloudle system works as follows: a user send a query through a web interface, 
+% cloud providers are registered in the system with a rating, a service discovery 
+% agent works by means of a query processor that takes the user profile and 
+% performs a similarity reasoning process against registered services trying to 
+% optimize price and time-slots. Two ontologies have been also designed in order to 
+% assist this similarity reasoning process and are used to improve the accuracy of 
+% results. The difference between these two ontologies lies in their structure, 
+% the first one only includes a concept hierarchy and the second one also includes 
+% individuals, semantic relationships, etc. that improves the performance of the 
+% similarity matchmaking process providing reasoning over data type and object 
+% properties and concepts. The main finding of this study is that an enriched 
+% ontology can improve the selection of cloud services. However all concepts, 
+% properties, etc. are defined by the authors from the scratch without any reuse 
+% of existing standard concepts.
 
 In~\cite{6206823} authors introduce the system Inter-cloud Resource Provisioning System 
 (IRPS) to accomplish the requirements of a customer to the maximum providing 
@@ -281,15 +281,15 @@ trust model for managing resources efficiently in cloud providers. Thus a
 reliable model is provided and validated against different datasets but no 
 semantics is used in any process. 
 
-QAComPS, a quality-aware federated computational semantic web service for 
-computational  modelers, is presented in~\cite{dewqacomps} to provide a 
-federated QABroker based on ontologies and making use of OWL2 features. 
-Basically they perform a matchmaking reasoning process for discovering and 
-selecting services according to a set of characteristics to meet user 
-requirements. A SAWSDL interface is also used to transfer semantic annotation 
-to/from the QAComPS service and QABroker. The final objective is to demonstrate 
-a promising framework to make cloud computing more accessible and cost effective 
-for computational modelers.
+% QAComPS, a quality-aware federated computational semantic web service for 
+% computational  modelers, is presented in~\cite{dewqacomps} to provide a 
+% federated QABroker based on ontologies and making use of OWL2 features. 
+% Basically they perform a matchmaking reasoning process for discovering and 
+% selecting services according to a set of characteristics to meet user 
+% requirements. A SAWSDL interface is also used to transfer semantic annotation 
+% to/from the QAComPS service and QABroker. The final objective is to demonstrate 
+% a promising framework to make cloud computing more accessible and cost effective 
+% for computational modelers.
 
 Authors present in~\cite{stantchev2009negotiating} an approach (a three-step method) 
 to map SLAs and QoS requirements of business processes. They formalize the capabilities 
@@ -395,7 +395,7 @@ Each feature is evaluated following the next approaches:
    Cloud Recommender~\cite{DBLP:conf/gecon/ZhangRNMH12} & - & 1 & 4 & 3 & 4 & 2 & 2 & 3 & 2 & 4 & 3 & - & 2 & 1 \\ \hline
    FP7 4WARD~\cite{5682131} & OWL & Y & 3 & 2 & 4 & 2 & 2 & 3 & 2& 3 & 3 & -& 1 & 1 \\ \hline
    SRC~\cite{DBLP:conf/soca/ChenL10} & OWL & Y & 1 & 3 & 3 & 4 & 2 & 2 &3 & 3  & 3 & - & 2 & 2 \\ \hline
-   Cloudle~\cite{5682131} & OWL & Y & 1 & 2 & 4 & 3& 2& 2 & 3& 2& 3& -&2 &1 \\ \hline
+  % Cloudle~\cite{5682131} & OWL & Y & 1 & 2 & 4 & 3& 2& 2 & 3& 2& 3& -&2 &1 \\ \hline
    IRPS~\cite{6206823} & OWL + RDQL& Y & 1 & 4&3 &4 & 3& 4& 2& 3& 2& -&1&1 \\ \hline
    RASIC~\cite{Buyya:2010:IUF:2143583.2143586} &- & -& 1 & 4 & 4& 3& 4& 4& 4& 3& 3&-&1 &1 \\ \hline
    SAMM~\cite{fg-2266} & OWL + ESPER & Y & 1 & 4&4 &4 &4 &4 & 4& 3& 3&- & 1&1 \\ \hline
