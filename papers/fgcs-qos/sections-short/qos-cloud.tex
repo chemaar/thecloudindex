@@ -30,30 +30,32 @@ manage multiple clouds, build for the future, support the whole application life
 In this sense OASIS just launched a CAMP TC to create and inter-operable protocol that cloud 
 implementers can use to package and deploy their applications. The idea is to provide a set of REST services, at the PaaS layer, to foster an ecosystem of 
 common tools, plug-ins, libraries and frameworks, which will allow vendors to offer greater value-add. In the particular case of QoS, the use of standards to gather data 
-from applications can improve the process of making decisions about resource provisioning or help in saving costs among others. Nevertheless 
-this specification is still in an early stage and its objectives are more focused on the management of cross-cloud applications than a 
-real management from QoS point of view. Following main characteristics of the CAMP specification are presented:
-\begin{itemize}
- \item It is a language, framework and platform neutral to manage in the same way Java, Ruby on Rails or Node.js applications.
- \item It only covers interactions between a cloud consumer and a provider~\cite{mell2011nist}.
- \item It supports the management of the entire lifecycle of the application not just the deployment of isolated components.
- \item A major objective of the specification is to provide an inter-operable environment. They are trying to keep simple as 
- possible but with the possibility of being extended by third-parties.
-\end{itemize}
+from applications can improve the process of making decisions about resource provisioning or help in saving costs among others.
+
+% Nevertheless this specification is still in an early stage and its objectives are more focused on the management of cross-cloud applications than a 
+% real management from QoS point of view. Following main characteristics of the CAMP specification are presented:
+% \begin{itemize}
+%  \item It is a language, framework and platform neutral to manage in the same way Java, Ruby on Rails or Node.js applications.
+%  \item It only covers interactions between a cloud consumer and a provider~\cite{mell2011nist}.
+%  \item It supports the management of the entire lifecycle of the application not just the deployment of isolated components.
+%  \item A major objective of the specification is to provide an inter-operable environment. They are trying to keep simple as 
+%  possible but with the possibility of being extended by third-parties.
+% \end{itemize}
 
 Although there is no a clear objective to support quality indicators it can be considered as a major effort to unify information exposed by providers and 
 improve the creation of an integrated and inter-operable ecosystem in which existing cloud management application platforms such 
 as RightScale, Enstratus, ScaleUp, Cloudability, Cloudyn, CloudExpress or MyGravitant can take advantage of implemented 
-added-value services on the top of a common API. Although these commercial products offer a very good option 
-to manage cloud-based applications there is a lack of standardization and some QoS features cannot be managed.  
-Nevertheless these existing cloud management platforms present some interesting features and services for 
-multi-cloud management that must be taken into account in the design of a dedicated cloud quality management platform such as:
-\begin{itemize}
- \item Integrated management of cloud resources: compute, networking and storage.
- \item Organization: tagging capabilities or creation of profiles and views to group cloud resources.
- \item Accessibility and usability: monitoring (tracking and graphing custom metrics), dashboard or import capabilities.
- \item Custom services: creation of alerts using a particular set of indicators, cost forecasting or reporting.
-\end{itemize}
+added-value services on the top of a common API. 
+
+% Although these commercial products offer a very good option to manage cloud-based applications there is a lack of standardization and some QoS features cannot be managed.  
+% Nevertheless these existing cloud management platforms present some interesting features and services for 
+% multi-cloud management that must be taken into account in the design of a dedicated cloud quality management platform such as:
+% \begin{itemize}
+%  \item Integrated management of cloud resources: compute, networking and storage.
+%  \item Organization: tagging capabilities or creation of profiles and views to group cloud resources.
+%  \item Accessibility and usability: monitoring (tracking and graphing custom metrics), dashboard or import capabilities.
+%  \item Custom services: creation of alerts using a particular set of indicators, cost forecasting or reporting.
+% \end{itemize}
 
 %Policy making
 On the other hand there is an interesting approach to manage cloud quality indicators using a policy-making 
@@ -100,29 +102,32 @@ As a consequence common features and requirements can be extracted from the exis
 \end{itemize}
 
 Following this perspective of creating a quantitative index the Cloud Computing community~\cite{Maiya:2012:QMC:2353730.2353862,DBLP:conf/quatic/KlemsBW12} 
-and some of the big players have launched some relevant indexes such as:
+and some of the big players have launched some relevant indexes such as: the Service Measurement Index (SMI) by the Cloud Services 
+Measurement Initiative Consortium (CSMIC) consortium, he Cisco Global Cloud Index (GCI) by Cisco, the CSC Cloud Usage index or 
+or the VMWare Cloud index.
 
-\begin{itemize}
- \item The Service Measurement Index (SMI) by the Cloud Services Measurement Initiative Consortium (CSMIC) consortium. It is 
- based on a framework of critical key performance indicators (both business and technical) \textit{associated attributes, and measures 
- that provide a standardized method for measuring and comparing a business service regardless of whether that service is internally provided or sourced from an outside company for any cloud service (IaaS, PaaS, SaaS, etc.). It is designed to become a 
- standard method to help organizations measure cloud-based services based on their specific business and technology requirements.} As 
- an implementation of the SMI Index the ``Ranking Clouds''~\cite{DBLP:journals/fgcs/GargVB13} presents a framework to manage this index 
- and makes a ranking of different PaaS providers using the Analytic Hierarchy Process (AHP) method to weight some key performance indicators.
- 
- \item The Cisco Global Cloud Index (GCI) by Cisco. \textit{It is an ongoing effort to forecast the growth of global data 
- center and cloud-based IP traffic. The forecast includes trends associated with data center virtualization and cloud computing. }
- It also provides a visual representation of countries ranging  from ``Cloud Prepared'' to ``Cloud Emerging''.
-
- \item The CSC Cloud Usage index. It is an index created through a survey of more than $3500$ cloud computing users 
- in eight countries around the world. The survey is focused on capturing user information about outcomes and 
- experiences rather than predictions and intentions.
-
- \item The VMWare Cloud index. It is an study conducted by Forrester Consulting and ITR in Japan. \textit{The 2012 study surveyed 
- approximately $6500$ senior IT practitioners across the APJ region in eleven countries / regions with the aim of establishing 
- top cloud drivers and concerns in the community.}
-
-\end{itemize}
+% 
+% \begin{itemize}
+%  \item The Service Measurement Index (SMI) by the Cloud Services Measurement Initiative Consortium (CSMIC) consortium. It is 
+%  based on a framework of critical key performance indicators (both business and technical) \textit{associated attributes, and measures 
+%  that provide a standardized method for measuring and comparing a business service regardless of whether that service is internally provided or sourced from an outside company for any cloud service (IaaS, PaaS, SaaS, etc.). It is designed to become a 
+%  standard method to help organizations measure cloud-based services based on their specific business and technology requirements.} As 
+%  an implementation of the SMI Index the ``Ranking Clouds''~\cite{DBLP:journals/fgcs/GargVB13} presents a framework to manage this index 
+%  and makes a ranking of different PaaS providers using the Analytic Hierarchy Process (AHP) method to weight some key performance indicators.
+%  
+%  \item The Cisco Global Cloud Index (GCI) by Cisco. \textit{It is an ongoing effort to forecast the growth of global data 
+%  center and cloud-based IP traffic. The forecast includes trends associated with data center virtualization and cloud computing. }
+%  It also provides a visual representation of countries ranging  from ``Cloud Prepared'' to ``Cloud Emerging''.
+% 
+%  \item The CSC Cloud Usage index. It is an index created through a survey of more than $3500$ cloud computing users 
+%  in eight countries around the world. The survey is focused on capturing user information about outcomes and 
+%  experiences rather than predictions and intentions.
+% 
+%  \item The VMWare Cloud index. It is an study conducted by Forrester Consulting and ITR in Japan. \textit{The 2012 study surveyed 
+%  approximately $6500$ senior IT practitioners across the APJ region in eleven countries / regions with the aim of establishing 
+%  top cloud drivers and concerns in the community.}
+% 
+% \end{itemize}
 
 As final remark, the creation of a quantitative index of QoS indicators seems to be a promising approach because 
 it represents a joint effort to establish a common set of KPI's and it can be applied to the different cloud types and models. Furthermore 
