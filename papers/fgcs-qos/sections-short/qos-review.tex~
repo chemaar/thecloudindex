@@ -118,7 +118,7 @@ semantic interoperability between heterogeneous cooperating clouds.
 
 
 A cloud computing ontology is proposed in~\cite{secloud12} to ease the semantic 
-identification, discovery and access to cloud services Moreover, a tool that 
+identification, discovery and access to cloud services. Moreover, a tool that 
 semi-automatically annotates cloud services and stores their semantic 
 description is also introduced. Authors create ontologies and taxonomies trying 
 to capture existing concepts and relationships in a cloud environment. 
@@ -211,17 +211,16 @@ user mobility and context awareness of application services. QoS is considered
 as an end-to-end basis by covering QoS features of all resources and actors 
 involved in service provisioning such as network, device, service or end-user. 
 The use of semantics appears to represent and enrich QoS features making use of 
-the Web Service Quality Model (WSQM). Additionally this model is supposed to be 
-extensible in specific domains where QoS factors are required. The main focus of 
-this approach is the semantic representation through ontologies rather than 
-specifying a new vocabulary for QoS. Similar to this approach appears other 
-old-QoS models Maximilien~\cite{Maximilien:2004:FOD:1024866.1025003}, MOQ~\cite{Kim:2007:MWS:1359823.1359827}, 
-QoSOnt~\cite{Dobson:2005:QQO:1090946.1091252}, Papaioannou~\cite{Papaioannou:2006:QOL:1129027.1129054}, Dobson~\cite{Dobson:2006:TUQ:1173701.1174285}, 
-Marchetti~\cite{Marchetti:2004:QMM:1013367.1013377} or WiQoSM~\cite{Resta:2008:WIQ:1340085.1340215} that partially support issues and criteria 
-such as semantic description of QoS features, device mobility and capabilities, 
-network performance,  environment characteristics, adaptation, context 
-awareness, user requirements among others. In most of cases these models are not 
-up-to-date and are more focused on web services than QoS in cloud systems.
+the Web Service Quality Model (WSQM).
+
+% Additionally this model is supposed to be extensible in specific domains where QoS factors are required. The main focus of 
+% this approach is the semantic representation through ontologies rather than 
+% specifying a new vocabulary for QoS. Similar to this approach appears other 
+% old-QoS models Maximilien, MOQ, QoSOnt, Papaioannou, Dobson, Marchetti or WiQoSM that partially support issues and criteria 
+% such as semantic description of QoS features, device mobility and capabilities, 
+% network performance,  environment characteristics, adaptation, context 
+% awareness, user requirements among others. In most of cases these models are not 
+% up-to-date and are more focused on web services than QoS in cloud systems.
 
 
 In~\cite{DBLP:conf/woa/Talia11} author makes a review of the marriage between clouds and agents 
@@ -248,10 +247,10 @@ user. This problem is considered to be a NP-hard problem. Furthermore in a
 dynamic environment the resolution of this problem becomes more complex. The 
 main outcome of this work is an algorithm guided by a heuristic that provides 
 the appropriate ground for QoS composition in dynamic service environments. 
-Finally an evaluation of the efficiency of the algorithm is also presented. From 
-a semantics point of view there is no any relevant advance and it is just a 
-matchmaking service for discovering and selecting services according to a set of 
-QoS constraints.
+% Finally an evaluation of the efficiency of the algorithm is also presented. From 
+% a semantics point of view there is no any relevant advance and it is just a 
+% matchmaking service for discovering and selecting services according to a set of 
+% QoS constraints.
 
 mOSAIC~\cite{Cretella:2012:UMS:2428736.2428805} is a an Open-Source API and 
 Platform for Multiple Clouds that uses ontologies and semantics for providing a 
@@ -281,15 +280,15 @@ trust model for managing resources efficiently in cloud providers. Thus a
 reliable model is provided and validated against different datasets but no 
 semantics is used in any process. 
 
-QAComPS, a quality-aware federated computational semantic web service for 
-computational  modelers, is presented in~\cite{dewqacomps} to provide a 
-federated QABroker based on ontologies and making use of OWL2 features. 
-Basically they perform a matchmaking reasoning process for discovering and 
-selecting services according to a set of characteristics to meet user 
-requirements. A SAWSDL interface is also used to transfer semantic annotation 
-to/from the QAComPS service and QABroker. The final objective is to demonstrate 
-a promising framework to make cloud computing more accessible and cost effective 
-for computational modelers.
+% QAComPS, a quality-aware federated computational semantic web service for 
+% computational  modelers, is presented in~\cite{dewqacomps} to provide a 
+% federated QABroker based on ontologies and making use of OWL2 features. 
+% Basically they perform a matchmaking reasoning process for discovering and 
+% selecting services according to a set of characteristics to meet user 
+% requirements. A SAWSDL interface is also used to transfer semantic annotation 
+% to/from the QAComPS service and QABroker. The final objective is to demonstrate 
+% a promising framework to make cloud computing more accessible and cost effective 
+% for computational modelers.
 
 Authors present in~\cite{stantchev2009negotiating} an approach (a three-step method) 
 to map SLAs and QoS requirements of business processes. They formalize the capabilities 
@@ -302,20 +301,6 @@ a SOA lifecycle. Authors describe the concepts and formalisms of each
 lifecycle stage (Model, Assemble, Deploy, and Manage). The final objective 
 of this approach is to meet the user requirements offering optimized levels 
 of dependability.
-
-In~\cite{}
-Cloud systems have shifted traditional on-premise software products towards new
-and service oriented solutions. In order to adapt to this new trend, traditional software vendors
-are facing a necessary evolution towards service oriented software products. This software
-evolution is quite complex and full of problems. This paper presents lessons learned and the
-issues that emerged in a project aimed to adapt Meta 4’ PeopleNet solution to adopt a cloud
-computing approach. This project, designed as a two-step approach, presents a set of issues that
-are analyzed in this paper, namely: Software evolution, Software processes and Technology
-and Personnel issues. The resultant conclusions, that highlight the importance of people in this
-software evolution, are useful for companies facing a product evolution process towards cloud
-oriented environments.
-
-
 
 A taxonomy of QoS management and Service Selection Methodologies in cloud 
 computing is presented in~\cite{qos-taxonomy}. This survey reviews the current 
@@ -416,13 +401,13 @@ Each feature is evaluated following the next approaches:
    QoSMONaaS~\cite{srt-15} & OWL + CEP + SLA& Y & 1&3 &4 &4 & 4& 4& 3& 4& 3& -& 1&1 \\ \hline
    IRMOS~\cite{DBLP:conf/compsac/CucinottaAA10}  & -&- &1 & 3& 4& 4& 4& 2& 2& 2& 3& -&2 &2 \\ \hline
    QoS model~\cite{Mabrouk:2009:SEQ:1564601.1564724} & WSQM & - &1 &4 &2 &4 &4 &4 &2 &2 &4 &- &1 &1 \\ \hline
-   Maximilien~\cite{Maximilien:2004:FOD:1024866.1025003} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
-   MOQ~\cite{Kim:2007:MWS:1359823.1359827} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
-   Papaioannou\cite{Papaioannou:2006:QOL:1129027.1129054} & OWL & Y & 1&3 &3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline
-   Dobson~\cite{Dobson:2006:TUQ:1173701.1174285} & OWL & Y & 1&3 &4 &4 &4 &4 &3 &4 &4 &- &1 &1 \\ \hline
-   Marchetti~\cite{Marchetti:2004:QMM:1013367.1013377} & - & - & 1 &2 &2 &2 &2 &2 &2 &3 &3 &- &1 &1 \\ \hline
-   WiQoSM~\cite{Resta:2008:WIQ:1340085.1340215} & - & - & 1 &2 &2 &2 &2 &2 &2 &2 &2 &- &1 &1 \\ \hline
-   QoSOnt~\cite{Dobson:2005:QQO:1090946.1091252} & OWL & Y & 1&  &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+ %  Maximilien~\cite{Maximilien:2004:FOD:1024866.1025003} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+ %  MOQ~\cite{Kim:2007:MWS:1359823.1359827} & OWL & Y & 1&4 &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
+ %  Papaioannou\cite{Papaioannou:2006:QOL:1129027.1129054} & OWL & Y & 1&3 &3 &3 &3 &3 &3 &3 &3 &- &1 &1 \\ \hline
+ %  Dobson~\cite{Dobson:2006:TUQ:1173701.1174285} & OWL & Y & 1&3 &4 &4 &4 &4 &3 &4 &4 &- &1 &1 \\ \hline
+ %  Marchetti~\cite{Marchetti:2004:QMM:1013367.1013377} & - & - & 1 &2 &2 &2 &2 &2 &2 &3 &3 &- &1 &1 \\ \hline
+ %  WiQoSM~\cite{Resta:2008:WIQ:1340085.1340215} & - & - & 1 &2 &2 &2 &2 &2 &2 &2 &2 &- &1 &1 \\ \hline
+ %  QoSOnt~\cite{Dobson:2005:QQO:1090946.1091252} & OWL & Y & 1&  &3 &4 &4 &4 &4 &3 &3 &- &1 &1 \\ \hline
    eCloudManager~\cite{Haase:2010:STE:1940334.1940342} & RDF & Y & 1& 3 &3 &3 &3 &3 &3 &2 &4 &- &1 &1 \\ \hline
    mOSAIC~\cite{Cretella:2012:UMS:2428736.2428805} & OWL-S + SPARQL & Y & 1 & 4 &4 &4 &4 &3 &3 &4 &4 &- &1 &1 \\ \hline
    Q-Clouds~\cite{Nathuji:2010:QMP:1755913.1755938} & MIMO & - & 1 & 3 &3 &4 &4 &3 &3 &3 &3 &- &1 &1 \\ \hline

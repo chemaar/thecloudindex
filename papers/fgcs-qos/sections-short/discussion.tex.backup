@@ -1,7 +1,6 @@
 Despite the growing interest in Cloud Computing and the hype of this 
-new paradigm for the creation of new era of applications, services and data 
-available through the Web, a real advanced cloud management environment is far 
-from being fully developed. There are many open issues to be solved and 
+paradigm for the creation of new era of applications, a real advanced 
+cloud management environment is far from being fully developed. There are many open issues to be solved and 
 technology to ease the transition from traditional developments and applications 
 to a cloud-based environment is still under development. With regards to QoS, 
 there are a lot of initiatives and efforts trying to model and manage functional 
@@ -26,14 +25,14 @@ into account user feedback to evaluate the real quality and trust of a service.
 Moreover, depending on the cloud layer, specific QoS characteristics should be 
 defined to collect the requirements of each particular case. Currently QoS 
 approaches are mainly focused on web service discovery and selection but new 
-ranking methods~\cite{DBLP:journals/fgcs/GargVB13,} and reactive control systems taking into QoS features should be 
+ranking methods~\cite{DBLP:journals/fgcs/GargVB13} and reactive control systems taking into QoS features should be 
 deployed to provide an intelligent cloud infrastructure.  
 
 \item Which is the ``best'' approach to tackle the QoS management in Cloud Systems?
 
-From a policy-making perspective the use of quantitative indexes is widely accepted 
+From a policy-making perspective the use of quantitative indexes is a widely accepted 
 practice to compile in just one value a set of indicators. In this sense the on-going 
-works presented in Section~\cite{qos-cloud-index} are a nice start, more specifically 
+works presented in Section~\ref{qos-cloud-index} are a nice start, more specifically 
 the SMI index seems to be a clear candidate to assess the quality of cloud services (XaaS). 
 Nevertheless it is necessary to find a method to: 1) integrate different data sources; 
 2) model the index structure and its computation and 3) provide proper documentation 
@@ -83,7 +82,7 @@ Nevertheless, the expectations of linking different datasets to enrich
 information are growing as a manner for delivering more intelligent services. To 
 apply Linked Data in the Cloud Computing environment we should ensure that any 
 resource to be monitored has an URI, its data is coded into RDF according to a 
-formal model, an API or endpoint is accessible for fetching data using pulling 
+formal model, an API or endpoint is accessible for fetching data using pulling, 
 pushing or triggering techniques and the methods for graph processing and 
 reasoning are efficient and scalable under real-time constraints.
 
@@ -93,7 +92,7 @@ Following the review in Section~\ref{data-stream} there is already a proven set 
 big data. Most of them are based on an internal model, a formal query language and a NoSQL-based storage 
 to perform queries or analysis in real-time. Nevertheless an extra layer of semantics based on standards 
 such as RDF or SPARQL is still an open issue. An effort to expose processed data as a SPARQL endpoint it is 
-completely possible since a similar approach have been reached using SQL. In that sense a good approach can 
+completely possible since a similar approach have been reached using SQL (e.g. SploutSQL). In that sense a good approach can 
 be to re-use the effort of existing monitoring tools but adding a RDF layer, see Section~\ref{framework}, 
 to leverage the two main advantages of semantics: integration and interoperability.
 
@@ -117,10 +116,19 @@ some analysis then the scenario presented in Section~\ref{motivating}, Cloud Bro
 be efficiently address. Nevertheless the complete automation of a broker service is still 
 an utopia since human-validation is required to make strategic decisions. Furthermore it is necessary 
 to define a QoS API, maybe using the SMI indicators, to be able to implement a real Cloud Quality Management 
-Platform. For instance, SalesForce offers some RSS feeds to check the status of their services.
+Platform. For instance, SalesForce offers~\footnote{\url{http://trust.salesforce.com}} 
+some RSS feeds to check the status of their services, a similar approach should be followed for other providers to boost 
+the user experience and trust and create a real cloud service market.
 
+On the other hand semantic technologies and Linked Data are now focused on addressing some challenges in
+data quality, provenance, trust, large dataset processing, entity reconciliation, searching 
+or inference to name a few.
 
-
+Finally the use of Big Data techniques and tools is already in the market and an evolving community is generating 
+more and more approaches to provide more faster and scalable analysis processes. The design of algorithms taking 
+advantage of a distributed environment, the possibility of integrating diverse data, the use of standards and the creation 
+of more enriched visualization tools are some open issues that must be addressed to improve and bring these tools 
+to public at large boosting a new data-based economy.
 
 \end{itemize}
 

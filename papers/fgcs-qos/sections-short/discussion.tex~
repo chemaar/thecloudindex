@@ -93,7 +93,7 @@ Following the review in Section~\ref{data-stream} there is already a proven set 
 big data. Most of them are based on an internal model, a formal query language and a NoSQL-based storage 
 to perform queries or analysis in real-time. Nevertheless an extra layer of semantics based on standards 
 such as RDF or SPARQL is still an open issue. An effort to expose processed data as a SPARQL endpoint it is 
-completely possible since a similar approach have been reached using SQL. In that sense a good approach can 
+completely possible since a similar approach have been reached using SQL (e.g. SploutSQL). In that sense a good approach can 
 be to re-use the effort of existing monitoring tools but adding a RDF layer, see Section~\ref{framework}, 
 to leverage the two main advantages of semantics: integration and interoperability.
 
@@ -122,9 +122,8 @@ some RSS feeds to check the status of their services, a similar approach should 
 the user experience and trust and create a real cloud service market.
 
 On the other hand semantic technologies and Linked Data are now focused on addressing some challenges in
-data quality~\cite{bizer2007,Bizer2009QA,lodq,link-qa}, provenance~\cite{DBLP:conf/ipaw/HartigZ10}, trust~\cite{Carroll05namedgraphs}, 
-large dataset processing~\cite{DBLP:conf/closer/HausenblasGHC12}, entity reconciliation~\cite{Maali_Cyganiak_2011}, 
-searching~\cite{hoga-etal-2011-swse-JWS} or inference~\cite{DBLP:journals/ws/BonattiHPS11} to name a few.
+data quality, provenance, trust, large dataset processing, entity reconciliation, searching 
+or inference to name a few.
 
 Finally the use of Big Data techniques and tools is already in the market and an evolving community is generating 
 more and more approaches to provide more faster and scalable analysis processes. The design of algorithms taking 

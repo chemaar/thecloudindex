@@ -16,11 +16,8 @@ On the other hand, a sensor can be defined as a data source which can produces a
 sequence of data items over time~\cite{deri2010}. This definition leads us to a new 
 environment in which any device can continuously produce data and we can take 
 advantage of this information to deliver advanced services on monitoring 
-distinct domains such as traffic, logistics or supply chain management, etc. 
-Gartner predicts that ``By 2015, wirelessly networked sensors in everything we 
-own will form a new Web. But it will only be of value if the \textit{terabyte torrent} 
-of data it generates can be collected, analyzed and interpreted'' and this 
-implies that new techniques and models should be developed to deal with this 
+distinct domains such as traffic, logistics or supply chain management, etc. Nevertheless
+this environment requires new techniques and models to deal with this 
 vast amount of data making the integration and interoperability among 
 applications possible.
 
@@ -35,7 +32,7 @@ performance than static metadata. In the case of Linked Data this situation is
 more dramatic due to the existence of different vocabularies and the possibility 
 of having new RDF triples in execution time that are not modeled by static 
 metadata. Existing triple stores do not manage this situation and assume RDF 
-data is static. In a cloud system environment this assumption is no longer hold 
+data as static. In a cloud system environment this assumption is no longer hold 
 and a method to query and make decisions in real-time processing stream data 
 must be provided in order to deliver a reactive knowledge-based system. More 
 specifically in the QoS management context, the need of dynamic adaptation of 
@@ -44,17 +41,16 @@ optimizing the reservation of cloud resources. Thus the QoS management can be
 seen as a motivating scenario to apply stream reasoning over data coming from 
 cloud resources.
 
-First efforts to address the data stream challenges were made in the IEEE 1451 
-definition, the Radiation Detection Standards (ANSI N42), the OGC Sensor Web 
+First efforts to address data stream challenges were made in the IEEE 1451 
+definition, the Radiation Detection Standards (ANSI N42), the Open Geospatial Consortium (OGC) Sensor Web 
 Enablement (SWE)~\cite{sensorweb-wb} or the Extended Environments Markup Language~\cite{eeml} (EEML). 
 They followed a domain-specific approach that cannot be easily applied in other 
 contexts. A standard with a broader application was the Sensor Web Enablement 
-standard which was implemented by the 52º North project~\cite{52project}, the NASA/JPL~\cite{nasajpl}
-Sensor Webs Project~\cite{Sheth:2008:SSW:1444383.1444435} and the European Space Agency among others. 
+standard which was implemented by the 52º North project, the NASA/JPL project and the European Space Agency among others. 
 Efforts with regards to Linked Data such as ``SensorBase'' enables the publication 
-of sensor data via HTTP POST as well as Pachube that offers a RESTfull interface 
-for querying stream real-time sensor data in different formats such as JSON or EEML. 
-Nevertheless the main drawback of these approaches is the lack of semantic descriptions to describe data streams.
+of sensor data via HTTP POST as well as Pachube that offers a Restful interface 
+for querying stream real-time sensor data in different formats such as JSON or EEML. Nevertheless the common and 
+main drawback of these approaches lies in the lack of semantic descriptions to describe data streams.
 
 
 In~\cite{Sheth:2008:SSW:1444383.1444435} authors proposed the use of RDFa to annotate ontological concepts and 
@@ -68,54 +64,54 @@ they assume~\cite{deri2010} that semantic descriptions are already available and
 enough quality. Finally the W3C Semantic Sensor Network Incubator Group has 
 proposed the SSN Ontology~\cite{Compton:2012:OPS:2400766.2401456} to answer the need of a domain-independent and 
 end-to-end model for sensing application by merging sensor focused (e.g. SensorML), observation-focused (e.g. observation and measurement) and system 
-focused views. It also covers subdomains which are sensor-specific such as the 
+focused views. It also covers sub-domains which are sensor-specific such as the 
 sensing principles and capabilities and can be used to define how a sensor will 
 perform in a particular context. Nevertheless further steps imply their real 
 adoption in a Linked Sensor Data context to bridge the new era of Internet of 
-Things and Internet of Services fostering their potential adoption in the OGC 
-community.
+Things and Internet of Services fostering their potential adoption in the OGC community.
 
 Following the review of approaches to mix semantic technologies and stream data processing is 
 presented with special focus on storage, stream processing, analytics and some applications:
 \begin{itemize}
  \item In the case of storage, RDF triple stores such as Sesame, Apache Jena 
-(Joseki), RISC-3X, YARS2, Oracle Semantic, OWLim, OpenLink Virtuoso have gained 
-importance in recent times due to the deployment of the Linked Open Data initiative. Most of them are based on a SQL-backend and offer distinct 
-services such as basic reasoning processes and a query service via a SPARQL 
-endpoint. The main focus of these repositories is the scalability in terms of 
-the number of triples they can manage. There is mainly adequate when data do not 
+(Joseki and Fuseki), RISC-3X, YARS2, Oracle Semantic, OWLim, OpenLink Virtuoso have gained 
+importance in recent times due to the deployment of the Linked Open Data initiative. 
+Most of them are based on a SQL-backend and offer distinct services such as basic reasoning processes 
+and a query service via a SPARQL endpoint. The main focus of these repositories is the scalability 
+in terms of the number of triples they can manage. They are adequate when data do not 
 change frequently and a better performance can be reached applying well-known 
-techniques of indexing. Moreover the current initiative of NoSQL databases 
-brings the opportunity of using new representation and retrieving models (key-value, document oriented, column-family or graph) to deal with the vast amount of data in contexts such as Social Media 
-or in our case of study data coming from dozen of applications.
+techniques of indexing. Moreover the current initiative of NoSQL databases brings the opportunity 
+of using new representation and retrieving models (key-value, document oriented, column-family or graph) 
+to deal with the vast amount of data in contexts such as Social Media or, like in our case of study, 
+data coming from dozen of applications.
 
-Furthermore Apache Hadoop and related projects built on top of this Map/Reduce 
-framework~\cite{Dean:2008:MSD:1327452.1327492} such as Apache Pig, Hive, Mahout, Cassandra or Zookeeper enable a 
-distributed processing environment of large data sets across clusters of 
-computers using simple programming models. The storage and processing models of 
-large datasets is not a mere question and it must be carefully planned to avoid 
+Furthermore Apache Hadoop and related projects built on top of this Map/Reduce framework 
+such as Apache Pig, Hive, Mahout, Cassandra or Zookeeper enable a distributed processing environment 
+of large data sets across clusters of computers using simple programming models. The storage and 
+processing models of large datasets is not a mere question and it must be carefully planned to avoid 
 scalability problems. In this context there are also some projects providing 
-data flows such as Storm~\cite{BigDataManing} (a distributed and fault-tolerant teal-time 
-computation environment), most of these efforts are boosted by the main social 
-media sites such as Facebook, Twitter or Linkedin. 
+data flows such as Storm~\cite{BigDataManing} (a distributed and fault-tolerant real-time 
+computation environment), most of these efforts are boosted by the main 
+social media sites. 
 
-\item There is a growing set of both commercial and open tools that 
+\item There is also a growing set of both commercial and open tools that 
 claims to provide large scale and distributed data stream processing, inspired in Apache Drill~\cite{hausenblas2013apache}. 
-All of them use their own internal data models, cluster processing, a formal query language and different kinds of 
+All of them use their own internal data models, cluster processing technique, formal query languages and different kinds of 
 predictive analytics. In this context Impala~\cite{impala-project}, SPARK~\cite{zaharia2012discretized}, Sparrow~\cite{ousterhout2013sparrow},
 Shark~\cite{DBLP:conf/sigmod/XinRZFSS13}, S4~\cite{neumeyer2010s4}, Druid~\cite{yangdruid} or MapR~\cite{mapr-project} technologies to name a 
-few deliver such predictive services on big data through off-line and real-time queries. Usually they 
-also take advantage of: 1) programming languages with functional and parallel capabilities such as Scala, Clojure, Erlang or Python; 
+few deliver such predictive services on big data through off-line and real-time queries. Usually they also take advantage 
+of: 1) programming languages with functional and parallel capabilities such as Scala, Clojure, Erlang or Python; 
 2) NoSQL stores and 3) MapReduce-based frameworks. Finally an advanced dashboard to manage jobs is 
 commonly provided as a graphical interface for controlling the distributed execution and the results of predictive 
 analysis functions.
 
 
-\item Data stream management systems (DSMS) are other possibility to manage data streams GraphgCQ, Amazon/Cougar, Aurora, Gigascope, 
+\item Data stream management systems (DSMS) represents other way to manage data streams GraphgCQ, Amazon/Cougar, Aurora, Gigascope, 
 Hancock, Niagara, OpenCQ, Stream, Stream Mill, Tapestry, Tribeca, Streambase, Coral8, Apama or Truviso among others were implemented to overcome the 
-limitation of traditional DBMS when continuous data updates appear. They are based on different data models and their implicit semantics is not based on static 
-restrictions such as the ACID principles. The main objective lies in getting a better performance when huge amounts of data should be managed. According to~\cite{deri2010} and 
-taking into account there is no benchmark available about their support of Linked Data streams these management systems are not suitable for processing RDF streams. 
+limitation of traditional databases when continuous data updates appear. They are based on different data models and their implicit semantics is not 
+based on static restrictions such as the ACID principles. The main objective, in these cases, lies in getting a better performance when 
+huge amounts of data should be managed. According to~\cite{deri2010} and taking into account there is no benchmark 
+available about their support of Linked Data streams these management systems are not suitable for processing RDF streams. 
 
 
 \item StreamingSPARQL~\cite{Bolles:2008:SSE:1789394.1789438} and 
@@ -127,16 +123,14 @@ of top of existing stream data management and triple storage systems. In that
 sense C-SPARQL is supposed to be more stable than StreamSPARQL and it also 
 provides a service for splitting the continuous queries into two groups: static 
 and dynamic which are merged through orchestration service binding the required 
-facts when new RDF triples arise. A complete summary and tutorial on semantic 
-stream reasoning is provided in~\cite{stream-reasoning-linked-data}. Authors also outline all the features that 
-stream reasoning should address such as the use of continuous semantics instead 
+facts when new RDF triples arise. Authors also outline~\cite{stream-reasoning-linked-data} all 
+features that stream reasoning should address such as the use of continuous semantics instead 
 of ``static'' semantics. In~\cite{deri2010} authors present the Continuous Query Evaluation 
 over Linked Streams (CQELS) project to unify data coming from both the Linked 
 Open Data cloud and sensor stream data. They focus on continuous queries that 
 is, queries that are registered in the system, and executed every time new data 
 matches their criteria considering the queries themselves as input parameters. 
-Finally a complete study of stream processing in the cloud 
-is also depicted in~\cite{Backman:2012:MPS:2169090.2169091}.
+Finally a complete study of stream processing in the cloud is also depicted in~\cite{Backman:2012:MPS:2169090.2169091}.
 
 \item On the other hand, the CEP community is concerned with timely detection of 
 compound events in streams of simple events. Nevertheless event processing 
@@ -148,16 +142,16 @@ background knowledge, mix different data streams and execute reasoning
 processes. That is why the conjunction of event processing for dealing with a 
 vast amount of data and semantics to manage several streams and background 
 knowledge can improve the exploitation of diverse data streams. In this context 
-EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} is an extension of the existing SPARQL language to support complex 
-events and stream reasoning. The main challenge of this work is to take 
+EP-SPARQL~\cite{Anicic:2011:EUL:1963405.1963495} has been designed as an extension of the existing SPARQL 
+language to support complex events and stream reasoning. The main challenge of this work is to take 
 advantage of real-time data, and recognizes important situations of interest in 
 a timely fashion. Authors conclude that EP-SPARQL specifies complex events by 
 temporarily situating real-time streaming data, and uses background ontologies 
 to enable stream reasoning.
 
 \item The problem of querying large datasets and performing semantic reasoning 
-is being addressed in WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} and QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} which are prototypes 
-implemented in the context of the LarKC project. These projects show how to use 
+is being addressed in WebPIE~\cite{DBLP:journals/ws/UrbaniKMHB12} and QueryPIE~\cite{Urbani:2011:QBR:2063016.2063063} 
+which were prototypes implemented in the context of the LarKC project. These approaches show how to use 
 a Map/Reduce framework for building an inference engine. WebPIE is focused on 
 the calculation of the transitive closure of OWL semantics, more specifically 
 RDFS and OWL-Horst. This inference engine proposes a scalable technique to 
@@ -167,28 +161,24 @@ reasoning process when new facts arise that is why it cannot be considered
 adequate for stream reasoning. On the other hand and with the objective of 
 processing dynamic data QueryPIE offers a backward inference engine to execute 
 queries over large datasets performing a reasoning process before retrieving 
-results. This approach is similar to the traditional backtracking technique used 
-in Prolog engines. In this context of reasoning over large datasets, in~\cite{DBLP:journals/ijswis/HoganHP09,Umbrich:2012:IRL:2415113.2415129,Umbrich:2012:FUW:2413941.2413963} 
+results. In this context of reasoning over large datasets, in~\cite{DBLP:journals/ijswis/HoganHP09,Umbrich:2012:IRL:2415113.2415129,Umbrich:2012:FUW:2413941.2413963} 
 a system to compute the closure of RDF graphs is also presented but it 
-only supports a fragment of OWL Horst to enable efficient materialization and 
-(live) query processing on the Linked Data realm. 
+only supports a fragment of OWL Horst to enable efficient materialization and (live) query processing on the Linked Data realm. 
 
 \item As we have seen in the previous works the implementation of SPARQL 
 extensions to be executed in a distributed environment is currently a good 
 approach to deal with a mass of data and provide a scalable environment for the 
 Semantic Web. In this sense, authors in~\cite{DBLP:journals/pvldb/HuangAR11} make an implementation of a SPARQL 
-distributed engine to split data and queries into different nodes to get 
+distributed engine to split data and queries into different nodes and to get 
 local-optimizations. In~\cite{Schatzle:2011:PMS:1999299.1999303} authors propose a translation of SPARQL queries 
 into Pig Latin for the scalable processing of complex queries on very large RDF 
 datasets. They introduce PigSPARQL, a system which processes the SPARQL queries 
-as Map/Reduce jobs, and make an evaluation using the benchmark SP2Bench (a 
-specific SPARQL performance benchmark) getting good results. Following a similar 
-approach HadoopSPARQL~\cite{liuhadoopsparql} is a tool that allows user to submit multiple queries 
-at the same time. These queries are handled by an algorithm that is in charge of 
-creating and distributing sub queries using Map/Reduce jobs. In~\cite{FarhanHusain:2009:SRL:1695659.1695734} authors 
-present a work to store RDF in HDFS (Hadoop File System) and an algorithm to ask 
-SPARQL queries. H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058}, Jena-HBase~\cite{DBLP:conf/semweb/KhadilkarKTC12} and the proposal in~\cite{maindonald2007data} 
-are similar works trying to manage large RDF datasets and execute distributed SPARQL queries. 
+as Map/Reduce jobs, and make an evaluation using the benchmark SP2Bench (a specific SPARQL performance benchmark) getting pretty good results. 
+Following a similar approach HadoopSPARQL~\cite{liuhadoopsparql} is a tool that allows user to submit multiple queries 
+at the same time. These queries are handled by an algorithm that is in charge of creating and distributing sub queries 
+using Map/Reduce jobs. In~\cite{FarhanHusain:2009:SRL:1695659.1695734} authors present a work to store RDF in HDFS (Hadoop File System) 
+and an algorithm to ask SPARQL queries. H2RDF~\cite{Papailiou:2012:HAQ:2187980.2188058}, Jena-HBase~\cite{DBLP:conf/semweb/KhadilkarKTC12} 
+and the proposal in~\cite{maindonald2007data} are similar works trying to manage large RDF datasets and execute distributed SPARQL queries. 
 
 \item The use of the R statistics package is widely accepted in the Big 
 Data community to make decisions, predictions or analysis and perform statistical methods on large datasets. In 
@@ -225,11 +215,11 @@ automatically tune itself based on resource needs.
 allocates computational resources on the cloud in an elastic manner for a data 
 stream processing application. To minimize the charges for using the Cloud 
 environment while satisfying the SLA, they formulate a linear programming 
-problem to optimize the costs as a trade-off between the application’s latency 
+problem to optimize the costs as a trade-off between the application's latency 
 and charges. A system is also implemented to assign or remove computational 
 resources dynamically on the top of the data stream middleware. Authors also 
 conclude that their approach could save up to 80\% of the costs while maintaining 
-the application’s latency in comparison to a na\"{i}ve approach. Nevertheless they 
+the application's latency in comparison to a na\"{i}ve approach. Nevertheless they 
 remain as future work the prediction of data rate and the inclusion of new 
 features in the platform to a better stream data management. This approach does 
 not use any semantic feature to address the needs of managing a cloud 

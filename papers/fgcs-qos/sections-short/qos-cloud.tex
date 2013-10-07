@@ -1,15 +1,17 @@
+% 
+% \textit{A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of 
+% abstracted, virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet}. 
+% The NIST institute has also defined~\cite{mell2011nist}: 
+% \begin{enumerate}
+%  \item Five key characteristics: on-demand self-service, ubiquitous network access, location independent resource pooling, rapid elasticity and pay per use.
+%  \item Three service models: Software-as-a-Service (SaaS), Platform-as-a-Service (PaaS) and Infrastructure-as-a-Service (IaaS).
+%  \item Four development models: private, community, public and hybrid clouds. 
+% \end{enumerate}
+% 
 Cloud Computing represents the next natural step in the evolution of on-demand services and applications. 
-Several definitions have been made but the description~\cite{mell2011nist} provided by the NIST institute has reached a major consensus:  
-\textit{A large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of 
-abstracted, virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet}. 
-The NIST institute has also defined~\cite{mell2011nist}: 
-\begin{enumerate}
- \item Five key characteristics: on-demand self-service, ubiquitous network access, location independent resource pooling, rapid elasticity and pay per use.
- \item Three service models: Software-as-a-Service (SaaS), Platform-as-a-Service (PaaS) and Infrastructure-as-a-Service (IaaS).
- \item Four development models: private, community, public and hybrid clouds. 
-\end{enumerate}
-
-These basic concepts~\cite{mell2011nist} and usages~\cite{cloud-usage} in a cloud environment lead us to consider that QoS is a key-enabler of the five essential characteristics identified by 
+Several definitions have been made but the description~\cite{mell2011nist} provided by the NIST 
+institute has reached a major consensus. These basic concepts~\cite{mell2011nist} and usages~\cite{cloud-usage} in a cloud environment 
+lead us to consider that QoS is a key-enabler of the five essential characteristics~\cite{mell2011nist} identified by 
 the NIST institute and it is closely related to the concepts of Autonomic and Utility Computing~\cite{Huebscher:2008:SAC:1380584.1380585}. 
 As a consequence the QoS management must play a major role in cloud environments and in the Future Internet to 
 afford, from a quality point of view, the implementation of the ``Measured Service'' concept.
@@ -18,19 +20,25 @@ On the other hand, the ITUT-T Recommendation E.800 defines QoS as \textit{collec
 satisfaction by a user of the service}. Thus QoS data is a key-enabler to design, identify and put in action SLAs. It should also influence 
 software components and applications to ensure a reliable environment for executing services. Some open issues in 
 QoS management emerge to extend this definition including reputation-based mechanisms for service selection or 
-dynamic adaptation of resource provisioning. The application of QoS has been widely studied and 
-applied~\cite{Conejero:2012:MSQ:2357487.2357591,Pedersen:2011:AMQ:2114495.2115542} to web services and grid computing areas and it is now 
-gaining momentum in the new Cloud Computing paradigm. 
+dynamic adaptation of resource provisioning. 
+% 
+% The application of QoS has been widely studied and 
+% applied~\cite{Conejero:2012:MSQ:2357487.2357591,Pedersen:2011:AMQ:2114495.2115542} to web services and grid computing areas and it is now 
+% gaining momentum in the new Cloud Computing paradigm. 
 
 In order to facilitate the QoS management in the cloud-environment some tools, called Cloud Management Platforms (CMPs) can be found 
 to manage the different layers of cloud-based applications but the majority of them are now focused on the IaaS and PaaS layers. 
 The use of these platforms can help to manage the growing of cloud applications and ease the deployment and monitoring of services across 
 public and private clouds. The six key capabilities~\cite{Kephart2012} that we should look for in a CMP are: simplify complexity, 
 manage multiple clouds, build for the future, support the whole application lifecycle, self-management (set-it and forget-it) and manage/control costs. 
-In this sense OASIS just launched a CAMP TC to create and inter-operable protocol that cloud 
-implementers can use to package and deploy their applications. The idea is to provide a set of REST services, at the PaaS layer, to foster an ecosystem of 
-common tools, plug-ins, libraries and frameworks, which will allow vendors to offer greater value-add. In the particular case of QoS, the use of standards to gather data 
-from applications can improve the process of making decisions about resource provisioning or help in saving costs among others.
+In this sense OASIS just launched a CAMP TC to create and inter-operable protocol that cloud implementers can use to package and 
+deploy their applications. The idea is to provide a set of REST services, at the PaaS layer, to foster an ecosystem of 
+common tools, plug-ins, libraries and frameworks, which will allow vendors to offer greater value-add. 
+In the particular case of QoS, the use of standards to gather data from applications can improve the process of making decisions 
+about resource provisioning or help in saving costs among others. Although there is no a clear objective to support quality indicators 
+it can be considered as a major effort to unify information exposed by providers and improve the creation of an integrated and inter-operable 
+ecosystem in which existing cloud management application platforms such as RightScale, Enstratus, ScaleUp, Cloudability, Cloudyn, 
+CloudExpress or MyGravitant can take advantage of implemented added-value services on the top of a common API. 
 
 % Nevertheless this specification is still in an early stage and its objectives are more focused on the management of cross-cloud applications than a 
 % real management from QoS point of view. Following main characteristics of the CAMP specification are presented:
@@ -42,10 +50,7 @@ from applications can improve the process of making decisions about resource pro
 %  possible but with the possibility of being extended by third-parties.
 % \end{itemize}
 
-Although there is no a clear objective to support quality indicators it can be considered as a major effort to unify information exposed by providers and 
-improve the creation of an integrated and inter-operable ecosystem in which existing cloud management application platforms such 
-as RightScale, Enstratus, ScaleUp, Cloudability, Cloudyn, CloudExpress or MyGravitant can take advantage of implemented 
-added-value services on the top of a common API. 
+
 
 % Although these commercial products offer a very good option to manage cloud-based applications there is a lack of standardization and some QoS features cannot be managed.  
 % Nevertheless these existing cloud management platforms present some interesting features and services for 
@@ -106,7 +111,7 @@ profiles and multicultural/multilingual character of information.
 
 Following this perspective of creating a quantitative index the Cloud Computing community~\cite{Maiya:2012:QMC:2353730.2353862,DBLP:conf/quatic/KlemsBW12} 
 and some of the big players have launched some relevant indexes such as: the Service Measurement Index (SMI) by the Cloud Services 
-Measurement Initiative Consortium (CSMIC) consortium, he Cisco Global Cloud Index (GCI) by Cisco, the CSC Cloud Usage index or 
+Measurement Initiative Consortium (CSMIC) consortium, the Cisco Global Cloud Index (GCI) by Cisco, the CSC Cloud Usage index or 
 or the VMWare Cloud index.
 
 % 
